@@ -1,0 +1,142 @@
+/* @font-face {
+    font-family: "chistayekanR";
+    src: url("/fonts/chistaYekan/ChistaYekanRegular.woff2") format('woff2'),
+     url('/fonts/chistaYekan/ChistaYekanRegular.woff') format('woff'),
+     url('/fonts/chistaYekan/ChistaYekanRegular.ttf') format('truetype');
+}  */
+
+html {
+    scroll-behavior: auto;
+}
+
+:root {
+    --textColorPrimary: #0c0b31;
+    --textColorSecondary: #0c0b31cc;
+    --textColorDisabled: #0c0b3180;
+    --textColorBorder: #0c0b3126;
+    --textColorAvatarBorder: #0c0b3133;
+    --textColorFivePercent: #0c0b310d;
+    --textColorPercent70: #0c0b31b3;
+    --textColorPercent50: #0c0b3180;
+    --textColorThreePercent: #0c0b3108;
+    --textColorSuccess: #34c278;
+    --textColorSuccessAlt: #00dbb51a;
+    --textColorError: #ff6575;
+    --textColorErrorAlt: #ff65751a;
+    --textColorTooltip: #3a3958;
+    --fontRegular:'chistaYekanR';
+    --fontBold:'chistaYekanB';
+    --fontMedium:'chistaYekanM';
+    --fontLatin:'chistaYekanLatin';
+    --buttonColorNormal:#3f53d9;
+    --buttonColorHover:#3748bb;
+    --darkBg:#050038;
+  }
+
+.tile_color_1 {
+    background: #FFC693 !important;
+    /*background: #ebedfa !important;*/
+    border: none !important;
+    color: #fff !important;
+}
+
+.tile_color_2 {
+    /*background: #fa418d !important;*/
+    background: #FFDFA9 !important;
+    border: none !important;
+    color: #fff !important;
+
+}
+
+.tile_color_3 {
+    background: #EAE1D0 !important;
+    border: none !important;
+    color: #fff !important;
+
+    /*background: #34c278 !important;*/
+}
+
+.tile_color_4 {
+    background: #C6E5ED !important;
+    border: none !important;
+    color: #fff !important;
+
+    /*background: #ae3e79 !important;*/
+}
+
+.tile_color_5 {
+    background: #9DCFF1 !important;
+    border: none !important;
+    color: #fff !important;
+
+    /*background: #0d83fe !important;*/
+}
+
+.tile_color_6 {
+    background: #8FD2DC !important;
+    border: none !important;
+    color: #fff !important;
+
+    /*background: #ffd800 !important;*/
+}
+
+.tile_color_7 {
+    background: #8CD2B7 !important;
+    border: none !important;
+    color: #fff !important;
+
+    /*background: #f64b4b !important;*/
+}
+
+.tile_color_8 {
+    background: #CDE8CE !important;
+    border: none !important;
+    color: #fff !important;
+
+    /*background: #d5d539 !important;*/
+}
+
+.tile_color_9 {
+    background: #EAA6C6 !important;
+    /*background: rgba(12, 11, 49, 0.15) !important;*/
+}
+.tile_color_10 {
+    background: #FACCCB !important;
+    /*background: rgba(12, 11, 49, 0.15) !important;*/
+}
+
+.class_tile_color {
+    background: #0c0b3108 !important;
+    border: 1px solid #0c0b3126 !important;
+    color: #0c0b31 !important;
+}
+
+.MuiPopover-paper {
+    width: 191px;
+    max-height: 190px;
+    border-radius: 8px !important;
+    border: 1px solid rgba(0, 5, 52, 0.11);
+}
+
+/* .MuiAutocomplete-popper{
+  width: 200px;
+  height: 172px;
+  border-radius: 16px!important;
+  border: 1px solid rgba(0, 5, 52, 0.11);
+} */
+
+.slider, .animated {
+    direction: ltr;
+}
+
+.slide {
+    background: transparent !important;
+}
+
+.entered, .container, .MuiCollapse-entered, .MuiCollapse-container {
+    width: 100%;
+}
+
+.client-snackbar {
+    color: #fff !important;
+}

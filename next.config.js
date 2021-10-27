@@ -1,3 +1,6 @@
-module.exports = {
-  reactStrictMode: true,
-}
+// module.exports = {
+//   reactStrictMode: true,
+// }
+const withImages = require('next-images')
+const withFonts = require('next-fonts');
+module.exports = withImages(withFonts())
