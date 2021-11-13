@@ -1,0 +1,129 @@
+@use "../master.module.scss" as master;
+//events component needs container for width
+.eventContainer {
+    width: 100%;
+    height: 562px;
+    border: 1px solid var(--linkActiveColor);
+    border-radius: 50px;
+    background-color: #f6f6f6;
+    padding: 16px 16px 37px;
+    position: relative;
+    & > .imageContainer {
+        height: 352px;
+    }
+}
+.eventSm {
+    height: 524px;
+    @media (max-width: master.$xl) {
+        padding: 12px 12px 25px;
+        height: 438px;
+    }
+    & > .imageContainer {
+        height: 315px;
+        @media (max-width: master.$xl) {
+            height: 257px;
+        }
+    }
+}
+.imageContainer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 40px;
+    }
+}
+
+.dataContainer {
+    width: 100%;
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @media (max-width: master.$xl) {
+        padding: 22px 0;
+    }
+    & > h3 {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 24px;
+        text-align: center;
+        color: var(--textColor);
+        @media (max-width: master.$xl) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    & > p {
+        margin-top: 8px;
+        font-size: 16px;
+        line-height: 21px;
+        text-align: center;
+        color: var(--textColor);
+        @media (max-width: master.$xl) {
+            margin-top: 7px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+}
+
+.divider {
+    width: calc(100% - 45px);
+    background-color: var(--linkActiveColor);
+    height: 1px;
+    margin: 0 auto 3px;
+}
+.priceContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding: 0 21px;
+    @media (max-width: master.$xl) {
+        margin-top: 22px;
+    }
+    & > p {
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        color: var(--textColor);
+        @media (max-width: master.$xl) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}
+.actionBtn {
+    position: absolute !important;
+    border: solid 1px var(--linkActiveColor) !important;
+    background-color: #f6f6f6 !important;
+    border-radius: 50% !important;
+    width: 52px !important;
+    height: 52px !important;
+    left: calc(50% - 26px);
+    max-width: 52px !important;
+    min-width: 52px !important;
+    bottom: -26px !important;
+    @media (max-width: master.$xl) {
+        width: 45px !important;
+        height: 45px !important;
+        bottom: -23px !important;
+        max-width: 45px !important;
+        min-width: 45px !important;
+        left: calc(50% - 23px);
+    }
+    & img {
+        transform: translateX(2px);
+        @media (max-width: master.$xl) {
+            width: 8px ;
+            transform: translateX(1px);
+
+            
+        }
+    }
+}

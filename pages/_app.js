@@ -11,13 +11,16 @@ import NProgress from "nprogress"; //nprogress module
 import "nprogress/nprogress.css"; //styles of nprogress
 // import 'swiper/swiper.scss'; //styles of swiper
 import { SnackbarProvider } from "notistack"; // requires a loader
-
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import axios from 'axios';
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
+
 function MyApp(props) {
-  const { Component, pageProps, store, isMobile, classes } = props;
+  const { Component, pageProps, store, classes } = props;
   // React.useEffect(() => {
   //     // Remove the server-side injected CSS.
   //     const jssStyles = document.querySelector("#jss-server-side");
@@ -34,7 +37,7 @@ function MyApp(props) {
 
       <React.Fragment>
         <Head>
-          <title>چیستا</title>
+          <title>rhythmitica</title>
           {/* <meta
                         name="viewport"
                         content="minimum-scale=1, initial-scale=1, width=device-width"
@@ -45,7 +48,7 @@ function MyApp(props) {
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Component isMobile={isMobile} {...pageProps} />
+          <Component {...pageProps} />
         </ThemeProvider>
       </React.Fragment>
     </SnackbarProvider>

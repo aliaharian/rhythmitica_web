@@ -1,0 +1,401 @@
+@use "./master.module.scss" as master;
+
+.sliderContainer {
+    width: 100%;
+}
+.slideItem {
+    height: 894px;
+    @media (max-width: master.$xl) {
+        height: 780px;
+    }
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom;
+    }
+}
+.IntroGrandContainer {
+    width: 100%;
+    background-color: #f9f9f9;
+}
+.moreBtn {
+    width: 130px;
+    height: 55px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 27px;
+    margin: 0 auto;
+    @media (max-width: master.$xl) {
+        width: 98px;
+        height: 45px;
+        padding: 0 29px;
+    }
+    & > div {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        @media (max-width: master.$xl) {
+            width: 8px;
+            height: 8px;
+        }
+    }
+}
+.IntroContainer {
+    width: 100%;
+    max-width: 1436px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: calc(50% - 31px) calc(50% - 31px);
+    grid-column-gap: 62px;
+    padding: 111px 0 120px;
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+        padding: 91px 0 100px;
+    }
+    & > div {
+        width: 100%;
+        position: relative;
+        & > img {
+            width: 100%;
+        }
+        & > a {
+            position: absolute;
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 184px;
+            background-color: rgba(255, 255, 255, 0.3);
+            bottom: 27px;
+            left: 27px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+            @media (max-width: master.$xl) {
+                width: 164px;
+                height: 50px;
+                font-size: 18px;
+                bottom: 24px;
+                left: 24px;
+            }
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////
+.whyContainer {
+    background-color: var(--litePurple);
+    width: 100%;
+    padding: 137px 0;
+    @media (max-width: master.$xl) {
+        padding: 110px 0;
+    }
+}
+.sectionTitle {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.36;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 109px;
+    @media (max-width: master.$xl) {
+        font-size: 20px;
+        margin-bottom: 95px;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        width: 73px;
+        height: 5px;
+        border-radius: 51px;
+        position: absolute;
+        bottom: 0;
+        @media (max-width: master.$xl) {
+            width: 50px;
+        }
+    }
+}
+.whyTitle {
+    color: var(--textColor);
+    &:after {
+        background-color: var(--darkPurple);
+    }
+}
+.whyItemsContainer {
+    width: 100%;
+    max-width: 1436px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 351px 351px 351px;
+    grid-column-gap: calc((100% - 1053px) / 2);
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+    }
+    & > div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        & > h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.35;
+            text-align: center;
+            color: var(--textColor);
+            @media (max-width: master.$xl) {
+                font-size: 18px;
+                margin-bottom: 14px;
+            }
+        }
+        & > p {
+            font-size: 18px;
+            line-height: 1.94;
+            text-align: center;
+            color: var(--textColor);
+            @media (max-width: master.$xl) {
+                font-size: 16px;
+            }
+        }
+    }
+}
+.whyIcon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 1px var(--darkPurple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+    @media (max-width: master.$xl) {
+        width: 80px;
+        height: 80px;
+    }
+    & > img {
+        width: 63px;
+        @media (max-width: master.$xl) {
+            width: 50px;
+        }
+    }
+}
+
+.animateBorderIcon {
+    position: relative;
+    animation: spin 5s linear infinite;
+    & > img {
+        animation: spin 5s linear infinite reverse;
+    }
+    &:after {
+        width: 12px;
+        height: 12px;
+        top: -6px;
+        border-radius: 50%;
+        content: "";
+        position: absolute;
+        display: block;
+        background-color: var(--pinkColor);
+        animation: spin 5s linear infinite reverse;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.instructorsContainer {
+    width: 100%;
+    padding: 137px 0 121px;
+    background-color: #f9f9f9;
+    @media (max-width: master.$xl) {
+        padding: 110px 0 100px;
+    }
+}
+.instructorsTitle {
+    color: var(--textColor);
+    &:after {
+        background-color: var(--darkPurple);
+    }
+}
+
+.categoriesContainer {
+    width: 100%;
+    max-width: 1436px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 70px;
+    @media (max-width: master.$xl) {
+        margin: 0 auto 60px;
+    }
+    & > p {
+        font-size: 22px;
+        line-height: 30px;
+        color: var(--textColor);
+        cursor: pointer;
+        margin-right: 90px;
+        @media (max-width: master.$xl) {
+            font-size: 18px;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    & > .activeCat {
+        color: var(--darkPurple) !important;
+    }
+}
+.staffListContainer {
+    width: 100%;
+    max-width: 1436px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto 87px;
+    flex-wrap: wrap;
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+        margin: 0 auto 80px;
+    }
+    & > div {
+        flex: 1 1 240px;
+        max-width: 240px;
+        margin-right: 59px;
+        @media (max-width: master.$xl) {
+            max-width: 200px;
+            margin-right: 37px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+        &:first-child {
+            margin-right: 58px;
+            @media (max-width: master.$xl) {
+                margin-right: 38px;
+            }
+        }
+    }
+}
+.moreStaffBtn {
+    border: 1px solid var(--darkPurple);
+    & > div {
+        background-color: var(--darkPurple);
+    }
+}
+
+.eventsContainer {
+    width: 100%;
+    padding: 137px 0;
+    background-color: var(--greenBgColor);
+    @media (max-width: master.$xl) {
+        padding: 110px 0;
+    }
+}
+.eventsTitle {
+    color: var(--textColor);
+    &:after {
+        background-color: var(--linkActiveColor);
+    }
+}
+.moreEventBtn {
+    border: 1px solid var(--linkActiveColor);
+    & > div {
+        background-color: var(--linkActiveColor);
+    }
+}
+
+.eventListContainer {
+    width: 100%;
+    max-width: 1436px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto 87px;
+    flex-wrap: wrap;
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+        margin: 0 auto 80px;
+    }
+    & > div {
+        flex: 1 1 441px;
+        max-width: 441px;
+        @media (max-width: master.$xl) {
+            flex: 1 1 359px;
+            max-width: 359px;
+        }
+    }
+}
+
+.postsContainer {
+    width: 100%;
+    padding: 137px 0;
+    background-color: #f9f9f9;
+}
+.postsTitle {
+    color: var(--textColor);
+    &:after {
+        background-color: var(--pinkColor);
+    }
+}
+.morePostBtn {
+    border: 1px solid var(--pinkColor);
+    & > div {
+        background-color: var(--pinkColor);
+    }
+}
+.postListContainer {
+    width: 100%;
+    max-width: 1436px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto 87px;
+    flex-wrap: wrap;
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+        margin: 0 auto 80px;
+
+    }
+    & > div {
+        flex: 1 1 450px;
+        max-width: 450px;
+        @media (max-width: master.$xl) {
+            flex: 1 1 359px;
+            max-width: 359px;
+        }
+    }
+}
+
+.homeAdsContainer {
+    width: 100%;
+    padding: 96px 0;
+    background-color: var(--headerBgColor);
+}
+.homeAdItemsContainer {
+    width: 100%;
+    max-width: 1436px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 97px);
+    grid-column-gap: calc((100% - 582px) / 5);
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+        grid-template-columns: repeat(6, 80px);
+        grid-column-gap: calc((100% - 480px) / 5);
+
+
+
+    }
+}

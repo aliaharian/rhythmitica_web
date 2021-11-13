@@ -1,0 +1,28 @@
+//post component needs container for width
+@use "../master.module.scss" as master;
+
+.adContainer {
+    width: 97px;
+    height: 97px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color:#fff;
+    @media (max-width: master.$xl) {
+        width: 80px;
+        height: 80px;
+    }
+    & > img {
+        filter: grayscale(100) opacity(0.5);
+        @media (max-width: master.$xl) {
+            width: 40px;
+        }
+    }
+    &:hover {
+        & > img {
+            filter: grayscale(0);
+        }
+    }
+}

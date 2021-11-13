@@ -17,10 +17,10 @@ export const globalStyles = () => {
 
         "@global": {
             body: {
-                // fontFamily: "chistayekanR",
+                fontFamily: "nirmala",
                 fontSize: "14px",
                 backgroundColor: "#fff",
-                color: "#0c0b31cc",
+                color: "#291720",
                 lineHeight: 2.14,
                 "&::--webkit-scrollbar": {
                     width: "6px",

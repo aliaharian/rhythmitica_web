@@ -1,0 +1,125 @@
+@use "../master.module.scss" as master;
+
+//instrument component needs container for width
+.instructorContainer {
+    width: 100%;
+    height: 361px;
+    border: 1px solid var(--borderColor);
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #fff;
+    @media (max-width: master.$xl) {
+        height: 300px;
+    }
+    & > .imageContainer {
+        height: 255px;
+        @media (max-width: master.$xl) {
+            height: 212px;
+            border-bottom: 1px solid var(--borderColor);
+        }
+    }
+    & > .dataContainer {
+        height: calc(100% - 255px);
+        @media (max-width: master.$xl) {
+            height: calc(100% - 212px);
+        }
+    }
+}
+.instructorContainerSm {
+    height: 315px !important;
+    & > .imageContainer {
+        height: 220px !important;
+    }
+    & > .dataContainer {
+        height: calc(100% - 220px);
+    }
+    & h3,
+    & p {
+        font-size: 16px !important;
+        @media (max-width: master.$xl) {
+            font-size: 14px !important;
+        }
+    }
+    & .language {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 16px !important;
+        margin: 0 7.5px !important;
+        @media (max-width: master.$xl) {
+            font-size: 14px !important;
+        }
+    }
+}
+.imageContainer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+        .languagesContainer {
+            bottom: 0;
+        }
+    }
+    & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.languagesContainer {
+    transition: all 250ms ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+    background-color: var(--overlayColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > .language {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: solid 1px #fff;
+        color: #fff;
+        border-radius: 50%;
+        margin: 0 9px;
+        cursor: auto;
+        font-size: 18px;
+        text-transform: uppercase;
+        @media (max-width: master.$xl) {
+            font-size: 15px;
+            width: 42px;
+            height: 42px;
+            margin: 0 8px;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+.dataContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    & > h3,
+    & > p {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.61;
+        text-align: center;
+        color: var(--textColor);
+        @media (max-width: master.$xl) {
+            font-size: 16px !important;
+        }
+    }
+    & > p {
+        font-weight: normal !important;
+    }
+}
