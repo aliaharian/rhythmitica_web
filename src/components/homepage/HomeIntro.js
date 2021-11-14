@@ -1,7 +1,7 @@
 import React from "react";
 import classes from '../../assets/styleSheets/homepage.module.scss';
 import groupImg from '../../assets/images/groupLessonBanner.jpg';
-import privateImg from '../../assets/images/privateLessonBanner.jpg';
+import privateImg from '../../assets/images/PrivateLessonBanner.jpg';
 import Link from 'next/Link';
 const HomeIntro = () => {
     return (
