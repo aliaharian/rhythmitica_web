@@ -15,6 +15,10 @@
         height:86px;
         top: 45px;
     }
+    @media (max-width: master.$lg) {
+        height:75px;
+        top: 40px;
+    }
 }
 .headerContainer {
     width: 100%;
@@ -29,6 +33,9 @@
     transition: all 100ms ease padding 0 ease margin 0 ease;
     @media (max-width: master.$xl) {
         max-width: 1250px;
+    }
+    @media (max-width: master.$lg) {
+        max-width: 1080px;
     }
 }
 .stickyHeaderContainer {
@@ -55,12 +62,18 @@
     grid-template-columns:
         [start] 60px 93px [firstCol] calc((100% - 1153px) / 2) 847px [middleCol] calc((100% - 1153px) / 2)
         93px [lastCol] 60px [end];
-    @media (max-width: master.$xl) {
-        max-width: 1250px;
-        grid-template-columns:
-            [start] 50px 84px [firstCol] calc((100% - 1018px) / 2) 750px [middleCol] calc((100% - 1018px) / 2)
-            84px [lastCol] 50px [end];
-    }
+        @media (max-width: master.$xl) {
+            max-width: 1250px;
+            grid-template-columns:
+                [start] 50px 84px [firstCol] calc((100% - 1018px) / 2) 750px [middleCol] calc((100% - 1018px) / 2)
+                84px [lastCol] 50px [end];
+        }
+        @media (max-width: master.$lg) {
+            max-width: 1080px;
+            grid-template-columns:
+                [start] 40px 78px [firstCol] calc((100% - 886px) / 2) 650px [middleCol] calc((100% - 886px) / 2)
+                78px [lastCol] 40px [end];
+        }
     & > div {
         justify-self: center;
         display: flex;
@@ -87,6 +100,15 @@
             @media (max-width: master.$xl) {
                 font-size: 16px;
                 height: 35px;
+                padding-bottom:7px;
+                padding-top:5px;
+            }
+            @media (max-width: master.$lg) {
+                font-size: 14px;
+                height: 32px;
+                padding-bottom:7px;
+                padding-top:5px;
+                border-radius: 8px;
 
             }
         }
@@ -102,6 +124,9 @@
             text-transform: capitalize;
             @media (max-width: master.$xl) {
                 font-size: 18px;
+            }
+            @media (max-width: master.$lg) {
+                font-size: 16px;
             }
             &:hover {
                 color: var(--linkActiveColor);
@@ -123,5 +148,9 @@
         position: absolute;
         top: 6px;
         right: -10px;
+        @media (max-width: master.$xl) {
+            width: 8px;
+            height: 8px;
+        }
     }
 }

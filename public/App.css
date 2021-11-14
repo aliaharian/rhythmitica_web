@@ -54,6 +54,7 @@ p {
     --fontLight: nirmalaS;
     --fontBold: nirmalaB;
     --xl: 1800px;
+    --lg: 1600px;
 }
 
 a {
@@ -87,7 +88,7 @@ a {
     line-height: 23px !important;
 }
 
-@media (max-width: 1800px) {
+@media (max-width: 1900px) {
     .slick-dots {
         bottom: 45px !important;
     }
@@ -107,5 +108,35 @@ a {
     .slick-dots li.slick-active button:before {
         font-size: 8px !important;
         line-height: 19px !important;
+    }
+}
+@media (max-width: 1600px) {
+    .slick-dots {
+        bottom: 40px !important;
+    }
+    .slick-dots li {
+        width: 16px !important;
+        height: 16px !important;
+        margin: 0 10px !important;
+    }
+    .slick-dots li button {
+        width: 16px !important;
+        height: 16px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .slick-dots li button:before {
+        width: 6px !important;
+        height: 6px !important;
+        content: "" !important;
+        background: #fff !important;
+        border-radius: 50% !important;
+        top: unset !important;
+        left: unset !important;
+    }
+    .slick-dots li.slick-active button:before {
+        font-size: 6px !important;
     }
 }

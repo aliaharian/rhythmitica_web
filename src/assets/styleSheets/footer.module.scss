@@ -85,6 +85,10 @@
 .footerLinks {
     width: 130px;
     max-width: 130px;
+    @media (max-width: master.$xl) {
+        width: 110px;
+        max-width: 110px;
+    }
 
     & > ul {
         list-style-type: none;
