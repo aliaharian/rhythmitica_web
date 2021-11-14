@@ -14,10 +14,19 @@
         width: 80px;
         height: 80px;
     }
+    @media (max-width: master.$lg) {
+        width: 68px;
+        height: 68px;
+    }
     & > img {
         filter: grayscale(100) opacity(0.5);
+        width: 52px;
+
         @media (max-width: master.$xl) {
             width: 40px;
+        }
+        @media (max-width: master.$lg) {
+            width: 32px;
         }
     }
     &:hover {

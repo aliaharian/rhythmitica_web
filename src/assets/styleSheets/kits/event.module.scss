@@ -8,6 +8,12 @@
     background-color: #f6f6f6;
     padding: 16px 16px 37px;
     position: relative;
+    @media (max-width: master.$xl) {
+        border-radius: 44px;
+    }
+    @media (max-width: master.$lg) {
+        border-radius: 40px;
+    }
     & > .imageContainer {
         height: 352px;
     }
@@ -18,10 +24,17 @@
         padding: 12px 12px 25px;
         height: 438px;
     }
+    @media (max-width: master.$lg) {
+        padding: 11px 11px 25px;
+        height: 370px;
+    }
     & > .imageContainer {
         height: 315px;
         @media (max-width: master.$xl) {
             height: 257px;
+        }
+        @media (max-width: master.$lg) {
+            height: 216px;
         }
     }
 }
@@ -34,6 +47,12 @@
         height: 100%;
         object-fit: cover;
         border-radius: 40px;
+        @media (max-width: master.$xl) {
+            border-radius: 34px;
+        }
+        @media (max-width: master.$lg) {
+            border-radius: 30px;
+        }
     }
 }
 
@@ -47,6 +66,9 @@
     @media (max-width: master.$xl) {
         padding: 22px 0;
     }
+    @media (max-width: master.$lg) {
+        padding: 18px 0;
+    }
     & > h3 {
         font-size: 18px;
         font-weight: bold;
@@ -56,6 +78,10 @@
         @media (max-width: master.$xl) {
             font-size: 16px;
             line-height: 20px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 14px;
+            line-height: 16px;
         }
     }
     & > p {
@@ -69,6 +95,12 @@
             font-size: 14px;
             line-height: 17px;
         }
+        @media (max-width: master.$lg) {
+            font-size: 12px;
+            line-height: 14px;
+            margin-top: 8px;
+
+        }
     }
 }
 
@@ -77,6 +109,12 @@
     background-color: var(--linkActiveColor);
     height: 1px;
     margin: 0 auto 3px;
+    @media (max-width: master.$xl) {
+        width: calc(100% - 40px);
+    }
+    @media (max-width: master.$lg) {
+        width: calc(100% - 34px);
+    }
 }
 .priceContainer {
     display: flex;
@@ -86,6 +124,12 @@
     padding: 0 21px;
     @media (max-width: master.$xl) {
         margin-top: 22px;
+        padding: 0 19px;
+    }
+    @media (max-width: master.$lg) {
+        margin-top: 18px;
+        padding: 0 17px;
+
     }
     & > p {
         font-size: 18px;
@@ -95,6 +139,10 @@
         @media (max-width: master.$xl) {
             font-size: 16px;
             line-height: 20px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 14px;
+            line-height: 17px;
         }
     }
 }
@@ -117,13 +165,23 @@
         min-width: 45px !important;
         left: calc(50% - 23px);
     }
+    @media (max-width: master.$lg) {
+        width: 38px !important;
+        height: 38px !important;
+        bottom: -19px !important;
+        max-width: 38px !important;
+        min-width: 38px !important;
+        left: calc(50% - 20px);
+    }
     & img {
         transform: translateX(2px);
         @media (max-width: master.$xl) {
-            width: 8px ;
+            width: 8px;
             transform: translateX(1px);
-
-            
+        }
+        @media (max-width: master.$lg) {
+            width: 7px;
+            transform: translateX(1px);
         }
     }
 }

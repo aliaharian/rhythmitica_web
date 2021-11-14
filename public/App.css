@@ -68,6 +68,9 @@ a {
 }
 
 /* slick slider override style */
+.slick-slider{
+    background-color:#f9f9f9 !important;
+}
 .slick-dots {
     bottom: 53px !important;
 }
@@ -77,6 +80,7 @@ a {
 }
 .slick-dots li button:before {
     color: transparent !important;
+    opacity: 0 !important;
 }
 .slick-dots li {
     margin: 0 12px !important;
@@ -111,8 +115,9 @@ a {
     }
 }
 @media (max-width: 1600px) {
+
     .slick-dots {
-        bottom: 40px !important;
+        bottom: 38px !important;
     }
     .slick-dots li {
         width: 16px !important;

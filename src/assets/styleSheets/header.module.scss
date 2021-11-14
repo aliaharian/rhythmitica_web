@@ -17,7 +17,7 @@
     }
     @media (max-width: master.$lg) {
         height:75px;
-        top: 40px;
+        top: 36px;
     }
 }
 .headerContainer {
@@ -35,7 +35,7 @@
         max-width: 1250px;
     }
     @media (max-width: master.$lg) {
-        max-width: 1080px;
+        max-width: 1060px;
     }
 }
 .stickyHeaderContainer {
@@ -69,7 +69,7 @@
                 84px [lastCol] 50px [end];
         }
         @media (max-width: master.$lg) {
-            max-width: 1080px;
+            max-width: 1060px;
             grid-template-columns:
                 [start] 40px 78px [firstCol] calc((100% - 886px) / 2) 650px [middleCol] calc((100% - 886px) / 2)
                 78px [lastCol] 40px [end];

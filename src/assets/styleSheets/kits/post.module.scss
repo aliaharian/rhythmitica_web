@@ -10,9 +10,18 @@
     @media (max-width: master.$xl) {
         height: 500px;
     }
+    @media (max-width: master.$lg) {
+        height: 424px;
+    }
     &:hover {
         & .overlay {
-            top: calc(100% - 248px);
+            top: calc(100% - 250px);
+            @media (max-width: master.$xl) {
+                top: calc(100% - 235px);
+            }
+            @media (max-width: master.$lg) {
+                top: calc(100% - 220px);
+            }
             & > h3 {
                 border-bottom: 1px solid #fff;
             }
@@ -30,7 +39,7 @@
 }
 .overlay {
     width: 100%;
-    height: 248px;
+    height: 250px;
     position: absolute;
     background-color: var(--overlayDarkColor);
     top: calc(100% - 90px);
@@ -39,7 +48,12 @@
     @media (max-width: master.$xl) {
         top: calc(100% - 80px);
         padding: 0 27px 27px;
-
+        height: 235px;
+    }
+    @media (max-width: master.$lg) {
+        top: calc(100% - 70px);
+        padding: 0 24px 24px;
+        height: 220px;
     }
     & > h3 {
         transition: all 250ms ease;
@@ -53,11 +67,16 @@
         justify-content: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0);
         margin-bottom: 15px;
+        font-weight: normal;
         @media (max-width: master.$xl) {
             font-size: 18px;
             line-height: 26px;
             padding: 27px 0 15px;
-
+        }
+        @media (max-width: master.$lg) {
+            font-size: 16px;
+            line-height: 22px;
+            padding: 24px 0 15px;
         }
     }
     & > .brief {
@@ -70,6 +89,10 @@
             font-size: 14px;
             line-height: 19px;
         }
+        @media (max-width: master.$lg) {
+            font-size: 12px;
+            line-height: 19px;
+        }
     }
     & > .actionsContainer {
         position: absolute;
@@ -80,6 +103,16 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (max-width: master.$xl) {
+            bottom: 27px;
+            width: calc(100% - 54px);
+            left: 27px;
+        }
+        @media (max-width: master.$lg) {
+            bottom: 24px;
+            width: calc(100% - 48px);
+            left: 24px;
+        }
         & > p {
             font-size: 14px;
             line-height: 23px;
@@ -88,10 +121,14 @@
                 font-size: 12px;
                 line-height: 19px;
             }
+            @media (max-width: master.$lg) {
+                font-size: 10px;
+                line-height: 15px;
+            }
         }
         & > button {
-            width: 110px;
-            height: 40px;
+            width: 114px;
+            height: 42px;
             border-radius: 114px;
             border: solid 1px #fff;
             font-size: 16px;
@@ -100,7 +137,13 @@
             font-weight: lighter;
             @media (max-width: master.$xl) {
                 font-size: 14px;
-
+                width: 105px;
+                height: 38px;
+            }
+            @media (max-width: master.$lg) {
+                font-size: 12px;
+                width: 96px;
+                height: 35px;
             }
             &:hover {
                 background-color: rgba(255, 255, 255, 0.3);

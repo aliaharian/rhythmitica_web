@@ -7,11 +7,20 @@
     @media (max-width: master.$xl) {
         padding: 120px 0;
     }
+    @media (max-width: master.$lg) {
+        padding: 100px 0;
+    }
 }
 .copyrightGrandContainer {
     width: 100%;
     padding: 30px 0;
     background-color: #f9f9f9;
+    @media (max-width: master.$xl) {
+        padding: 27px 0;
+    }
+    @media (max-width: master.$lg) {
+        padding: 25px 0;
+    }
 }
 .copyrightContainer {
     width: 100%;
@@ -22,6 +31,9 @@
     justify-content: space-between;
     @media (max-width: master.$xl) {
         max-width: 1150px;
+    }
+    @media (max-width: master.$lg) {
+        max-width: 980px;
     }
 }
 .footerContainer {
@@ -34,6 +46,9 @@
     color: #ebebeb;
     @media (max-width: master.$xl) {
         max-width: 1150px;
+    }
+    @media (max-width: master.$lg) {
+        max-width: 980px;
     }
     & > div {
         display: flex;
@@ -50,6 +65,10 @@
         @media (max-width: master.$xl) {
             font-size: 20px;
             line-height: 28px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 18px;
+            line-height: 24px;
         }
     }
 }
@@ -72,6 +91,10 @@
             font-size: 30px;
             line-height: 45px;
         }
+        @media (max-width: master.$lg) {
+            font-size: 28px;
+            line-height: 41px;
+        }
     }
     & > p {
         font-size: 20px;
@@ -79,6 +102,10 @@
         @media (max-width: master.$xl) {
             font-size: 16px;
             line-height: 35px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 14px;
+            line-height: 31px;
         }
     }
 }
@@ -88,6 +115,10 @@
     @media (max-width: master.$xl) {
         width: 110px;
         max-width: 110px;
+    }
+    @media (max-width: master.$lg) {
+        width: 95px;
+        max-width: 95px;
     }
 
     & > ul {
@@ -104,6 +135,10 @@
                     font-size: 16px;
                     line-height: 33px;
                 }
+                @media (max-width: master.$lg) {
+                    font-size: 14px;
+                    line-height: 29px;
+                }
             }
         }
     }
@@ -111,9 +146,16 @@
 .footerDownload {
     width: 125px;
     max-width: 125px;
+    @media (max-width: master.$xl) {
+        width: 95px;
+        max-width: 95px;
+    }
     & img {
         @media (max-width: master.$xl) {
             width: 58px;
+        }
+        @media (max-width: master.$lg) {
+            width: 47px;
         }
     }
     & > a {
@@ -128,6 +170,10 @@
                 font-size: 13px;
                 line-height: 17px;
             }
+            @media (max-width: master.$lg) {
+                font-size: 11px;
+                line-height: 13px;
+            }
         }
     }
 }
@@ -137,12 +183,18 @@
     @media (max-width: master.$xl) {
         width: 190px;
         max-width: 190px;
-        }
+    }
+    @media (max-width: master.$lg) {
+        width: 160px;
+        max-width: 160px;
+    }
     & img {
-
         border-radius: 11px;
         @media (max-width: master.$xl) {
             width: 190px;
+        }
+        @media (max-width: master.$lg) {
+            width: 150px;
         }
     }
 }
@@ -153,6 +205,10 @@
     @media (max-width: master.$xl) {
         font-size: 14px;
         line-height: 17px;
+    }
+    @media (max-width: master.$lg) {
+        font-size: 12px;
+        line-height: 13px;
     }
 }
 .copyrightLinks {
@@ -167,6 +223,9 @@
         & > img {
             @media (max-width: master.$xl) {
                 width: 26px;
+            }
+            @media (max-width: master.$lg) {
+                width: 22px;
             }
         }
     }
