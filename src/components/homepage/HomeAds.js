@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import classes from '../../assets/styleSheets/homepage.module.scss';
-import Link from 'next/Link';
+import Link from 'next/link';
 import clsx from 'clsx';
 import AdItem from "../kits/AdItem";
 import discord from '../../assets/images/icons/discord.svg'

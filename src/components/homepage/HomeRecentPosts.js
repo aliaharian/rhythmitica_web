@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import classes from '../../assets/styleSheets/homepage.module.scss';
-import Link from 'next/Link';
+import Link from 'next/link';
 import clsx from 'clsx';
 import Post from "../kits/Post";
 

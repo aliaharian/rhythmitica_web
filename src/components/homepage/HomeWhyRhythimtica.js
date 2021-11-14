@@ -3,7 +3,7 @@ import classes from '../../assets/styleSheets/homepage.module.scss';
 import laptopIcon from '../../assets/images/icons/laptop.svg';
 import earthIcon from '../../assets/images/icons/earth.svg';
 import PersonIcon from '../../assets/images/icons/person.svg';
-import Link from 'next/Link';
+import Link from 'next/link';
 import clsx from 'clsx';
 const HomeWhyRhythimtica = () => {
     return (
