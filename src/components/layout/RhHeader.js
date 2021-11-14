@@ -4,7 +4,7 @@ import Link from 'next/link';
 import logoImg from '../../assets/images/logo.svg';
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
-const Header = () => {
+const RhHeader = () => {
     const [sticky, setSticky] = useState(false)
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -46,4 +46,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default RhHeader;
