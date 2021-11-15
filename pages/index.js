@@ -10,7 +10,7 @@ import HomeRecentPosts from '../src/components/homepage/HomeRecentPosts'
 import HomeAds from '../src/components/homepage/HomeAds'
 function Home({ categories, events , posts }) {
   return (
-    <Layout>
+    <Layout page={'home'}>
       <HomeSlider />
       <HomeIntro />
       <HomeWhyRhythimtica />

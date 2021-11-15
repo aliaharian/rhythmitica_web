@@ -40,7 +40,8 @@ const HomeInstructors = ({ categories }) => {
                                         langArray.push(a.substring(0, 2));
                                     }
                                 })
-                            } if (i < 5) {
+                            }
+                            if (i < 5) {
                                 i++;
                                 return (
                                     <Instructor
@@ -56,7 +57,7 @@ const HomeInstructors = ({ categories }) => {
                 }
             </div>
             <Link href={"#"}>
-                <a className={clsx(classes.moreBtn,classes.moreStaffBtn)} title="all staffs">
+                <a className={clsx(classes.moreBtn, classes.moreStaffBtn)} title="all staffs">
                     <div></div><div></div><div></div>
                 </a>
             </Link>

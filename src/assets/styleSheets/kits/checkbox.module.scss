@@ -1,0 +1,37 @@
+//post component needs container for width
+@use "../master.module.scss" as master;
+.icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    border: solid 1px var(--overlayColor);
+}
+.checkedIcon {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    border: none;
+    background-color: var(--darkPurple);
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    &:hover {
+        & > .icon {
+            background-color: #f9f9f9;
+        }
+        & > .checkedIcon {
+            background-color: var(--darkPurple);
+        }
+    }
+    & > label {
+        cursor: pointer;
+        margin-left: 18px;
+        text-transform: capitalize;
+        font-size: 16px;
+        line-height: 1.31;
+        color: var(--textColor);
+    }
+}

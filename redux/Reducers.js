@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
-// import auth from "./auth";
+import privateLessons from "./privateLessons";
 
 export default combineReducers({
-  // auth,
-
+  privateLessons
 });

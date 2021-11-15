@@ -1,9 +1,9 @@
 import Footer from './Footer';
 import RhHeader from './RhHeader';
-const Layout = ({ children }) => {
+const Layout = ({ children , page }) => {
     return (
         <>
-            <RhHeader />
+            <RhHeader page={page}/>
             {children}
             <Footer/>
         </>

@@ -19,6 +19,8 @@ Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 
+// axios.defaults.withCredentials = true;
+
 function MyApp(props) {
   const { Component, pageProps, store, classes } = props;
   // React.useEffect(() => {
@@ -30,6 +32,9 @@ function MyApp(props) {
   // }, []);
 
 
+  axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
+  axios.defaults.headers.post["Content-Type"] = "application/json";
+  axios.defaults.headers.common['site'] = process.env.REACT_APP_SITE_TOKEN;
   return (
     <SnackbarProvider maxSnack={3} classes={{
       root: classes.snackbar
