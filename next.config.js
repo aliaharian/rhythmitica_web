@@ -13,5 +13,4 @@ module.exports = withImages(withFonts({
     images: {
         disableStaticImages: true
     },
-    distDir: 'build'
 }))
