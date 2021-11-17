@@ -1,12 +1,12 @@
 @use "./master.module.scss" as master;
 
-.privateLessonsMainContainer {
+.eventsMainContainer {
     padding: 58px 0 58px;
     display: grid;
     max-width: 1436px;
     margin: 164px auto 0;
-    grid-template-columns: calc(100% - 1076px) 1014px;
-    grid-column-gap: 63px;
+    grid-template-columns: calc(100% - 1079px) 1014px;
+    grid-column-gap: 65px;
 }
 .openMapBtn {
     width: 100% !important;
@@ -18,16 +18,15 @@
     align-items: center !important;
     justify-content: flex-start !important;
     margin-bottom: 45px !important;
-    text-transform: capitalize !important;
     // background-color: #f9f9f9 !important;
+
     & img {
         margin-right: 16px;
     }
     & p {
-        font-family: nirmalaS;
-        font-size: 16px;
-        line-height: 1.5;
-        color: var(--darkPurple);
+        font-size: 15px;
+        line-height: 1.33;
+        color: var(--linkActiveColor);
         text-align: left;
     }
 }
@@ -61,7 +60,7 @@
         margin-bottom: 25px;
     }
 }
-.privateLessonsHeader {
+.eventsHeader {
     width: 100%;
     display: flex;
     align-items: center;
@@ -69,7 +68,7 @@
     padding-bottom: 25px;
     border-bottom: solid 1px var(--overlayColor);
 }
-.privateLessonsSort {
+.eventsSort {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -92,15 +91,11 @@
     }
     & > .activeBtn {
         border: solid 1px var(--textColor) !important;
-        background-color: var(--litePurple);
-        &:hover{
-            border: solid 1px var(--textColor) !important;
-            background-color: var(--litePurple);
-        }
+        background-color: var(--liteGreenColor);
     }
 }
 
-.privateLessonsSearch {
+.eventsSearch {
     height: 40px;
     width: 40px;
     border-radius: 20px;
@@ -110,30 +105,26 @@
     overflow: hidden;
     // padding: 0 10px;
     transition: all 250ms ease;
-    background-color:#f9f9f9;
-
     border: 1px solid #82026300;
     & > img {
         width: 40px;
         margin-left: 10px;
         padding: 10px;
         cursor: pointer;
-        background-color: var(--darkPurple);
+        background-color: var(--linkActiveColor);
         transition: all 250ms ease;
-        border-radius: 50%;
     }
     & > input {
         width: 100%;
         border: none;
         outline: none !important;
         padding: 10px 0 10px 15px;
-        background-color:#f9f9f9;
     }
 }
 
-.privateLessonsSearchOpen {
+.eventsSearchOpen {
     width: 300px;
-    border: 1px solid var(--darkPurple);
+    border: 1px solid var(--linkActiveColor);
     & > img {
         width: 40px;
         margin-left: 10px;
@@ -143,19 +134,19 @@
     }
 }
 
-.privateLessonsSidebar {
+.eventsSidebar {
     position: sticky;
     top: 156px;
 }
-.privateLessonsStaffListContainer {
+.eventsListContainer {
 }
-.privateLessonsStaffList {
+.eventsList {
     width: 100%;
     display: grid;
     margin-top: 56px;
-    grid-template-columns: repeat(4, 206px);
-    grid-column-gap: 63px;
-    grid-row-gap: 53px;
+    grid-template-columns: repeat(2, 475px);
+    grid-column-gap: 64px;
+    grid-row-gap: 62px;
 }
 .noResult {
     width: 100%;
@@ -167,8 +158,25 @@
     & > p {
         font-size: 15px;
         line-height: 1.33;
-        color: var(--darkPurple);
+        color: var(--linkActiveColor);
         text-align: left;
         margin-top: 15px;
+    }
+}
+
+.bt{
+    position:relative;
+    // border-top:1px solid var(--overlayColor);
+    padding-top:25px;
+    margin-top:31px;
+    &:before{
+        position:absolute;
+        width:calc(100% + 60px);
+        left:-30px;
+        top:0;
+        height:1px;
+        background-color:var(--overlayColor);
+        content:"";
+
     }
 }

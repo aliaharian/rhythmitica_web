@@ -3,10 +3,13 @@ import classes from '../../assets/styleSheets/homepage.module.scss';
 import Link from 'next/link';
 import clsx from 'clsx';
 import Instructor from "../kits/Instructor";
+import { useMediaQuery, useTheme } from "@material-ui/core";
 
 const HomeInstructors = ({ categories }) => {
     console.log('categories', categories)
     const [selectedCat, setSelectedCat] = useState(0)
+    const theme = useTheme();
+    const md = useMediaQuery(theme.breakpoints.down(1300));
     return (
         <div className={classes.instructorsContainer}>
             <h2 className={clsx(classes.sectionTitle, classes.instructorsTitle)}>Highly Skilled Instructors</h2>
@@ -46,7 +49,8 @@ const HomeInstructors = ({ categories }) => {
                                 return (
                                     <Instructor
                                         image={process.env.REACT_APP_IMAGE_URL + staff.staff_user.user.avatar}
-                                        name={staff.staff_user.user.name + " " + staff.staff_user.user.family}
+                                        name={staff.staff_user.user.name}
+                                        family={staff.staff_user.user.family}
                                         instrument={pack.name}
                                         languages={langArray}
                                     />

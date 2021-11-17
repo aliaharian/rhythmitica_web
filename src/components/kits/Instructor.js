@@ -1,13 +1,17 @@
 import classes from '../../assets/styleSheets/kits/instructor.module.scss';
 import clsx from 'clsx';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 const Instructor = ({
 
     image,
     name,
     instrument,
     languages,
+    family,
     sm
 }) => {
+    const theme = useTheme();
+    const md = useMediaQuery(theme.breakpoints.down(1300));
     return (
         <div className={clsx(classes.instructorContainer, sm && classes.instructorContainerSm)}>
             <div className={classes.imageContainer}>
@@ -21,7 +25,14 @@ const Instructor = ({
                 </div>
             </div>
             <div className={classes.dataContainer}>
-                <h3>{name}</h3>
+                {
+                    // md ?
+                    //     <h3>{name}<br /> {family}</h3>
+
+                    //     :
+                        <h3>{name} {family}</h3>
+
+                }
                 <p>{instrument}</p>
             </div>
         </div>

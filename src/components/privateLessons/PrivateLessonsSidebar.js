@@ -10,7 +10,7 @@ const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages
             <div className={classes.privateLessonsSidebar}>
                 <Button className={classes.openMapBtn}>
                     <img src={earthIcon} />
-                    <p>Click to See All Musical Instruments</p>
+                    <p>Click to See  <br/> All Musical Instruments</p>
                 </Button>
                 <div className={classes.packagesContainer}>
                     <div className={classes.packagesTitle}>
@@ -28,6 +28,30 @@ const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages
                                 />
                             </div>
                         ))}
+                        <div className={classes.packageItem}>
+                            <RhCheckbox
+                                label={'santoor'}
+                                checked={selectedPackages.indexOf(0) != -1}
+                                key={0}
+                                onChange={() => { handleSelectPackage(0) }}
+                            />
+                        </div>
+                        <div className={classes.packageItem}>
+                            <RhCheckbox
+                                label={'santoor'}
+                                checked={selectedPackages.indexOf(0) != -1}
+                                key={0}
+                                onChange={() => { handleSelectPackage(0) }}
+                            />
+                        </div>
+                        <div className={classes.packageItem}>
+                            <RhCheckbox
+                                label={'santoor'}
+                                checked={selectedPackages.indexOf(0) != -1}
+                                key={0}
+                                onChange={() => { handleSelectPackage(0) }}
+                            />
+                        </div>
                     </div>
 
                 </div>

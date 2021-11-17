@@ -6,7 +6,7 @@
     height: 361px;
     border: 1px solid var(--borderColor);
     border-radius: 30px;
-    overflow: hidden;
+    overflow: hidden !important;
     background-color: #fff;
     @media (max-width: master.$xl) {
         height: 300px;
@@ -16,14 +16,22 @@
         height: 255px;
         border-radius: 26px;
     }
+    @media (max-width: master.$md) {
+        height: 230px;
+        border-radius: 24px;
+    }
     & > .imageContainer {
         height: 255px;
+        border-bottom: 1px solid var(--borderColor);
+        overflow: hidden !important;
         @media (max-width: master.$xl) {
             height: 212px;
-            border-bottom: 1px solid var(--borderColor);
         }
         @media (max-width: master.$lg) {
             height: 180px;
+        }
+        @media (max-width: master.$md) {
+            height: 164px;
         }
     }
     & > .dataContainer {
@@ -34,12 +42,16 @@
         @media (max-width: master.$lg) {
             height: calc(100% - 180px);
         }
+        @media (max-width: master.$md) {
+            height: calc(100% - 164px);
+        }
     }
 }
 .instructorContainerSm {
     height: 315px !important;
     & > .imageContainer {
         height: 220px !important;
+        overflow: hidden !important;
     }
     & > .dataContainer {
         height: calc(100% - 220px);
@@ -53,6 +65,9 @@
         @media (max-width: master.$lg) {
             font-size: 12px !important;
         }
+        @media (max-width: master.$md) {
+            font-size: 11px !important;
+        }
     }
     & .language {
         width: 44px !important;
@@ -65,12 +80,15 @@
         @media (max-width: master.$lg) {
             font-size: 12px !important;
         }
+        @media (max-width: master.$md) {
+            font-size: 11px !important;
+        }
     }
 }
 .imageContainer {
     width: 100%;
     position: relative;
-    overflow: hidden;
+    overflow: hidden !important;
     &:hover {
         .languagesContainer {
             bottom: 0;
@@ -80,6 +98,11 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 30px 30px 0 0;
+        @media (max-width: master.$md) {
+            border-radius: 24px 24px 0 0;
+    
+        }
     }
 }
 .languagesContainer {
@@ -93,6 +116,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 30px 30px 0 0;
+    @media (max-width: master.$xl) {
+        border-radius: 26px 26px 0 0;
+
+    }
+    @media (max-width: master.$md) {
+        border-radius: 24px 24px 0 0;
+
+    }
     & > .language {
         width: 50px;
         height: 50px;
@@ -118,6 +150,14 @@
             height: 38px;
             margin: 0 6px;
         }
+        @media (max-width: master.$md) {
+            font-size: 12px;
+            width: 36px;
+            height: 36px;
+            margin: 0 5px;
+
+           
+        }
         &:first-child {
             margin-left: 0;
         }
@@ -131,6 +171,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: var(--white30Percent);
     & > h3,
     & > p {
         font-size: 18px;
@@ -143,6 +184,9 @@
         }
         @media (max-width: master.$lg) {
             font-size: 14px !important;
+        }
+        @media (max-width: master.$md) {
+            font-size: 13px !important;
         }
     }
     & > p {

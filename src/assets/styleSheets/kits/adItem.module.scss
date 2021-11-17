@@ -18,6 +18,10 @@
         width: 68px;
         height: 68px;
     }
+    @media (max-width: master.$md) {
+        width: 66px;
+        height: 66px;
+    }
     & > img {
         filter: grayscale(100) opacity(0.5);
         width: 52px;
@@ -27,6 +31,9 @@
         }
         @media (max-width: master.$lg) {
             width: 32px;
+        }
+        @media (max-width: master.$md) {
+            width: 30px;
         }
     }
     &:hover {

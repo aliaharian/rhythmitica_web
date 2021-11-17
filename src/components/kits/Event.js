@@ -8,11 +8,12 @@ const Event = ({
     instructor,
     price,
     sessions,
-    sm
+    sm,
+    whiteBg
 }) => {
     //needs container for width
     return (
-        <div className={clsx(classes.eventContainer, sm && classes.eventSm)}>
+        <div className={clsx(classes.eventContainer, sm && classes.eventSm , whiteBg && classes.eventWhite)}>
             <div className={classes.imageContainer}>
                 <img src={image} />
             </div>

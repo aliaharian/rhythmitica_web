@@ -35,6 +35,9 @@
     @media (max-width: master.$lg) {
         max-width: 980px;
     }
+    @media (max-width: master.$md) {
+        max-width: 856px;
+    }
 }
 .footerContainer {
     width: 100%;
@@ -49,6 +52,9 @@
     }
     @media (max-width: master.$lg) {
         max-width: 980px;
+    }
+    @media (max-width: master.$md) {
+        max-width: 856px;
     }
     & > div {
         display: flex;
@@ -70,6 +76,10 @@
             font-size: 18px;
             line-height: 24px;
         }
+        @media (max-width: master.$md) {
+            font-size: 16px;
+            line-height: 22px;
+        }
     }
 }
 
@@ -79,6 +89,10 @@
     @media (max-width: master.$xl) {
         width: 390px;
         max-width: 390px;
+    }
+    @media (max-width: master.$md) {
+        width: 300px;
+        max-width: 300px;
     }
     & > h1 {
         font-size: 35px;
@@ -95,6 +109,10 @@
             font-size: 28px;
             line-height: 41px;
         }
+        @media (max-width: master.$md) {
+            font-size: 24px;
+            line-height: 30px;
+        }
     }
     & > p {
         font-size: 20px;
@@ -106,6 +124,10 @@
         @media (max-width: master.$lg) {
             font-size: 14px;
             line-height: 31px;
+        }
+        @media (max-width: master.$md) {
+            // font-size: 13px;
+            line-height: 32px;
         }
     }
 }
@@ -139,6 +161,10 @@
                     font-size: 14px;
                     line-height: 29px;
                 }
+                @media (max-width: master.$md) {
+                    // font-size: 13px;
+                    line-height: 32px;
+                }
             }
         }
     }
@@ -150,12 +176,19 @@
         width: 95px;
         max-width: 95px;
     }
+    @media (max-width: master.$md) {
+        width: 105px;
+        max-width: 105px;
+    }
     & img {
         @media (max-width: master.$xl) {
             width: 58px;
         }
         @media (max-width: master.$lg) {
             width: 47px;
+        }
+        @media (max-width: master.$md) {
+            width: 40px;
         }
     }
     & > a {
@@ -174,6 +207,10 @@
                 font-size: 11px;
                 line-height: 13px;
             }
+            @media (max-width: master.$md) {
+                font-size: 12px;
+                line-height: 13px;
+            }
         }
     }
 }
@@ -188,6 +225,7 @@
         width: 160px;
         max-width: 160px;
     }
+    
     & img {
         border-radius: 11px;
         @media (max-width: master.$xl) {
@@ -195,6 +233,11 @@
         }
         @media (max-width: master.$lg) {
             width: 150px;
+        }
+        @media (max-width: master.$md) {
+            width: 140px;
+            border-radius: 9px;
+
         }
     }
 }
@@ -207,7 +250,7 @@
         line-height: 17px;
     }
     @media (max-width: master.$lg) {
-        font-size: 12px;
+        font-size: 13px;
         line-height: 13px;
     }
 }
@@ -217,6 +260,9 @@
     justify-content: flex-start;
     & > a {
         margin-right: 20px;
+        @media (max-width: master.$md) {
+            margin-right: 30px;
+        }
         &:last-child {
             margin-right: 0;
         }
@@ -226,6 +272,9 @@
             }
             @media (max-width: master.$lg) {
                 width: 22px;
+            }
+            @media (max-width: master.$md) {
+                width: 26px;
             }
         }
     }

@@ -8,11 +8,15 @@
     background-color: #f6f6f6;
     padding: 16px 16px 37px;
     position: relative;
+    margin-bottom: 25px;
     @media (max-width: master.$xl) {
         border-radius: 44px;
     }
     @media (max-width: master.$lg) {
         border-radius: 40px;
+    }
+    @media (max-width: master.$md) {
+        border-radius: 34px;
     }
     & > .imageContainer {
         height: 352px;
@@ -28,6 +32,10 @@
         padding: 11px 11px 25px;
         height: 370px;
     }
+    @media (max-width: master.$md) {
+        padding: 10px 10px 25px;
+        height: 342px;
+    }
     & > .imageContainer {
         height: 315px;
         @media (max-width: master.$xl) {
@@ -36,6 +44,15 @@
         @media (max-width: master.$lg) {
             height: 216px;
         }
+        @media (max-width: master.$md) {
+            height: 187px;
+        }
+    }
+}
+.eventWhite {
+    background-color: #fff !important;
+    & .actionBtn {
+        background-color: #fff !important;
     }
 }
 .imageContainer {
@@ -53,6 +70,9 @@
         @media (max-width: master.$lg) {
             border-radius: 30px;
         }
+        @media (max-width: master.$md) {
+            border-radius: 25px;
+        }
     }
 }
 
@@ -69,6 +89,10 @@
     @media (max-width: master.$lg) {
         padding: 18px 0;
     }
+    @media (max-width: master.$md) {
+        padding: 20px 0;
+    }
+
     & > h3 {
         font-size: 18px;
         font-weight: bold;
@@ -81,6 +105,10 @@
         }
         @media (max-width: master.$lg) {
             font-size: 14px;
+            line-height: 16px;
+        }
+        @media (max-width: master.$md) {
+            font-size: 13px;
             line-height: 16px;
         }
     }
@@ -99,7 +127,10 @@
             font-size: 12px;
             line-height: 14px;
             margin-top: 8px;
-
+        }
+        @media (max-width: master.$md) {
+            font-size: 13px;
+            line-height: 14px;
         }
     }
 }
@@ -115,6 +146,9 @@
     @media (max-width: master.$lg) {
         width: calc(100% - 34px);
     }
+    @media (max-width: master.$md) {
+        width: calc(100% - 28px);
+    }
 }
 .priceContainer {
     display: flex;
@@ -129,7 +163,10 @@
     @media (max-width: master.$lg) {
         margin-top: 18px;
         padding: 0 17px;
-
+    }
+    @media (max-width: master.$md) {
+        margin-top: 20px;
+        padding: 0 14px;
     }
     & > p {
         font-size: 18px;
@@ -143,6 +180,10 @@
         @media (max-width: master.$lg) {
             font-size: 14px;
             line-height: 17px;
+        }
+        @media (max-width: master.$md) {
+            font-size: 13px;
+            line-height: 16px;
         }
     }
 }
@@ -173,6 +214,14 @@
         min-width: 38px !important;
         left: calc(50% - 20px);
     }
+    // @media (max-width: master.$md) {
+    //     width: 40px !important;
+    //     height: 40px !important;
+    //     bottom: -20px !important;
+    //     max-width: 40px !important;
+    //     min-width: 40px !important;
+    //     left: calc(50% - 19px);
+    // }
     & img {
         transform: translateX(2px);
         @media (max-width: master.$xl) {

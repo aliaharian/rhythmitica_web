@@ -11,13 +11,21 @@
     z-index: 999;
     transition: all 100ms ease top 0ms ease;
     margin: 0 auto;
+    // @media (min-width: master.$xxl) {
+    //     height: 113px;
+        // top: 70px;
+    // }
     @media (max-width: master.$xl) {
-        height:86px;
+        height: 86px;
         top: 45px;
     }
     @media (max-width: master.$lg) {
-        height:75px;
+        height: 75px;
         top: 36px;
+    }
+    @media (max-width: master.$md) {
+        height: 74px;
+        top: 32px;
     }
 }
 .headerContainer {
@@ -31,11 +39,17 @@
     align-items: center;
     justify-content: center;
     transition: all 100ms ease padding 0 ease margin 0 ease;
+    // @media (min-width: master.$xxl) {
+    //     max-width: 1700px;
+    // }
     @media (max-width: master.$xl) {
         max-width: 1250px;
     }
     @media (max-width: master.$lg) {
         max-width: 1060px;
+    }
+    @media (max-width: master.$md) {
+        max-width: 920px;
     }
 }
 .stickyHeaderContainer {
@@ -62,18 +76,31 @@
     grid-template-columns:
         [start] 60px 93px [firstCol] calc((100% - 1153px) / 2) 847px [middleCol] calc((100% - 1153px) / 2)
         93px [lastCol] 60px [end];
-        @media (max-width: master.$xl) {
-            max-width: 1250px;
-            grid-template-columns:
-                [start] 50px 84px [firstCol] calc((100% - 1018px) / 2) 750px [middleCol] calc((100% - 1018px) / 2)
-                84px [lastCol] 50px [end];
-        }
-        @media (max-width: master.$lg) {
-            max-width: 1060px;
-            grid-template-columns:
-                [start] 40px 78px [firstCol] calc((100% - 886px) / 2) 650px [middleCol] calc((100% - 886px) / 2)
-                78px [lastCol] 40px [end];
-        }
+    // @media (min-width: master.$xxl) {
+    //     max-width: 1700px;
+        // grid-template-columns:
+        //     [start] 100px 110px [firstCol] calc((100% - 1420px) / 2) 1000px [middleCol] calc((100% - 1420px) / 2)
+        //     110px [lastCol] 100px [end];
+    // }
+    @media (max-width: master.$xl) {
+        max-width: 1250px;
+        grid-template-columns:
+            [start] 50px 84px [firstCol] calc((100% - 1018px) / 2) 750px [middleCol] calc((100% - 1018px) / 2)
+            84px [lastCol] 50px [end];
+    }
+
+    @media (max-width: master.$lg) {
+        max-width: 1060px;
+        grid-template-columns:
+            [start] 40px 78px [firstCol] calc((100% - 886px) / 2) 650px [middleCol] calc((100% - 886px) / 2)
+            78px [lastCol] 40px [end];
+    }
+    @media (max-width: master.$md) {
+        max-width: 920px;
+        grid-template-columns:
+            [start] 32px 62px [firstCol] calc((100% - 788px) / 2) 600px [middleCol] calc((100% - 788px) / 2)
+            62px [lastCol] 32px [end];
+    }
     & > div {
         justify-self: center;
         display: flex;
@@ -81,7 +108,7 @@
         justify-content: center;
         &:nth-child(1) {
             grid-column-end: firstCol;
-            &>img{
+            & > img {
                 width: 100%;
             }
         }
@@ -100,16 +127,24 @@
             @media (max-width: master.$xl) {
                 font-size: 16px;
                 height: 35px;
-                padding-bottom:7px;
-                padding-top:5px;
+                padding-bottom: 7px;
+                padding-top: 5px;
             }
             @media (max-width: master.$lg) {
                 font-size: 14px;
                 height: 32px;
-                padding-bottom:7px;
-                padding-top:5px;
+                padding-bottom: 7px;
+                padding-top: 5px;
                 border-radius: 8px;
-
+            }
+            @media (max-width: master.$md) {
+                font-size: 13px;
+                height: 28px;
+                // border-radius: 6px;
+                padding-bottom: 0 !important;
+                padding-top: 0 !important;
+                min-width: 100%;
+                max-width: 100%;
             }
         }
     }
@@ -122,11 +157,17 @@
             color: var(--textColor);
             transition: all 250ms ease;
             text-transform: capitalize;
+            // @media (min-width: master.$xxl) {
+            //     font-size: 22px;
+            // }
             @media (max-width: master.$xl) {
                 font-size: 18px;
             }
             @media (max-width: master.$lg) {
                 font-size: 16px;
+            }
+            @media (max-width: master.$md) {
+                font-size: 15px;
             }
             &:hover {
                 color: var(--linkActiveColor);
@@ -151,6 +192,10 @@
         @media (max-width: master.$xl) {
             width: 8px;
             height: 8px;
+        }
+        @media (max-width: master.$md) {
+            width: 7px;
+            height: 7px;
         }
     }
 }

@@ -28,7 +28,7 @@ const RhHeader = ({page}) => {
                     <div className={classes.navBar}>
                         <Link href="/"><a className={page=='home' && classes.active}>home</a></Link>
                         <Link href="/privateLessons"><a className={page=='privateLessons' && classes.active}>private lessons</a></Link>
-                        <Link href="/groupLessons"><a className={page=='groupLessons' && classes.active}>group lessons</a></Link>
+                        <Link href="/events"><a className={page=='events' && classes.active}>group lessons</a></Link>
                         <Link href="/blog"><a className={page=='blog' && classes.active}>blog</a></Link>
                         <Link href="/branch"><a className={page=='branch' && classes.active}>branch</a></Link>
                         <Link href="/contactUs"><a className={page=='contact' && classes.active}>contact us</a></Link>

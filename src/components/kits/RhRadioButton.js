@@ -1,7 +1,6 @@
-import classes from '../../assets/styleSheets/kits/checkbox.module.scss';
+import classes from '../../assets/styleSheets/kits/radioButton.module.scss';
 import clsx from 'clsx';
-import { Checkbox, FormControlLabel, makeStyles } from '@material-ui/core';
-const RhCheckbox = ({
+const RhRadioButton = ({
     label,
     checked,
     key,
@@ -15,4 +14,4 @@ const RhCheckbox = ({
         </div>
     )
 }
-export default RhCheckbox;
+export default RhRadioButton;

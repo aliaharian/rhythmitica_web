@@ -35,3 +35,14 @@
         color: var(--textColor);
     }
 }
+
+.greenBg {
+    & .checkedIcon {
+        background-color: var(--linkActiveColor);
+    }
+    &:hover {
+        & > .checkedIcon {
+            background-color: var(--linkActiveColor);
+        }
+    }
+}
