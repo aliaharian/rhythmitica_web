@@ -60,7 +60,7 @@ const HomeInstructors = ({ categories }) => {
                     })
                 }
             </div>
-            <Link href={"#"}>
+            <Link href={"/privateLessons"}>
                 <a className={clsx(classes.moreBtn, classes.moreStaffBtn)} title="all staffs">
                     <div></div><div></div><div></div>
                 </a>

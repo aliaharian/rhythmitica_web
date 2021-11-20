@@ -8,6 +8,11 @@
     border-radius: 30px;
     overflow: hidden !important;
     background-color: #fff;
+    transition: all 250ms ease;
+    &:hover{
+        // box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        // border-color: transparent;
+    }
     @media (max-width: master.$xl) {
         height: 300px;
         border-radius: 26px;
@@ -100,19 +105,19 @@
     & .language {
         width: 44px !important;
         height: 44px !important;
-        font-size: 16px !important;
-        margin: 0 7.5px !important;
+        font-size: 15px !important;
+        margin: 0 8px !important;
         @media (max-width: master.$xl) {
-            font-size: 15px !important;
-            width: 42px !important;
-            height: 42px !important;
-            margin: 0 8px !important;
-        }
-        @media (max-width: master.$lg) {
-            font-size: 13px !important;
+            font-size: 14px !important;
             width: 38px !important;
             height: 38px !important;
-            margin: 0 6px !important;
+            margin: 0 7px !important;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 12px !important;
+            width: 34px !important;
+            height: 34px !important;
+            margin: 0 5px !important;
         }
         @media (max-width: master.$md) {
             font-size: 12px !important;
@@ -172,6 +177,9 @@
         cursor: auto;
         font-size: 18px;
         text-transform: uppercase;
+        &:hover{
+            background-color: #ffffff1a
+        }
         @media (max-width: master.$xl) {
             font-size: 15px;
             width: 42px;

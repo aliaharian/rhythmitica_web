@@ -24,7 +24,7 @@ const HomeRecentEvents = ({ events }) => {
                     })
                 }
             </div>
-            <Link href={"#"}>
+            <Link href={"/groupLessons"}>
                 <a className={clsx(classes.moreBtn,classes.moreEventBtn)} title="all events">
                     <div></div><div></div><div></div>
                 </a>

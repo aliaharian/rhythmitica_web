@@ -34,6 +34,7 @@
     justify-content: space-between;
     border-radius: 27px;
     margin: 0 auto;
+    transition: all 250ms ease;
     @media (max-width: master.$xl) {
         width: 98px;
         height: 45px;
@@ -92,8 +93,6 @@
         grid-column-gap: 40px;
         grid-template-columns: calc(50% - 20px) calc(50% - 20px);
         padding: 71px 0 80px;
-
-
     }
     & > div {
         width: 100%;
@@ -125,6 +124,11 @@
             color: #fff;
             font-size: 20px;
             font-weight: 500;
+            transition: all 250ms ease;
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.4);
+                color: #fff;
+            }
             @media (max-width: master.$xl) {
                 width: 164px;
                 height: 50px;
@@ -200,21 +204,20 @@
         border-radius: 51px;
         position: absolute;
         bottom: 0;
-        left:calc(50% - 30px);
+        left: calc(50% - 30px);
         @media (max-width: master.$xl) {
             width: 50px;
             height: 4px;
-            left:calc(50% - 25px);
-
+            left: calc(50% - 25px);
         }
         @media (max-width: master.$lg) {
             width: 40px;
-            left:calc(50% - 20px);
+            left: calc(50% - 20px);
         }
         @media (max-width: master.$md) {
             width: 34px;
 
-            left:calc(50% - 17px);
+            left: calc(50% - 17px);
         }
     }
 }
@@ -308,13 +311,11 @@
         width: 68px;
         height: 68px;
         margin-bottom: 24px;
-
     }
     @media (max-width: master.$md) {
         width: 62px;
         height: 62px;
         // margin-bottom: 22px;
-
     }
     & > img {
         width: 63px;
@@ -333,6 +334,10 @@
 .animateBorderIcon {
     position: relative;
     animation: spin 5s linear infinite;
+
+    &:hover {
+        background-color: #8202630d;
+    }
     & > img {
         animation: spin 5s linear infinite reverse;
     }
@@ -368,7 +373,7 @@
         padding: 110px 0;
     }
     @media (max-width: master.$lg) {
-        padding: 96px 0;   
+        padding: 96px 0;
     }
 }
 .instructorsTitle {
@@ -436,11 +441,11 @@
     @media (max-width: master.$lg) {
         max-width: 980px;
         margin: 0 auto 70px;
-    }   
+    }
     @media (max-width: master.$md) {
         max-width: 856px;
         margin: 0 auto 70px;
-    }   
+    }
     & > div {
         flex: 1 1 240px;
         max-width: 240px;
@@ -481,6 +486,9 @@
     & > div {
         background-color: var(--darkPurple);
     }
+    &:hover {
+        background-color: #8202631a;
+    }
 }
 
 .eventsContainer {
@@ -504,6 +512,9 @@
     border: 1px solid var(--linkActiveColor);
     & > div {
         background-color: var(--linkActiveColor);
+    }
+    &:hover {
+        background-color: #ffffff40;
     }
 }
 
@@ -564,6 +575,9 @@
     border: 1px solid var(--pinkColor);
     & > div {
         background-color: var(--pinkColor);
+    }
+    &:hover {
+        background-color: #d903681a;
     }
 }
 .postListContainer {

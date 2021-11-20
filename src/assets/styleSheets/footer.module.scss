@@ -101,6 +101,12 @@
         color: #fff;
         letter-spacing: 1px;
         margin-bottom: 30px;
+        transform: scale(1);
+        transition: all 250ms ease;
+        &:hover{
+            transform: scale(1.02);
+            // color:var(--pinkColor)
+        }
         @media (max-width: master.$xl) {
             font-size: 30px;
             line-height: 45px;
@@ -148,11 +154,21 @@
         margin: 0;
         padding: 0;
         & > li {
+            transform: translateX(0);
+            transition: all 250ms ease;
+            &:hover {
+                transform: translateX(5px);
+            }
             & > a {
                 text-decoration: none;
                 color: #ebebeb;
                 font-size: 20px;
                 line-height: 35px;
+                transition: all 250ms ease;
+
+                &:hover {
+                    color: var(--pinkColor);
+                }
                 @media (max-width: master.$xl) {
                     font-size: 16px;
                     line-height: 33px;
@@ -194,6 +210,12 @@
     & > a {
         margin-bottom: 20px;
         text-decoration: none;
+        transition: all 250ms ease;
+        &:hover {
+            & > p {
+                color: var(--pinkColor);
+            }
+        }
         & > p {
             margin-top: 15px;
             font-size: 15px;
@@ -225,7 +247,7 @@
         width: 160px;
         max-width: 160px;
     }
-    
+
     & img {
         border-radius: 11px;
         @media (max-width: master.$xl) {
@@ -237,7 +259,6 @@
         @media (max-width: master.$md) {
             width: 140px;
             border-radius: 9px;
-
         }
     }
 }

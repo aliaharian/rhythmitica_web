@@ -10,6 +10,8 @@ const HomeSlider = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows:false,
+        fade: true,
+
       };
     return (
         <div className={classes.sliderContainer}>
