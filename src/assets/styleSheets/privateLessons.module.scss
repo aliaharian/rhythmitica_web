@@ -43,6 +43,10 @@
     margin-bottom: 45px !important;
     text-transform: capitalize !important;
     // background-color: #f9f9f9 !important;
+    &:hover{
+        border: 1px solid var(--darkPurple) !important;
+        background-color: #8202631a !important;
+    }
     @media (max-width: master.$xl) {
         margin-bottom: 36px !important;
         height: 82px !important;
@@ -314,7 +318,7 @@
 }
 
 .privateLessonsSearchOpen {
-    width: 250px;
+    width: 300px;
     border: 1px solid var(--darkPurple);
     @media (max-width: master.$md) {
         width: 250px;
