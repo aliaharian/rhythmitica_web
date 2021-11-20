@@ -48,13 +48,40 @@
     }
 }
 .instructorContainerSm {
-    height: 315px !important;
+    height: 322px !important;
+    @media (max-width: master.$xl) {
+        height: 265px !important;
+    }
+    @media (max-width: master.$lg) {
+        height: 227px !important;
+    }
+    @media (max-width: master.$md) {
+        height: 221px !important;
+    }
     & > .imageContainer {
-        height: 220px !important;
+        height: 225px !important;
         overflow: hidden !important;
+        @media (max-width: master.$xl) {
+            height: 184px !important;
+        }
+        @media (max-width: master.$lg) {
+            height: 159px !important;
+        }
+        @media (max-width: master.$md) {
+            height: 152px !important;
+        }
     }
     & > .dataContainer {
-        height: calc(100% - 220px);
+        height: calc(100% - 225px);
+        @media (max-width: master.$xl) {
+            height: calc(100% - 184px);
+        }
+        @media (max-width: master.$lg) {
+            height: calc(100% - 159px);
+        }
+        @media (max-width: master.$md) {
+            height: calc(100% - 152px);
+        }
     }
     & h3,
     & p {
@@ -69,19 +96,29 @@
             font-size: 11px !important;
         }
     }
+
     & .language {
         width: 44px !important;
         height: 44px !important;
         font-size: 16px !important;
         margin: 0 7.5px !important;
         @media (max-width: master.$xl) {
-            font-size: 14px !important;
+            font-size: 15px !important;
+            width: 42px !important;
+            height: 42px !important;
+            margin: 0 8px !important;
         }
         @media (max-width: master.$lg) {
-            font-size: 12px !important;
+            font-size: 13px !important;
+            width: 38px !important;
+            height: 38px !important;
+            margin: 0 6px !important;
         }
         @media (max-width: master.$md) {
-            font-size: 11px !important;
+            font-size: 12px !important;
+            width: 36px !important;
+            height: 36px !important;
+            margin: 0 4px !important;
         }
     }
 }
@@ -101,14 +138,13 @@
         border-radius: 30px 30px 0 0;
         @media (max-width: master.$md) {
             border-radius: 24px 24px 0 0;
-    
         }
     }
 }
 .languagesContainer {
     transition: all 250ms ease;
     position: absolute;
-    width: 100%;
+    width: 101%;
     height: 100%;
     bottom: -100%;
     left: 0;
@@ -119,11 +155,9 @@
     border-radius: 30px 30px 0 0;
     @media (max-width: master.$xl) {
         border-radius: 26px 26px 0 0;
-
     }
     @media (max-width: master.$md) {
-        border-radius: 24px 24px 0 0;
-
+        border-radius:  24px 24px 0 0;
     }
     & > .language {
         width: 50px;
@@ -155,8 +189,6 @@
             width: 36px;
             height: 36px;
             margin: 0 5px;
-
-           
         }
         &:first-child {
             margin-left: 0;
@@ -179,6 +211,7 @@
         line-height: 1.61;
         text-align: center;
         color: var(--textColor);
+
         @media (max-width: master.$xl) {
             font-size: 16px !important;
         }

@@ -7,7 +7,30 @@
     margin: 164px auto 0;
     grid-template-columns: calc(100% - 1076px) 1014px;
     grid-column-gap: 63px;
+
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+        margin: 134px auto 0;
+        padding: 45px 0;
+        grid-template-columns: calc(100% - 880px) 830px;
+        grid-column-gap: 50px;
+    }
+    @media (max-width: master.$lg) {
+        max-width: 980px;
+        margin: 115px auto 0;
+        padding: 36px 0;
+        grid-template-columns: calc(100% - 740px) 702px;
+        grid-column-gap: 38px;
+    }
+    @media (max-width: master.$md) {
+        max-width: 856px;
+        margin: 109px auto 0;
+        padding: 32px 0;
+        grid-template-columns: calc(100% - 696px) 664px;
+        grid-column-gap: 30px;
+    }
 }
+
 .openMapBtn {
     width: 100% !important;
     height: 99px !important;
@@ -20,8 +43,33 @@
     margin-bottom: 45px !important;
     text-transform: capitalize !important;
     // background-color: #f9f9f9 !important;
+    @media (max-width: master.$xl) {
+        margin-bottom: 36px !important;
+        height: 82px !important;
+        padding: 0 23px !important;
+    }
+    @media (max-width: master.$lg) {
+        margin-bottom: 30px !important;
+        height: 74px !important;
+        padding: 0 21px !important;
+    }
+    @media (max-width: master.$md) {
+        margin-bottom: 30px !important;
+        height: 57px !important;
+        padding: 0 13.5px !important;
+    }
     & img {
         margin-right: 16px;
+        @media (max-width: master.$xl) {
+            width: 36px;
+        }
+        @media (max-width: master.$lg) {
+            width: 32px;
+        }
+        @media (max-width: master.$md) {
+            width: 30px;
+            margin-right: 13.5px;
+        }
     }
     & p {
         font-family: nirmalaS;
@@ -29,17 +77,42 @@
         line-height: 1.5;
         color: var(--darkPurple);
         text-align: left;
+
+        @media (max-width: master.$xl) {
+            font-size: 14px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 12px;
+        }
+        @media (max-width: master.$md) {
+            line-height: 1.4;
+        }
     }
 }
 .packageItem {
     margin-bottom: 21px;
+    @media (max-width: master.$xl) {
+        margin-bottom: 19px;
+    }
+    @media (max-width: master.$md) {
+        margin-bottom: 22px;
+    }
 }
 .packagesContainer {
     border-radius: 50px;
     border: solid 1px var(--overlayColor);
     // background-color: #f9f9f9;
-    padding: 0 0 78px;
+    // padding: 0 0 5px;
     width: 100%;
+    @media (max-width: master.$xl) {
+        border-radius: 38px;
+    }
+    @media (max-width: master.$lg) {
+        border-radius: 36px;
+    }
+    @media (max-width: master.$md) {
+        border-radius: 26px;
+    }
 }
 .packagesTitle {
     width: 100%;
@@ -48,17 +121,45 @@
     align-items: center;
     justify-content: center;
     border-bottom: solid 1px var(--overlayColor);
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.31;
     color: var(--textColor);
+    @media (max-width: master.$xl) {
+        font-size: 15px;
+        height: 50px;
+    }
+    @media (max-width: master.$lg) {
+        font-size: 13px;
+        height: 48px;
+    }
+    @media (max-width: master.$md) {
+        font-size: 13px;
+        height: 46px;
+    }
 }
 .packagesBody {
-    padding: 25px 30px 0;
+    padding: 25px 30px;
+    @media (max-width: master.$xl) {
+        padding: 22px 25px;
+    }
+    @media (max-width: master.$lg) {
+        padding: 22px 22px;
+    }
+    @media (max-width: master.$md) {
+        padding: 22px 18px;
+    }
     & > p {
         font-size: 20px;
         line-height: 1.35;
         color: var(--textColor);
         margin-bottom: 25px;
+        @media (max-width: master.$xl) {
+            font-size: 18px;
+            margin-bottom: 22px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 16px;
+        }
     }
 }
 .privateLessonsHeader {
@@ -68,6 +169,12 @@
     justify-content: space-between;
     padding-bottom: 25px;
     border-bottom: solid 1px var(--overlayColor);
+    @media (max-width: master.$xl) {
+        padding-bottom: 20px;
+    }
+    @media (max-width: master.$lg) {
+        padding-bottom: 18px;
+    }
 }
 .privateLessonsSort {
     display: flex;
@@ -78,22 +185,52 @@
         line-height: 1.31;
         color: var(--textColor);
         margin-right: 15px;
+        @media (max-width: master.$xl) {
+            font-size: 14px;
+            margin-right: 13px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 12px;
+            margin-right: 12px;
+        }
+        @media (max-width: master.$md) {
+            font-size: 12px;
+            margin-right: 13px;
+        }
     }
     & > button {
-        height: 40px !important;
-        padding: 9px 25px !important;
+        height: 42px !important;
+        padding: 0 24px !important;
         border-radius: 114px !important;
         border: solid 1px var(--overlayColor) !important;
         color: var(--textColor) !important;
         text-transform: capitalize !important;
         margin-right: 15px !important;
-        font-size: 16px !important;
+        font-size: 17px !important;
         line-height: 1.31 !important;
+        @media (max-width: master.$xl) {
+            font-size: 15px !important;
+            margin-right: 13px !important;
+            height: 36px !important;
+            padding: 0 21px !important;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 13px !important;
+            padding: 0 18px !important;
+            height: 32px !important;
+            margin-right: 12px !important;
+        }
+        @media (max-width: master.$md) {
+            font-size: 13px !important;
+            padding: 0 18px !important;
+            height: 34px !important;
+            margin-right: 13px !important;
+        }
     }
     & > .activeBtn {
         border: solid 1px var(--textColor) !important;
         background-color: var(--litePurple);
-        &:hover{
+        &:hover {
             border: solid 1px var(--textColor) !important;
             background-color: var(--litePurple);
         }
@@ -101,8 +238,8 @@
 }
 
 .privateLessonsSearch {
-    height: 40px;
-    width: 40px;
+    height: 46px;
+    width: 46px;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -110,42 +247,135 @@
     overflow: hidden;
     // padding: 0 10px;
     transition: all 250ms ease;
-    background-color:#f9f9f9;
-
+    background-color: #f9f9f9;
     border: 1px solid #82026300;
-    & > img {
+    @media (max-width: master.$xl) {
+        height: 40px;
         width: 40px;
+    }
+    @media (max-width: master.$lg) {
+        height: 36px;
+        width: 36px;
+    }
+    @media (max-width: master.$md) {
+        height: 38px;
+        width: 38px;
+    }
+    & .searchIconConntainer {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        max-width: 42px;
         margin-left: 10px;
-        padding: 10px;
         cursor: pointer;
         background-color: var(--darkPurple);
-        transition: all 250ms ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: 50%;
+        @media (max-width: master.$xl) {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            max-width: 36px;
+        }
+        @media (max-width: master.$lg) {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            max-width: 32px;
+        }
+        @media (max-width: master.$md) {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            max-width: 34px;
+        }
+        & > img {
+            width: 20px;
+            @media (max-width: master.$xl) {
+                width: 16px;
+            }
+            @media (max-width: master.$lg) {
+                width: 12px;
+            }
+            @media (max-width: master.$md) {
+                width: 14px;
+            }
+        }
     }
     & > input {
         width: 100%;
         border: none;
         outline: none !important;
         padding: 10px 0 10px 15px;
-        background-color:#f9f9f9;
+        background-color: #f9f9f9;
     }
 }
 
 .privateLessonsSearchOpen {
     width: 300px;
     border: 1px solid var(--darkPurple);
-    & > img {
-        width: 40px;
+    @media (max-width: master.$md) {
+        width: 250px;
+    }
+    & .searchIconConntainer {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        max-width: 42px;
         margin-left: 10px;
-        padding: 10px;
         cursor: pointer;
         background-color: #82026300;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        @media (max-width: master.$xl) {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            max-width: 36px;
+        }
+        @media (max-width: master.$lg) {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            max-width: 32px;
+        }
+        @media (max-width: master.$md) {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            max-width: 34px;
+        }
+        & > img {
+            width: 20px;
+            @media (max-width: master.$xl) {
+                width: 16px;
+            }
+            @media (max-width: master.$lg) {
+                width: 13px;
+            }
+            @media (max-width: master.$md) {
+                width: 14px;
+            }
+        }
     }
 }
 
 .privateLessonsSidebar {
     position: sticky;
     top: 156px;
+    @media (max-width: master.$xl) {
+        top: 132px;
+    }
+    @media (max-width: master.$lg) {
+        top: 111px;
+    }
+    @media (max-width: master.$md) {
+        top: 107;
+    }
 }
 .privateLessonsStaffListContainer {
 }
@@ -153,9 +383,27 @@
     width: 100%;
     display: grid;
     margin-top: 56px;
-    grid-template-columns: repeat(4, 206px);
-    grid-column-gap: 63px;
-    grid-row-gap: 53px;
+    grid-template-columns: repeat(4, 211px);
+    grid-column-gap: 56px;
+    grid-row-gap: 56px;
+    @media (max-width: master.$xl) {
+        grid-template-columns: repeat(4, calc((100% - 135px) / 4));
+        grid-column-gap: 45px;
+        margin-top: 45px;
+        grid-row-gap: 45px;
+    }
+    @media (max-width: master.$lg) {
+        grid-template-columns: repeat(4, calc((100% - 96px) / 4));
+        grid-column-gap: 32px;
+        margin-top: 32px;
+        grid-row-gap: 32px;
+    }
+    @media (max-width: master.$md) {
+        grid-template-columns: repeat(4, calc((100% - 90px) / 4));
+        grid-column-gap: 30px;
+        margin-top: 30px;
+        grid-row-gap: 30px;
+    }
 }
 .noResult {
     width: 100%;
@@ -170,5 +418,11 @@
         color: var(--darkPurple);
         text-align: left;
         margin-top: 15px;
+        @media (max-width: master.$xl) {
+            font-size: 14px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 13px;
+        }
     }
 }

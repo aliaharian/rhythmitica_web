@@ -1,16 +1,18 @@
-import { Button, Checkbox, FormControlLabel } from "@material-ui/core";
+import { Button, Checkbox, FormControlLabel, useMediaQuery, useTheme } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import classes from '../../assets/styleSheets/privateLessons.module.scss'
 import earthIcon from '../../assets/images/icons/earthAlt.svg'
 import RhCheckbox from "../kits/RhCheckbox";
 const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages }) => {
     console.log('packages', packages)
+    const theme = useTheme();
+    const isTablet = useMediaQuery(theme.breakpoints.down(1300));
     return (
         <div className={classes.privateLessonsSidebarContainer}>
             <div className={classes.privateLessonsSidebar}>
                 <Button className={classes.openMapBtn}>
                     <img src={earthIcon} />
-                    <p>Click to See  <br/> All Musical Instruments</p>
+                    <p>{!isTablet && <>Click to See  <br/></>} All Musical Instruments</p>
                 </Button>
                 <div className={classes.packagesContainer}>
                     <div className={classes.packagesTitle}>

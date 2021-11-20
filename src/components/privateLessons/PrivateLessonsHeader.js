@@ -37,7 +37,9 @@ const PrivateLessonsHeader = ({ filter, handleChangeFilter, _handleSearch, q, se
                 onClickAway={handleClickAway}>
                 <div className={clsx(classes.privateLessonsSearch, openSearch && classes.privateLessonsSearchOpen)} >
                     <input type="text" value={q} onKeyPress={handleKeyPress} onChange={(e) => setQ(e.target.value)} />
-                    <img onClick={handleSearch} src={openSearch ? searchIconPurple : searchIcon} />
+                    <div onClick={handleSearch} className={classes.searchIconConntainer}>
+                        <img src={openSearch ? searchIconPurple : searchIcon} />
+                    </div>
                 </div>
             </ClickAwayListener>
         </div>
