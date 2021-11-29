@@ -51,7 +51,6 @@ const Events = ({ packages, eventTypes }) => {
     }
     return (
         <div className={classes.eventsMainContainer}>
-            <Media />
             <EventsSidebar
                 packages={packages}
                 handleSelectPackage={handleSelectPackage}

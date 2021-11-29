@@ -1,4 +1,5 @@
 import Media from '../src/components/layout/Media'
+import { wrapper } from "../redux/store";
 
 function D404() {
 
