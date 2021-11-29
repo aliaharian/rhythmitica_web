@@ -9,4 +9,13 @@ function D404() {
     )
 }
 
+export const getServerSideProps = wrapper.getServerSideProps(
+    async ({ store, req, res }) => {
+            res.setHeader("location", "/");
+            res.statusCode = 302;
+            res.end();
+            return;
+    }
+);
+
 export default D404;
