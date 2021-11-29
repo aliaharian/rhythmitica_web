@@ -5,6 +5,7 @@ import EventsList from "./EventsList";
 import { getEventsList } from "../../../redux/events";
 import EventsSidebar from "./EventsSidebar";
 import EventsHeader from "./EventsHeader";
+import Media from "../layout/Media";
 const Events = ({ packages, eventTypes }) => {
     const staffs = useSelector((state) => state.privateLessons.staffs);
     const [selectedPackages, setSelectedPackages] = useState([]);
@@ -50,6 +51,7 @@ const Events = ({ packages, eventTypes }) => {
     }
     return (
         <div className={classes.eventsMainContainer}>
+            <Media />
             <EventsSidebar
                 packages={packages}
                 handleSelectPackage={handleSelectPackage}
