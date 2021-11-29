@@ -15,6 +15,7 @@ const Media = () => {
             setHei(window.innerHeight)
             setHref(window.location.href)
             setUrl(document.URL)
+            window.loca
             
           }
     })

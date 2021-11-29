@@ -1,22 +1,12 @@
-import Media from '../src/components/layout/Media'
-import { wrapper } from "../redux/store";
+import { useEffect } from "react"
+import { useRouter } from "next/router"
 
-function D404() {
+export default function Custom404() {
+  const router = useRouter()
 
-    return (
-        <>
-            <Media/>
-        </>
-    )
+  useEffect(() => {
+    router.replace("/")
+  })
+
+  return null
 }
-
-export const getServerSideProps = wrapper.getServerSideProps(
-    async ({ store, req, res }) => {
-            res.setHeader("location", "/");
-            res.statusCode = 302;
-            res.end();
-            return;
-    }
-);
-
-export default D404;
