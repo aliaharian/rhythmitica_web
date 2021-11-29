@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { useSelector } from "react-redux";
 import classes from '../../assets/styleSheets/events.module.scss'
 import searchIcon from '../../assets/images/icons/searchIcon.svg'
-import searchIconPurple from '../../assets/images/icons/searchIconPurple.svg'
+import searchIconGreen from '../../assets/images/icons/searchIconGreen.svg'
 import { useState } from "react";
 
 const EventsHeader = ({ filter, handleChangeFilter, _handleSearch, q, setQ }) => {
@@ -37,7 +37,7 @@ const EventsHeader = ({ filter, handleChangeFilter, _handleSearch, q, setQ }) =>
                 onClickAway={handleClickAway}>
                 <div className={clsx(classes.eventsSearch, openSearch && classes.eventsSearchOpen)} >
                     <input type="text" value={q} onKeyPress={handleKeyPress} onChange={(e) => setQ(e.target.value)} />
-                    <img onClick={handleSearch} src={openSearch ? searchIconPurple : searchIcon} />
+                    <img onClick={handleSearch} src={openSearch ? searchIconGreen : searchIcon} />
                 </div>
             </ClickAwayListener>
 
