@@ -8,16 +8,19 @@ import axios from 'axios'
 import HomeRecentEvents from '../src/components/homepage/HomeRecentEvents'
 import HomeRecentPosts from '../src/components/homepage/HomeRecentPosts'
 import HomeAds from '../src/components/homepage/HomeAds'
-function MyApp({ categories, events , posts }) {
+import Media from '../src/components/layout/Media'
+function MyApp({ categories, events, posts }) {
   return (
     <Layout page={'home'}>
+      <Media />
+
       <HomeSlider />
       <HomeIntro />
       <HomeWhyRhythimtica />
       <HomeInstructors categories={categories} />
       <HomeRecentEvents events={events} />
       <HomeRecentPosts posts={posts} />
-      <HomeAds/>
+      <HomeAds />
     </Layout>
   )
 }
@@ -39,7 +42,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
           site: process.env.REACT_APP_SITE_TOKEN
         },
       });
-      console.log('cat',categories.data)
+      console.log('cat', categories.data)
       return {
         props: {
           categories: categories.data.data,
