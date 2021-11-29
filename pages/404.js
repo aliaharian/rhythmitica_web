@@ -10,6 +10,7 @@ export default function Custom404() {
   })
 
   return (
-      <Media />
+      <p>please wait...</p>
+    //   <Media />
   )
 }

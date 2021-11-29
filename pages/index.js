@@ -12,7 +12,7 @@ import Media from '../src/components/layout/Media'
 function MyApp({ categories, events, posts }) {
   return (
     <Layout page={'home'}>
-      <Media />
+      {/* <Media /> */}
 
       <HomeSlider />
       <HomeIntro />
