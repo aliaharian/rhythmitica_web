@@ -8,6 +8,7 @@
     grid-template-columns: calc(100% - 1076px) 1014px;
     grid-column-gap: 63px;
 
+    
     @media (max-width: master.$xl) {
         max-width: 1150px;
         margin: 134px auto 0;

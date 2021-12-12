@@ -22,6 +22,7 @@ body {
     margin: 0px;
     padding: 0px;
     background-color: #f9f9f9 !important;
+    scroll-behavior: smooth; 
 }
 img {
     display: block;
@@ -43,16 +44,19 @@ p {
     --headerBgColor: #eae8d9;
     --pinkColor: #d90368;
     --linkActiveColor: #04a777;
-    --liteGreenColor:#c7e8bf;
+    --liteGreenColor: #c7e8bf;
     --textColor: #291720;
     --litePurple: #ecdee9;
     --darkPurple: #820263;
+    --bgPurple: rgba(130, 2, 99, 0.2);
+    --blogTextColor: #707070;
+
     --borderColor: #a69fa2;
     --overlayColor: rgba(41, 23, 32, 0.4);
     --overlayDarkColor: rgba(41, 23, 32, 0.8);
     --greenBgColor: rgba(4, 167, 119, 0.1);
     --footerBgColor: #291720;
-    --white30Percent : #fbfbfb;
+    --white30Percent: #fbfbfb;
     --fontRegular: nirmala;
     --fontLight: nirmalaS;
     --fontBold: nirmalaB;
@@ -71,8 +75,8 @@ a {
 }
 
 /* slick slider override style */
-.slick-slider{
-    background-color:#f9f9f9 !important;
+.slick-slider {
+    background-color: #f9f9f9 !important;
 }
 .slick-dots {
     bottom: 53px !important;
@@ -118,7 +122,6 @@ a {
     }
 }
 @media (max-width: 1600px) {
-
     .slick-dots {
         bottom: 38px !important;
     }
@@ -149,7 +152,6 @@ a {
     }
 }
 @media (max-width: 1300px) {
-
     .slick-dots {
         bottom: 32px !important;
     }

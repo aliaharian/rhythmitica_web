@@ -5,6 +5,7 @@ import classes from '../../assets/styleSheets/blog.module.scss'
 import searchIcon from '../../assets/images/icons/searchIcon.svg'
 import searchIconPink from '../../assets/images/icons/searchIconPink.svg'
 import { useState } from "react";
+
 import useStyles from './Style'
 const BlogHeader = ({ categories, selectedCategory, handleSelectCategory, _handleSearch, q, setQ }) => {
     const [openSearch, setOpenSearch] = useState(false)
@@ -49,8 +50,11 @@ const BlogHeader = ({ categories, selectedCategory, handleSelectCategory, _handl
                 onClickAway={handleClickAway}>
                 <div className={clsx(classes.blogSearch, openSearch && classes.blogSearchOpen)} >
                     <input type="text" value={q} onKeyPress={handleKeyPress} onChange={(e) => setQ(e.target.value)} />
-                    <img onClick={handleSearch} src={openSearch ? searchIconPink : searchIcon} />
+                    <div onClick={handleSearch} className={classes.searchIconConntainer}>
+                        <img src={openSearch ? searchIconPink : searchIcon} />
+                    </div>
                 </div>
+
             </ClickAwayListener>
 
 

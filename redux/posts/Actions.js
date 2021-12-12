@@ -32,7 +32,7 @@ export const getPostsList = (isServer, payload, filter, page = 1, max = 10) => a
             filterParam += `&cat_id=${filter.cat_id}`
 
         const response = await axios.get(
-            `/v1.0/blog/posts/search/${searchQ}?page=${page}&max=${max}${filterParam}`
+            `/v1.0/blog/search/${searchQ}?page=${page}&max=${max}${filterParam}`
         );
         dispatch({
             type: GET_POSTS_LIST,
@@ -43,6 +43,6 @@ export const getPostsList = (isServer, payload, filter, page = 1, max = 10) => a
         });
 
     } catch (e) {
-        dispatch(errorSnackbar(e));
+        // dispatch(errorSnackbar(e));
     }
 };

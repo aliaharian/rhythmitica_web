@@ -4,7 +4,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { CircularProgress } from "@material-ui/core";
 import Event from "../kits/Event";
 import transform from "../../utilities/transform";
-import noResultIcon from '../../assets/images/icons/noResultIcon.svg'
+import noResultIcon from '../../assets/images/icons/noResultIconGreen.svg'
 import Link from 'next/link';
 const EventsList = ({ handlePaginate }) => {
     const events = useSelector((state) => state.events.events);

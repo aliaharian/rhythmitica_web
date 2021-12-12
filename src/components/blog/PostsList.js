@@ -4,7 +4,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { CircularProgress } from "@material-ui/core";
 import Post from "../kits/Post";
 import transform from "../../utilities/transform";
-import noResultIcon from '../../assets/images/icons/noResultIcon.svg'
+import noResultIcon from '../../assets/images/icons/noResultIconPink.svg'
 import Link from 'next/link';
 import { useEffect, useState } from "react";
 const PostsList = ({ handlePaginate }) => {
@@ -64,6 +64,7 @@ const PostsList = ({ handlePaginate }) => {
                                             name={post.title}
                                             brief={post.brief}
                                             date={post.created_at}
+                                            unsplashMode
                                             sm={index % 2 == 0}
                                         />
                                         //     </a>
@@ -82,6 +83,7 @@ const PostsList = ({ handlePaginate }) => {
                                             name={post.title}
                                             brief={post.brief}
                                             date={post.created_at}
+                                            unsplashMode
                                             sm={index % 2 != 0}
                                         />
                                         //     </a>
@@ -100,6 +102,7 @@ const PostsList = ({ handlePaginate }) => {
                                             name={post.title}
                                             brief={post.brief}
                                             date={post.created_at}
+                                            unsplashMode
                                             sm={index % 2 == 0}
                                         />
                                         //     </a>

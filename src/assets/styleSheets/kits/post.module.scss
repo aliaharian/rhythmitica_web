@@ -18,29 +18,52 @@
     @media (max-width: master.$md) {
         height: 365px;
         border-radius: 24px;
-
     }
-    &:hover {
+    &:hover , &:focus {
         & .overlay {
-            // top: calc(100% - 250px);
-            bottom:0;
-            // @media (max-width: master.$xl) {
-            //     top: calc(100% - 235px);
-            // }
-            // @media (max-width: master.$lg) {
-            //     top: calc(100% - 220px);
-            // }
-            // @media (max-width: master.$md) {
-            //     top: calc(100% - 230px);
-            // }
+            bottom: 0;
             & > h3 {
                 border-bottom: 1px solid #fff;
+                padding-bottom: 15px;
             }
         }
     }
 }
-.postContainerSm{
-    height: 350px;
+.postUnsplashMode {
+    height: 630px;
+    @media (max-width: master.$xl) {
+        height: 475px;
+        border-radius: 28px;
+
+
+    }
+    @media (max-width: master.$lg) {
+        height: 430px;
+        border-radius: 26px;
+
+
+    }
+    @media (max-width: master.$md) {
+        height: 345px;
+
+    }
+}
+.postContainerSm {
+    height: 380px;
+    @media (max-width: master.$xl) {
+        height: 276px;
+        border-radius: 28px;
+
+    }
+    @media (max-width: master.$lg) {
+        height: 261px;
+        border-radius: 26px;
+
+    }
+    @media (max-width: master.$md) {
+        height: 230px;
+        // border-radius: 24px;
+    }
 }
 .imageContainer {
     width: 100%;
@@ -57,7 +80,7 @@
 .overlay {
     width: 100%;
     // height: 250px;
-    height:auto;
+    height: auto;
     position: absolute;
     background-color: var(--overlayDarkColor);
     // top: calc(100% - 90px);
@@ -74,6 +97,7 @@
         // top: calc(100% - 70px);
         // bottom:-70px;
         padding: 0 24px 24px;
+
         // height: 220px;
     }
     @media (max-width: master.$md) {
@@ -87,7 +111,7 @@
         width: 100%;
         font-size: 20px;
         line-height: 30px;
-        padding: 30px 0 15px;
+        padding: 30px 0 30px;
         color: #fff;
         display: flex;
         align-items: center;
@@ -95,20 +119,25 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0);
         margin-bottom: 15px;
         font-weight: normal;
+        text-align: center;
         @media (max-width: master.$xl) {
             font-size: 18px;
             line-height: 26px;
-            padding: 27px 0 15px;
+            padding: 27px 0 27px;
+            // margin-bottom: 12px;
+
         }
         @media (max-width: master.$lg) {
             font-size: 16px;
             line-height: 22px;
-            padding: 24px 0 15px;
+            padding: 24px 0 24px;
+            // margin-bottom: 9px;
+
         }
         @media (max-width: master.$md) {
             font-size: 15px;
             line-height: 20px;
-            padding: 19px 0 15px;
+            padding: 20px 0 20px;
         }
     }
     & > .brief {
@@ -189,7 +218,6 @@
             @media (max-width: master.$md) {
                 font-size: 13px;
                 height: 36px;
-
             }
             &:hover {
                 background-color: rgba(255, 255, 255, 0.2);

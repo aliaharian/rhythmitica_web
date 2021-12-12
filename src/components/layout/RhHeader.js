@@ -30,7 +30,7 @@ const RhHeader = ({page}) => {
                         <Link href="/privateLessons"><a className={page=='privateLessons' && classes.active}>private lessons</a></Link>
                         <Link href="/events"><a className={page=='events' && classes.active}>group lessons</a></Link>
                         <Link href="/blog"><a className={page=='blog' && classes.active}>blog</a></Link>
-                        <Link href="/branch"><a className={page=='branch' && classes.active}>branch</a></Link>
+                        <Link href="/branch"><a className={page=='partners' && classes.active}>partners</a></Link>
                         <Link href="/contactUs"><a className={page=='contact' && classes.active}>contact us</a></Link>
                         <Link href="/aboutUs"><a className={page=='about' && classes.active}>about us</a></Link>
                     </div>

@@ -7,29 +7,29 @@
     margin: 164px auto 0;
     grid-template-columns: calc(100% - 1079px) 1014px;
     grid-column-gap: 65px;
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+        margin: 134px auto 0;
+        padding: 45px 0;
+        grid-template-columns: calc(100% - 880px) 830px;
+        grid-column-gap: 50px;
+    }
+    @media (max-width: master.$lg) {
+        max-width: 980px;
+        margin: 115px auto 0;
+        padding: 36px 0;
+        grid-template-columns: calc(100% - 740px) 702px;
+        grid-column-gap: 38px;
+    }
+    @media (max-width: master.$md) {
+        max-width: 856px;
+        margin: 109px auto 0;
+        padding: 32px 0;
+        grid-template-columns: calc(100% - 650px) 620px;
+        grid-column-gap: 30px;
+    }
 }
-.openMapBtn {
-    width: 100% !important;
-    height: 99px !important;
-    border: 1px solid var(--overlayColor) !important;
-    border-radius: 50px !important;
-    padding: 0 30px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    margin-bottom: 45px !important;
-    // background-color: #f9f9f9 !important;
 
-    & img {
-        margin-right: 16px;
-    }
-    & p {
-        font-size: 15px;
-        line-height: 1.33;
-        color: var(--linkActiveColor);
-        text-align: left;
-    }
-}
 .packageItem {
     margin-bottom: 21px;
 }
@@ -37,8 +37,17 @@
     border-radius: 50px;
     border: solid 1px var(--overlayColor);
     // background-color: #f9f9f9;
-    padding: 0 0 78px;
+    padding: 0 0 15px;
     width: 100%;
+    @media (max-width: master.$xl) {
+        border-radius: 38px;
+    }
+    @media (max-width: master.$lg) {
+        border-radius: 35px;
+    }
+    @media (max-width: master.$md) {
+        border-radius: 30px;
+    }
 }
 .packagesTitle {
     width: 100%;
@@ -50,6 +59,18 @@
     font-size: 16px;
     line-height: 1.31;
     color: var(--textColor);
+    @media (max-width: master.$xl) {
+        font-size: 15px;
+        height: 50px;
+    }
+    @media (max-width: master.$lg) {
+        font-size: 13px;
+        height: 48px;
+    }
+    @media (max-width: master.$md) {
+        font-size: 13px;
+        height: 46px;
+    }
 }
 .packagesBody {
     padding: 25px 30px 0;
@@ -67,6 +88,12 @@
     justify-content: space-between;
     padding-bottom: 25px;
     border-bottom: solid 1px var(--overlayColor);
+    @media (max-width: master.$xl) {
+        padding-bottom: 20px;
+    }
+    @media (max-width: master.$lg) {
+        padding-bottom: 18px;
+    }
 }
 .eventsSort {
     display: flex;
@@ -77,6 +104,18 @@
         line-height: 1.31;
         color: var(--textColor);
         margin-right: 15px;
+        @media (max-width: master.$xl) {
+            font-size: 14px;
+            margin-right: 13px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 12px;
+            margin-right: 12px;
+        }
+        @media (max-width: master.$md) {
+            font-size: 12px;
+            margin-right: 13px;
+        }
     }
     & > button {
         height: 40px !important;
@@ -88,10 +127,32 @@
         margin-right: 15px !important;
         font-size: 16px !important;
         line-height: 1.31 !important;
+        @media (max-width: master.$xl) {
+            font-size: 15px !important;
+            margin-right: 13px !important;
+            height: 36px !important;
+            padding: 0 21px !important;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 13px !important;
+            padding: 0 18px !important;
+            height: 32px !important;
+            margin-right: 12px !important;
+        }
+        @media (max-width: master.$md) {
+            font-size: 13px !important;
+            padding: 0 18px !important;
+            height: 34px !important;
+            margin-right: 13px !important;
+        }
     }
     & > .activeBtn {
         border: solid 1px var(--textColor) !important;
         background-color: var(--liteGreenColor);
+        &:hover {
+            border: solid 1px var(--textColor) !important;
+            background-color: var(--liteGreenColor);
+        }
     }
 }
 
@@ -106,37 +167,133 @@
     // padding: 0 10px;
     transition: all 250ms ease;
     border: 1px solid #82026300;
-    & > img {
+    @media (max-width: master.$xl) {
+        height: 40px;
         width: 40px;
+    }
+    @media (max-width: master.$lg) {
+        height: 36px;
+        width: 36px;
+    }
+    @media (max-width: master.$md) {
+        height: 38px;
+        width: 38px;
+    }
+    & .searchIconConntainer {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        max-width: 42px;
         margin-left: 10px;
-        padding: 10px;
         cursor: pointer;
         background-color: var(--linkActiveColor);
-        transition: all 250ms ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        @media (max-width: master.$xl) {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            max-width: 36px;
+        }
+        @media (max-width: master.$lg) {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            max-width: 32px;
+        }
+        @media (max-width: master.$md) {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            max-width: 34px;
+        }
+        & > img {
+            width: 20px;
+            @media (max-width: master.$xl) {
+                width: 16px;
+            }
+            @media (max-width: master.$lg) {
+                width: 12px;
+            }
+            @media (max-width: master.$md) {
+                width: 14px;
+            }
+        }
     }
     & > input {
         width: 100%;
         border: none;
         outline: none !important;
         padding: 10px 0 10px 15px;
+        background-color: #f9f9f9;
     }
 }
 
 .eventsSearchOpen {
     width: 300px;
     border: 1px solid var(--linkActiveColor);
-    & > img {
-        width: 40px;
+    @media (max-width: master.$md) {
+        width: 250px;
+    }
+    & .searchIconConntainer {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        max-width: 42px;
         margin-left: 10px;
-        padding: 10px;
         cursor: pointer;
         background-color: #82026300;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        @media (max-width: master.$xl) {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            max-width: 36px;
+        }
+        @media (max-width: master.$lg) {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            max-width: 32px;
+        }
+        @media (max-width: master.$md) {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            max-width: 34px;
+        }
+        & > img {
+            width: 20px;
+            @media (max-width: master.$xl) {
+                width: 16px;
+            }
+            @media (max-width: master.$lg) {
+                width: 13px;
+            }
+            @media (max-width: master.$md) {
+                width: 14px;
+            }
+        }
     }
 }
 
 .eventsSidebar {
     position: sticky;
-    top: 156px;
+    top: 140px;
+    @media (max-width: master.$xl) {
+    top: 130px;
+    }
+    @media (max-width: master.$lg) {
+    top: 110px;
+    }
+    @media (max-width: master.$md) {
+        top: 100px;
+    }
 }
 .eventsListContainer {
 }
@@ -146,7 +303,25 @@
     margin-top: 56px;
     grid-template-columns: repeat(2, 475px);
     grid-column-gap: 64px;
-    grid-row-gap: 62px;
+    grid-row-gap: 64px;
+    @media (max-width: master.$xl) {
+        margin-top: 50px;
+        grid-template-columns: repeat(2, calc((100% - 50px) / 2));
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+    }
+    @media (max-width: master.$lg) {
+        margin-top: 40px;
+        grid-template-columns: repeat(2, calc((100% - 40px) / 2));
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+    }
+    @media (max-width: master.$md) {
+        margin-top: 36px;
+        grid-template-columns: repeat(2, calc((100% - 36px) / 2));
+        grid-column-gap: 36px;
+        grid-row-gap: 36px;
+    }
 }
 .noResult {
     width: 100%;
@@ -164,19 +339,18 @@
     }
 }
 
-.bt{
-    position:relative;
+.bt {
+    position: relative;
     // border-top:1px solid var(--overlayColor);
-    padding-top:25px;
-    margin-top:31px;
-    &:before{
-        position:absolute;
-        width:calc(100% + 60px);
-        left:-30px;
-        top:0;
-        height:1px;
-        background-color:var(--overlayColor);
-        content:"";
-
+    padding-top: 25px;
+    margin-top: 31px;
+    &:before {
+        position: absolute;
+        width: calc(100% + 60px);
+        left: -30px;
+        top: 0;
+        height: 1px;
+        background-color: var(--overlayColor);
+        content: "";
     }
 }

@@ -11,15 +11,30 @@
     margin-bottom: 25px;
     @media (max-width: master.$xl) {
         border-radius: 44px;
+        height: 465px;
+        padding: 12px 12px 25px;
     }
     @media (max-width: master.$lg) {
         border-radius: 40px;
+        height: 400px;
+        padding: 11px 11px 25px;
     }
     @media (max-width: master.$md) {
         border-radius: 34px;
+        height: 380px;
+        padding: 10px 10px 25px;
     }
     & > .imageContainer {
         height: 352px;
+        @media (max-width: master.$xl) {
+            height: 285px;
+        }
+        @media (max-width: master.$lg) {
+            height: 245px;
+        }
+        @media (max-width: master.$md) {
+            height: 220px;
+        }
     }
 }
 .eventSm {
@@ -198,9 +213,9 @@
     max-width: 52px !important;
     min-width: 52px !important;
     bottom: -26px !important;
-    &:hover{
+    &:hover {
         // background-color: #04a777 !important;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     }
     @media (max-width: master.$xl) {
         width: 45px !important;

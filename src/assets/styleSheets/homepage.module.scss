@@ -446,21 +446,15 @@
         max-width: 856px;
         margin: 0 auto 70px;
     }
-    & > div {
-        flex: 1 1 240px;
-        max-width: 240px;
+    & > a {
         margin-right: 59px;
         @media (max-width: master.$xl) {
-            max-width: 200px;
             margin-right: 37px;
         }
         @media (max-width: master.$lg) {
-            max-width: 170px;
             margin-right: 32px;
         }
         @media (max-width: master.$md) {
-            flex: 1 1 155px;
-            max-width: 155px;
             margin-right: 20px;
         }
 
@@ -478,6 +472,21 @@
             @media (max-width: master.$md) {
                 margin-right: 21px;
             }
+        }
+        & > div {
+            flex: 1 1 240px;
+            max-width: 240px;
+            @media (max-width: master.$xl) {
+                max-width: 200px;
+            }
+            @media (max-width: master.$lg) {
+                max-width: 170px;
+            }
+            @media (max-width: master.$md) {
+                flex: 1 1 155px;
+                max-width: 155px;
+            }
+
         }
     }
 }

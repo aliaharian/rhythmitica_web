@@ -15,6 +15,7 @@ const EventsHeader = ({ filter, handleChangeFilter, _handleSearch, q, setQ }) =>
             _handleSearch()
         }
     }
+
     const handleClickAway = () => {
         if (q === '') {
             setOpenSearch(false)
@@ -37,11 +38,13 @@ const EventsHeader = ({ filter, handleChangeFilter, _handleSearch, q, setQ }) =>
                 onClickAway={handleClickAway}>
                 <div className={clsx(classes.eventsSearch, openSearch && classes.eventsSearchOpen)} >
                     <input type="text" value={q} onKeyPress={handleKeyPress} onChange={(e) => setQ(e.target.value)} />
-                    <img onClick={handleSearch} src={openSearch ? searchIconGreen : searchIcon} />
+                    <div onClick={handleSearch} className={classes.searchIconConntainer}>
+                        <img src={openSearch ? searchIconGreen : searchIcon} />
+                    </div>
                 </div>
             </ClickAwayListener>
 
-       
+
 
 
         </div>

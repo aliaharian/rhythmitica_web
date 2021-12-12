@@ -23,12 +23,12 @@ export const getServerSideProps = wrapper.getServerSideProps(
           },
         });
 
-        const posts = await axios.get(`${process.env.REACT_APP_BASE_URL}/v1.0/blog/posts/search/--?page=1&max=10&cat_id=${categories.data[0].id}`, {
+        const posts = await axios.get(`${process.env.REACT_APP_BASE_URL}/v1.0/blog/search/--?page=1&max=10&cat_id=${categories.data[0].id}`, {
           headers: {
             site: process.env.REACT_APP_SITE_TOKEN
           },
         });
-        // console.log('postsssspostsssspostsssspostsssspostssss',posts.data)
+        // console.log('postsssspostsssspostsssspostsssspostssss',posts)
         store.dispatch(getPostsList(true, posts.data));
 
         return {

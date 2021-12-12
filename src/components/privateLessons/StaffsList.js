@@ -32,9 +32,10 @@ const StaffsList = ({ handlePaginate }) => {
                     >
                         <div className={classes.privateLessonsStaffList}>
                             {
+                                
                                 staffs.data.map((staff) => (
-                                    // <Link href={'#'}>
-                                    //     <a>
+                                    <Link href={`privateLessons/${staff.staff_id}/${staff.package_id}`}>
+                                        <a>
                                             <Instructor
                                                 sm
                                                 image={process.env.REACT_APP_IMAGE_URL + staff.staff_avatar}
@@ -42,8 +43,8 @@ const StaffsList = ({ handlePaginate }) => {
                                                 instrument={staff.package_name}
                                                 languages={transform.staffLangs(staff.json)}
                                             />
-                                    //     </a>
-                                    // </Link>
+                                        </a>
+                                    </Link>
                                 ))
 
                             }

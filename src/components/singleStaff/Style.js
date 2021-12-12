@@ -1,9 +1,9 @@
 import { makeStyles } from "@material-ui/core";
 
 export default makeStyles((theme) => ({
-    blogHeader: {
+    tabsContainer: {
         '& .MuiTabs-indicator': {
-            backgroundColor: '#d90368',
+            backgroundColor: '#820263',
             height: 3
         },
         '& .MuiTabs-scroller': {
@@ -22,23 +22,28 @@ export default makeStyles((theme) => ({
         },
         '& .MuiTab-root': {
             padding: '6px 17px 9px',
-            minWidth:10,
-            marginRight:28
+            minWidth: 10,
+            marginRight: 28
         },
-        '& .MuiTab-wrapper':{
+        '& .Mui-selected': {
+            '& span': {
+                color:'#820263'
+            }
+        },
+        '& .MuiTab-wrapper': {
             textTransform: 'capitalize',
-            fontSize:16 ,
+            fontSize: 16,
             [theme.breakpoints.down(1900)]: {
-                fontSize:14 ,
+                fontSize: 14,
 
             },
             [theme.breakpoints.down(1600)]: {
-                fontSize:12 ,
+                fontSize: 12,
 
             },
         },
-        '& .MuiTab-textColorInherit':{
-            opacity:1
+        '& .MuiTab-textColorInherit': {
+            opacity: 1
         }
 
 

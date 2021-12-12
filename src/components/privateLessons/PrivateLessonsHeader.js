@@ -26,6 +26,7 @@ const PrivateLessonsHeader = ({ filter, handleChangeFilter, _handleSearch, q, se
             _handleSearch()
         }
     }
+    
     return (
         <div className={classes.privateLessonsHeader}>
             <div className={classes.privateLessonsSort}>
