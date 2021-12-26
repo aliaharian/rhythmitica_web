@@ -5,12 +5,14 @@ const RhRadioButton = ({
     checked,
     key,
     onChange,
-    color
+    color,
+    style,
+    xl
 }) => {
     return (
-        <div key={key} onClick={onChange} className={clsx(classes.checkbox,color=='green'&&classes.greenBg)}>
-            <div className={checked?classes.checkedIcon:classes.icon}></div>
-            <label>{label}</label>
+        <div key={key} style={style ? style : {}} onClick={onChange} className={clsx(classes.checkbox, color == 'green' && classes.greenBg)}>
+            <div className={checked ? clsx(classes.checkedIcon, xl && classes.checkedIconXl) : clsx(classes.icon, xl && classes.iconXl)}></div>
+            <label className={xl && classes.xlLabel}>{label}</label>
         </div>
     )
 }

@@ -1,12 +1,12 @@
-import Layout from '../../../src/components/layout/Layout'
-import { wrapper } from "../../../redux/store";
+import Layout from '../../../../src/components/layout/Layout'
+import { wrapper } from "../../../../redux/store";
 import axios from 'axios'
-import SingleStaff from '../../../src/components/singleStaff/SingleStaff';
+import Booking from '../../../../src/components/booking/Booking';
 
-function staffSinglePage({ staffInfo }) {
+function bookingPage({ packageInfo }) {
     return (
-        <Layout page={'singleStaff'}>
-            <SingleStaff staffInfo={staffInfo} />
+        <Layout page={'booking'}>
+            <Booking packageInfo={packageInfo} />
         </Layout>
     )
 }
@@ -14,7 +14,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
     (store) =>
         async ({ store, req, res, query }) => {
             try {
-                const staffInfo = await axios.post(`${process.env.REACT_APP_BASE_URL}/v1.0/staffs/${query.package_id}/${query.staff_id}/summery`, null,{
+                const packageInfo = await axios.post(`${process.env.REACT_APP_BASE_URL}/v1.0/staffs/${query.package_id}/${query.staff_id}/booking/summery`, null,{
                     headers: {
                         site: process.env.REACT_APP_SITE_TOKEN
                     },
@@ -22,7 +22,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
         
                 return {
                     props: {
-                        staffInfo: staffInfo.data.data,
+                        packageInfo: packageInfo.data.data,
                     }, // will be passed to the page component as props
                 };
             }
@@ -31,4 +31,4 @@ export const getServerSideProps = wrapper.getServerSideProps(
             }
         });
 
-export default staffSinglePage;
+export default bookingPage;

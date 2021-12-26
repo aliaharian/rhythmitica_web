@@ -37,8 +37,8 @@ export const globalStyles = () => {
             },
 
             ".Mui-disabled": {
-                backgroundColor: '#fff!important',
-                border: '1px solid rgba(0, 0, 0, 0.12)!important'
+                // backgroundColor: '#fff',
+                // border: '1px solid rgba(0, 0, 0, 0.12)'
 
             },
             '.MuiSnackbarContent-root': {

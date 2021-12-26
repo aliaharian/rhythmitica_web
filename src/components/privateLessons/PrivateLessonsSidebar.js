@@ -10,7 +10,7 @@ const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages
     return (
         <div className={classes.privateLessonsSidebarContainer}>
             <div className={classes.privateLessonsSidebar}>
-                <Button className={classes.openMapBtn}>
+                <Button className={classes.openMapBtn} href={'/globe'}>
                     <img src={earthIcon} />
                     <p>{!isTablet && <>Click to See  <br/></>} All Musical Instruments</p>
                 </Button>
@@ -30,30 +30,7 @@ const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages
                                 />
                             </div>
                         ))}
-                        <div className={classes.packageItem}>
-                            <RhCheckbox
-                                label={'santoor'}
-                                checked={selectedPackages.indexOf(0) != -1}
-                                key={0}
-                                onChange={() => { handleSelectPackage(0) }}
-                            />
-                        </div>
-                        <div className={classes.packageItem}>
-                            <RhCheckbox
-                                label={'santoor'}
-                                checked={selectedPackages.indexOf(0) != -1}
-                                key={0}
-                                onChange={() => { handleSelectPackage(0) }}
-                            />
-                        </div>
-                        <div className={classes.packageItem}>
-                            <RhCheckbox
-                                label={'santoor'}
-                                checked={selectedPackages.indexOf(0) != -1}
-                                key={0}
-                                onChange={() => { handleSelectPackage(0) }}
-                            />
-                        </div>
+                        
                     </div>
 
                 </div>

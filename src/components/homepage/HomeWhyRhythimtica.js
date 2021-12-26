@@ -6,6 +6,9 @@ import PersonIcon from '../../assets/images/icons/person.svg';
 import Link from 'next/link';
 import clsx from 'clsx';
 const HomeWhyRhythimtica = () => {
+    const handleGotoGlobe = ()=>{
+        window.open(`/globe`, '_self')
+    }
     return (
         <div className={classes.whyContainer}>
             <h2 className={clsx(classes.sectionTitle, classes.whyTitle)}>Why Rhythmitica</h2>
@@ -20,8 +23,8 @@ const HomeWhyRhythimtica = () => {
                         platform since 2015.
                     </p>
                 </div>
-                <div className={classes.whyItem}>
-                    <div className={clsx(classes.whyIcon, classes.animateBorderIcon)}>
+                <div className={classes.whyItem} onClick={handleGotoGlobe}>
+                    <div className={clsx(classes.whyIcon, classes.animateBorderIcon , classes.pointer)}>
                         <img src={earthIcon} />
                     </div>
                     <h3>Explore the World Music</h3>

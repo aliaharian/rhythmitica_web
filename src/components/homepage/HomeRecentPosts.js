@@ -23,7 +23,7 @@ const HomeRecentPosts = ({ posts }) => {
                     })
                 }
             </div>
-            <Link href={"#"}>
+            <Link href={"/blog"}>
                 <a className={clsx(classes.moreBtn,classes.morePostBtn)} title="all posts">
                     <div></div><div></div><div></div>
                 </a>

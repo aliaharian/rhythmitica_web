@@ -1,0 +1,237 @@
+@use "./master.module.scss" as master;
+
+.topColor {
+    width: 100%;
+    height: 511px;
+    top: 0;
+    background-color: #9a3381;
+    position: absolute;
+    z-index: -1;
+}
+.bookingGrandContainer {
+    margin-top: 276px;
+}
+.bookingContainer {
+    max-width: 1436px;
+    margin: 0 auto;
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+    }
+    @media (max-width: master.$lg) {
+        max-width: 980px;
+    }
+    @media (max-width: master.$md) {
+        max-width: 856px;
+    }
+}
+.stepperContainer {
+    max-width: 553px;
+    margin: 0 auto 15px;
+}
+.stepperLabel {
+    & > span:last-child {
+        transform: translateY(-85px);
+        & > span {
+            color: #fff !important;
+            font-size: 20px;
+        }
+    }
+}
+.bookingFormContainer {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--darkPurple);
+    border-radius: 50px;
+    background-color: #fff;
+    margin-bottom: 116px;
+}
+.bookingFormBody {
+    height: auto;
+    border-bottom: 1px solid var(--darkPurple);
+    padding: 45px 47px 48px;
+}
+.bookingFormFooter {
+    background-color: #ede0ea;
+    height: 112px;
+    border-radius: 0 0 50px 50px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 45px;
+    flex-direction: row-reverse;
+}
+.bookingSummeryContainer {
+    display: grid;
+    grid-template-columns: 242px repeat(4, 235px);
+    grid-column-gap: 38px;
+    margin-top:36px;
+    height: 366px;
+    & > div {
+        border: 1px solid var(--darkPurple);
+        height: 366px;
+    }
+}
+.summeryItem {
+    border-radius: 30px;
+    position: relative;
+    padding: 52px 24px 46px;
+    & > .summeryIcon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        border: 1px solid var(--darkPurple);
+        top: -35px;
+        left: calc(50% - 35px);
+        background-color: #fff;
+    }
+    & > .summeryTitle {
+        color: var(--darkPurple);
+        font-size: 18px;
+        line-height: 30px;
+        padding-bottom: 22px;
+        border-bottom: 1px solid var(--darkPurple);
+        text-align: center;
+        margin-bottom: 31px;
+        line-height: 24px;
+    }
+}
+
+.dFlexCenter {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+.pl30 {
+    padding-left: 30px;
+}
+.offStat {
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--darkPurple);
+    text-align: center;
+    margin-bottom: 24px;
+}
+.showOffSection {
+    height: 85px;
+    margin: 0 -24px;
+    width: calc(100% + 48px);
+    background-color: rgba(237, 224, 234, 0.6);
+    border-top: 1px solid var(--darkPurple);
+    border-bottom: 1px solid var(--darkPurple);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 29px;
+    margin-bottom: 30px;
+
+    & > p {
+        font-size: 28px;
+        color: #b8aab3;
+    }
+}
+.offPriceContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    & > .textLineThrough {
+        font-size: 20px;
+        line-height: 27px;
+        position: relative;
+        display: inline-block;
+
+        &:after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: var(--darkPurple);
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+        }
+    }
+    & > .textMainPrice {
+        font-size: 26px;
+        line-height: 27px;
+    }
+}
+
+.couponApplySection {
+    height: 46px;
+    border-radius: 23px;
+    border: 1px solid rgba(41, 23, 32, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 10px 9px 20px;
+    & > input {
+        width: calc(100% - 40px);
+        border: none !important;
+        outline: none !important;
+        font-size: 18px;
+    }
+}
+.submitCouponButton {
+    width: 28px;
+    height: 28px;
+    min-width: 28px !important;
+    max-width: 28px !important;
+    border: 1px solid var(--darkPurple) !important;
+    border-radius: 50% !important;
+    & > svg {
+        color: var(--darkPurple);
+    }
+}
+.submitCouponDisabled {
+    border: 1px solid rgba(41, 23, 32, 0.5) !important;
+    pointer-events: none;
+}
+.disabledInput {
+    pointer-events: none;
+}
+.bookingNextBtn {
+    width: 122px !important;
+    height: 52px !important;
+    border-radius: 94px !important;
+    border: solid 1px var(--darkPurple) !important;
+    color:var(--darkPurple) !important;
+    text-transform: capitalize !important;
+    font-size:18px !important;
+    & img{
+        margin-left:10px !important;
+    }
+
+}
+.bookingBackBtn {
+    width: 122px !important;
+    height: 52px !important;
+    border-radius: 94px !important;
+    border: solid 1px var(--darkPurple) !important;
+    color:var(--darkPurple) !important;
+    text-transform: capitalize !important;
+    font-size:18px !important;
+    & img{
+        margin-right:10px !important;
+        transform:rotate(180deg) !important;
+    }
+
+}
+
+///step 2
+
+.bookingTimesContainer{
+    display:grid;
+    column-gap: 40px;
+    grid-template-columns: 333px 452px 481px;
+    height:471px;
+}
+.bookingTimesSkeleton{
+    height:100%;
+    border-radius: 30px;
+}

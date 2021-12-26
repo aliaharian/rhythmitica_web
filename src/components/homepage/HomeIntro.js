@@ -9,7 +9,7 @@ const HomeIntro = () => {
         <div className={classes.IntroGrandContainer}>
             <div className={classes.IntroContainer}>
             <div><img src={groupImg} />
-                    <Link href={'/groupLessons'}><a>Group Lessons</a></Link>
+                    <Link href={'/events'}><a>Group Lessons</a></Link>
                 </div>
                 <div><img src={privateImg} />
                     <Link href={'/privateLessons'}><a>Private Lessons</a></Link>

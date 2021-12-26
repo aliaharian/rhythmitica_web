@@ -6,14 +6,23 @@ import PrivateLessonsHeader from "./PrivateLessonsHeader";
 import PrivateLessonsSidebar from "./PrivateLessonsSidebar";
 import StaffsList from "./StaffsList";
 import staffsList from "./StaffsList";
-const PrivateLessons = ({ packages }) => {
+const PrivateLessons = ({ packages, params }) => {
     const staffs = useSelector((state) => state.privateLessons.staffs);
-    const [selectedPackages, setSelectedPackages] = useState([]);
+    const [selectedPackages, setSelectedPackages] = useState(params ? params.split(",") : []);
     const [filter, setFilter] = useState();
     const [q, setQ] = useState('')
     const Dispatch = useDispatch();
     console.log('staffs', staffs)
-
+    console.log('params', params)
+    console.log('selectedPackages', selectedPackages)
+    useEffect(() => {
+        if (params) {
+            var items = params.split(',').map(function (item) {
+                return parseInt(item);
+            });
+            setSelectedPackages([...items]);
+        }
+    }, [])
     const handleSelectPackage = (id) => {
         let index = selectedPackages.indexOf(id);
         if (index == -1) {
