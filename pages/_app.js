@@ -29,7 +29,7 @@ function MyApp(props) {
   const getCookieByName = (name) => {
     //get uclaim cookie from all!
     const parts = cookies.split(`; ${name}=`);
-    const parts = cookies.split(`; ${name}=`);
+    // const parts = cookies.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
   // axios.defaults.withCredentials = true;
