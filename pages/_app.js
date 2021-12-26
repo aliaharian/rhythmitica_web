@@ -13,6 +13,8 @@ import "nprogress/nprogress.css"; //styles of nprogress
 import { SnackbarProvider } from "notistack"; // requires a loader
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import cookies from 'next-cookies'
+
 import axios from 'axios';
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
@@ -21,7 +23,7 @@ Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp(props) {
   const { Component, pageProps, store, classes, cookiesRhy } = props;
-  console.log('cookies', cookiesRhy)
+  console.log('cookiesRhy', cookiesRhy)
 
   const getCookieByName = (name) => {
     //get uclaim cookie from all!
@@ -100,7 +102,7 @@ MyApp.getInitialProps = async ({ ctx }) => {
   // }
   if (ctx.req) {
     return {
-      cookiesRhy: ctx.req.headers.cookie
+      cookiesRhy: cookies(ctx).uclaim || ''
     };
   }
 };
