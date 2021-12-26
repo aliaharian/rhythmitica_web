@@ -23,7 +23,7 @@ Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp(props) {
   const { Component, pageProps, store, classes, cookies } = props;
-
+  console.log('cookies', cookies)
 
   const getCookieByName = (name) => {
     //get uclaim cookie from all!
