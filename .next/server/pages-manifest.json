@@ -1,0 +1,15 @@
+{
+  "/404": "pages/404.js",
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/api/hello": "pages/api/hello.js",
+  "/blog": "pages/blog.js",
+  "/events": "pages/events.js",
+  "/globe": "pages/globe.js",
+  "/home": "pages/home.js",
+  "/": "pages/index.js",
+  "/privateLessons": "pages/privateLessons.js",
+  "/privateLessons/[package_id]/[staff_id]": "pages/privateLessons/[package_id]/[staff_id].js",
+  "/privateLessons/[package_id]/[staff_id]/book": "pages/privateLessons/[package_id]/[staff_id]/book.js",
+  "/_error": "pages/_error.js"
+}

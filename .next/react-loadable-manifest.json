@@ -1,0 +1,12 @@
+{
+  "../src/components/earthGlobe/EarthGlobe.js -> ./GlobeComponent": {
+    "id": 7084,
+    "files": [
+      "static/chunks/fb7d5399.02efa18dee06b87c061a.js",
+      "static/chunks/f8c9b989.078e142acd474204278d.js",
+      "static/chunks/e02aaf40.fb4ab0ac5422fc86d6e4.js",
+      "static/chunks/550.5ca47cc373c2b923fadf.js",
+      "static/chunks/84.75746ca7f7ee05851036.js"
+    ]
+  }
+}
