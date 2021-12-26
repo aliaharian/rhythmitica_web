@@ -22,11 +22,13 @@ Router.events.on("routeChangeError", () => NProgress.done());
 
 
 function MyApp(props) {
-  const { Component, pageProps, store, classes, cookies } = props;
+  const { Component, pageProps, store, classes, cookies , ctxR } = props;
   console.log('cookies', cookies)
+  console.log('ctxR', ctxR)
 
   const getCookieByName = (name) => {
     //get uclaim cookie from all!
+    const parts = cookies.split(`; ${name}=`);
     const parts = cookies.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
   }
@@ -102,7 +104,8 @@ MyApp.getInitialProps = async ({ ctx }) => {
   // }
   if (ctx.req) {
     return {
-      cookies: ctx.req.headers.cookie
+      cookies: ctx.req.headers.cookie,
+      ctxR: ctx
     };
   }
 };
