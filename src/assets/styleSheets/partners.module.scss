@@ -1,0 +1,315 @@
+@use "./master.module.scss" as master;
+
+.topColor {
+    width: 100%;
+    height: 400px;
+    top: 0;
+    background-color: var(--pinkColor);
+    position: absolute;
+    z-index: -1;
+    @media (max-width: master.$xl) {
+        height: 380px;
+    }
+    @media (max-width: master.$lg) {
+        height: 340px;
+    }
+}
+.partnersGrandContainer {
+    margin-top: 218px;
+    @media (max-width: master.$xl) {
+        margin-top: 180px;
+    }
+    @media (max-width: master.$lg) {
+        margin-top: 150px;
+    }
+}
+.partnersContainer {
+    max-width: 1436px;
+    margin: 0 auto;
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+    }
+    @media (max-width: master.$lg) {
+        max-width: 980px;
+    }
+    @media (max-width: master.$md) {
+        max-width: 856px;
+    }
+}
+.partnersTitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--textColor);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    padding-bottom: 25px;
+    line-height: 30px;
+    @media (max-width: master.$xl) {
+        font-size: 20px;
+        margin-bottom: 22px;
+        padding-bottom: 18px;
+    }
+    @media (max-width: master.$lg) {
+        font-size: 18px;
+        margin-bottom: 20px;
+        padding-bottom: 17px;
+    }
+    @media (max-width: master.$md) {
+        font-size: 18px;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+    }
+    &:after {
+        width: 73px;
+        height: 5px;
+        bottom: 0;
+        content: "";
+        position: absolute;
+        border-radius: 51px;
+        background-color: #f9f9f9;
+        @media (max-width: master.$xl) {
+            width: 68px;
+            height: 5px;
+        }
+        @media (max-width: master.$lg) {
+            width: 65px;
+            height: 4px;
+        }
+        @media (max-width: master.$md) {
+            width: 63px;
+            height: 3px;
+        }
+    }
+}
+
+.partnersBodyContainer {
+    padding: 47px 46px 118px;
+    border-radius: 50px;
+    border: solid 1px var(--pinkColor);
+    background-color: #f9f9f9;
+    margin-bottom: 92px;
+    @media (max-width: master.$xl) {
+        padding: 40px 42px 100px;
+        border-radius: 48px;
+        margin-bottom: 90px;
+    }
+    @media (max-width: master.$lg) {
+        padding: 34px 36px 85px;
+        border-radius: 46px;
+        margin-bottom: 85px;
+    }
+    @media (max-width: master.$md) {
+        padding: 28px 30px 70px;
+        border-radius: 44px;
+        margin-bottom: 80px;
+    }
+}
+
+.partnersSlider {
+    & > div:nth-child(1) {
+        margin: 0 -20px;
+        @media (max-width: master.$xl) {
+            margin: 0 -18px;
+        }
+        @media (max-width: master.$lg) {
+            margin: 0 -16px;
+        }
+        @media (max-width: master.$md) {
+            margin: 0 -14px;
+        }
+    }
+    ul {
+        bottom: -67px !important;
+        @media (max-width: master.$xl) {
+            bottom: -60px !important;
+        }
+        @media (max-width: master.$lg) {
+            bottom: -50px !important;
+        }
+        @media (max-width: master.$md) {
+            bottom: -45px !important;
+        }
+        :global(.slick-active) > button:before {
+            color: #d90368 !important;
+            @media (max-width: master.$lg) {
+                background: #d90368 !important;
+            }
+        }
+        & > li {
+            & button {
+                border-color: var(--pinkColor) !important;
+            }
+        }
+    }
+}
+.partnerItemContainer {
+    padding: 0 20px;
+    width: 100%;
+    @media (max-width: master.$xl) {
+        padding: 0 18px;
+    }
+    @media (max-width: master.$lg) {
+        padding: 0 16px;
+    }
+    @media (max-width: master.$md) {
+        padding: 0 14px;
+    }
+    .partnerItem {
+        border: 1px solid var(--pinkColor);
+        border-radius: 30px;
+        overflow: hidden;
+        @media (max-width: master.$xl) {
+            border-radius: 28px;
+        }
+        @media (max-width: master.$lg) {
+            border-radius: 26px;
+        }
+        @media (max-width: master.$md) {
+            border-radius: 24px;
+        }
+        & > .partnerItemImage {
+            width: 100%;
+            height: 295px;
+            @media (max-width: master.$xl) {
+                height: 240px;
+            }
+            @media (max-width: master.$lg) {
+                height: 190px;
+            }
+            @media (max-width: master.$md) {
+                height: 170px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        & > .partnerInfo {
+            height: 118px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 32px 39px 32px 32px;
+            border-top:1px solid var(--pinkColor);
+            @media (max-width: master.$xl) {
+                height: 95px;
+                padding: 26px 30px 26px 26px;
+            }
+            @media (max-width: master.$xl) {
+                height: 80px;
+                padding: 20px 24px 20px 20px;
+            }
+            @media (max-width: master.$md) {
+                height: 70px;
+                padding: 16px;
+            }
+            h3 {
+                font-size: 18px;
+                line-height: 24px;
+                color: var(--pinkColor);
+                font-weight: normal;
+                margin-bottom: 11px;
+                @media (max-width: master.$xl) {
+                    font-size: 16px;
+                    line-height: 22px;
+                    margin-bottom: 8px;
+                }
+                @media (max-width: master.$lg) {
+                    font-size: 14px;
+                    line-height: 20px;
+                    margin-bottom: 4px;
+
+                }
+                @media (max-width: master.$md) {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+            p {
+                font-size: 14px;
+                line-height: 19px;
+                color: var(--textColor);
+                @media (max-width: master.$xl) {
+                    font-size: 13px;
+                    line-height: 18px;
+                }
+                @media (max-width: master.$lg) {
+                    font-size: 12px;
+                    line-height: 16px;
+                }
+                @media (max-width: master.$md) {
+                    font-size: 11px;
+                    line-height: 14px;
+                }
+            }
+            a {
+                width: 48px !important;
+                height: 48px !important;
+                max-width: 48px !important;
+                @media (max-width: master.$xl) {
+                    width: 42px !important;
+                    height: 42px !important;
+                    max-width: 42px !important;
+                }
+                @media (max-width: master.$lg) {
+                    width: 38px !important;
+                    height: 38px !important;
+                    max-width: 38px !important;
+                }
+                @media (max-width: master.$md) {
+                    width: 32px !important;
+                    height: 32px !important;
+                    max-width: 32px !important;
+                }
+            }
+            button {
+                width: 48px !important;
+                height: 48px !important;
+                max-width: 48px !important;
+                min-width: 48px !important;
+                border: 1px solid var(--pinkColor);
+                border-radius: 50%;
+                @media (max-width: master.$xl) {
+                    width: 42px !important;
+                    height: 42px !important;
+                    max-width: 42px !important; 
+                    min-width: 42px !important;
+                }
+                @media (max-width: master.$lg) {
+                    width: 38px !important;
+                    height: 38px !important;
+                    max-width: 38px !important;
+                    min-width: 38px !important;
+
+                }
+                @media (max-width: master.$md) {
+                    width: 32px !important;
+                    height: 32px !important;
+                    max-width: 32px !important;
+                    min-width: 32px !important;
+
+                }
+                svg {
+                    color: var(--pinkColor);
+                    font-size: 30px;
+                    @media (max-width: master.$xl) {
+                        font-size: 26px;
+
+                    }
+                    @media (max-width: master.$lg) {
+                        font-size: 24px;
+
+                    }
+                    @media (max-width: master.$md) {
+                        font-size: 20px;
+
+                    }
+                }
+            }
+        }
+    }
+}

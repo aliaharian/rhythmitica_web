@@ -43,6 +43,6 @@ export const getPostsList = (isServer, payload, filter, page = 1, max = 10) => a
         });
 
     } catch (e) {
-        // dispatch(errorSnackbar(e));
+        console.log(e)
     }
 };

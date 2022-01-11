@@ -1,0 +1,61 @@
+@mixin borderRadius ($v) {
+  -webkit-border-radius: $v;
+  -moz-border-radius: $v;
+  border-radius: $v;
+}
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+@mixin col {
+  display: flex;
+  flex-direction: column;
+}
+@mixin bgSize ($v) {
+  -webkit-background-size: $v;
+  background-size: $v;
+}
+@mixin transform ($v) {
+  -webkit-transform: $v;
+  -moz-transform: $v;
+  -ms-transform: $v;
+  -o-transform: $v;
+  transform: $v;
+}
+@mixin noUserSelect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@mixin boxShadow ($v) {
+  -webkit-box-shadow: $v;
+  -moz-box-shadow: $v;
+  box-shadow: $v;
+}
+@mixin transform ($v) {
+  -webkit-transform: $v;
+  -moz-transform: $v;
+  -ms-transform: $v;
+  -o-transform: $v;
+  transform: $v;
+}
+@mixin transition ($v) {
+  -webkit-transition: $v;
+  -moz-transition: $v;
+  -ms-transition: $v;
+  -o-transition: $v;
+  transition: $v;
+}
+@mixin animationName($v) {
+  -webkit-animation-name: $v;
+  -moz-animation-name: $v;
+  -o-animation-name: $v;
+  animation-name: $v;
+}
+@mixin animationTimingFunction ($v) {
+  -webkit-animation-timing-function: $v;
+  -moz-animation-timing-function: $v;
+  -o-animation-timing-function: $v;
+  animation-timing-function: $v;
+}

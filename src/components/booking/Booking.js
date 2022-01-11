@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classes from '../../assets/styleSheets/booking.module.scss'
 import StepperComponent from './StepperComponent';
 import BookingSummery from './steps/BookingSummery';
 import BookingCalendar from './steps/BookingCalendar';
 import arrowNext from '../../assets/images/icons/arrowNext.svg';
 import { Button } from '@material-ui/core';
+import BookingCheckout from './steps/BookingCheckout';
+import { useSnackbar } from 'notistack';
+import axios from 'axios';
 const sessions = [
     {
         count: 1,
@@ -24,11 +27,20 @@ const sessions = [
     }
 ];
 const Booking = ({ packageInfo }) => {
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+
     const [step, setStep] = useState(0)
-    const [bookingData, setBookingData] = useState({ selectedDuration: null })
+    const [bookingData, setBookingData] = useState({ selectedDuration: null, couponCode: "" })
     const [timesData, setTimesData] = useState()
     const [disabledNext, setDisabledNext] = useState(false)
+    const [isAuth, setIsAuth] = useState(false)
+    console.log('packageInfo', packageInfo)
+    useEffect(() => {
+        if (typeof localstorage != undefined) {
+            setIsAuth(localStorage.getItem("isAuth"));
 
+        }
+    }, [])
     const renderStep = (step) => {
         switch (step) {
             case 0:
@@ -37,6 +49,9 @@ const Booking = ({ packageInfo }) => {
                     bookingData={bookingData}
                     setBookingData={setBookingData}
                     sessions={sessions}
+                    renderOffText={renderOffText}
+                    handleSubmitCoupon={handleSubmitCoupon}
+                    handleChangeCouponCode={handleChangeCouponCode}
                 />)
             case 1:
                 return (<BookingCalendar
@@ -47,12 +62,29 @@ const Booking = ({ packageInfo }) => {
                     setTimesData={setTimesData}
                     setDisabledNext={setDisabledNext}
                 />)
+            case 2:
+                return (<BookingCheckout
+                    packageInfo={packageInfo}
+                    bookingData={bookingData}
+                    setBookingData={setBookingData}
+                    timesData={timesData}
+                    setTimesData={setTimesData}
+                    setDisabledNext={setDisabledNext}
+                    renderOffText={renderOffText}
+                    handleSubmitCoupon={handleSubmitCoupon}
+                    handleChangeCouponCode={handleChangeCouponCode}
+
+
+                />)
         }
     }
     const handleStep = () => {
         switch (step) {
             case 0:
                 setTimesData(null);
+                setDisabledNext(true)
+                break;
+            case 1:
                 setDisabledNext(true)
                 break;
         }
@@ -63,8 +95,87 @@ const Booking = ({ packageInfo }) => {
             case 1:
                 setDisabledNext(false)
                 break;
+            case 2:
+                setTimesData(null);
+                break;
+
         }
         setStep(step - 1);
+    }
+
+    const renderOffText = () => {
+        if (bookingData.appliedCoupon) {
+            return (`${parseInt(bookingData.appliedCoupon.code.percentage)}% off discount code`)
+        } else if (bookingData.selectedSession.off > 0 && bookingData.selectedType.type == 'weekly') {
+            return (`${bookingData.selectedSession.off}% off for ${bookingData.selectedSession.count} sessions`)
+        } else {
+            return (`0% off for ${bookingData.selectedSession.count} ${bookingData.selectedSession.count > 1 ? 'sessions' : 'session'}`)
+
+        }
+    }
+    const handleChangeCouponCode = (e) => {
+        setBookingData({
+            ...bookingData,
+            couponCode: e.target.value
+        })
+    }
+    const handleSubmitCoupon = async () => {
+        if (bookingData.appliedCoupon) {
+            setBookingData({
+                ...bookingData,
+                appliedCoupon: null,
+                couponCode: ""
+            })
+        } else {
+            if (!isAuth) {
+                enqueueSnackbar('Log in to use your coupon', {
+                    variant: 'error',
+                    anchorOrigin: {
+                        vertical: 'bottom',
+                        horizontal: 'center',
+                    }
+                })
+            } else {
+                const key = enqueueSnackbar('please wait...', {
+                    variant: 'info',
+                    anchorOrigin: {
+                        vertical: 'bottom',
+                        horizontal: 'center',
+                    }
+                })
+                try {
+                    const response = await axios.post('admin/mc/coupons/check', {
+                        code: bookingData.couponCode,
+                        place_type: 'PACKAGE',
+                        place_id: packageInfo.package.id
+                    })
+                    setBookingData({
+                        ...bookingData,
+                        appliedCoupon: response.data.data
+                    })
+                    closeSnackbar(key);
+                    enqueueSnackbar('your coupon has been applied!', {
+                        variant: 'success',
+                        anchorOrigin: {
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }
+                    })
+                }
+                catch (e) {
+                    closeSnackbar(key);
+                    console.log(e)
+                    enqueueSnackbar('your coupon code is wrong!', {
+                        variant: 'error',
+                        anchorOrigin: {
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }
+                    })
+                }
+            }
+        }
+
     }
     return (
         <>
@@ -82,6 +193,24 @@ const Booking = ({ packageInfo }) => {
                             }
                         </div>
                         <div className={classes.bookingFormFooter}>
+                            {step == 2 &&
+                                <div>
+                                    {isAuth ?
+                                        <>
+                                            <Button onClick={() => { }} disabled={disabledNext} className={classes.bookingBookMoreBtn}>
+                                                Book More
+                                            </Button>
+                                            <Button onClick={() => { }} disabled={disabledNext} className={classes.bookingPayBtn}>
+                                                Pay Now
+                                            </Button>
+                                        </>
+                                        :
+                                        <Button onClick={() => { }} disabled={disabledNext} className={classes.bookingLoginBtn}>
+                                            Login
+                                        </Button>}
+                                </div>
+                            }
+
                             {step < 2 &&
                                 <Button onClick={handleStep} disabled={disabledNext} className={classes.bookingNextBtn}>
                                     Next
@@ -94,6 +223,8 @@ const Booking = ({ packageInfo }) => {
 
                                     Back
                                 </Button>}
+
+
                         </div>
                     </div>
                 </div>

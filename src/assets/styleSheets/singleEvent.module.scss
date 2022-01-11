@@ -1,0 +1,722 @@
+@use "./master.module.scss" as master;
+
+.singleEventMainContainer {
+    padding: 58px 0 58px;
+    display: grid;
+    max-width: 1436px;
+    margin: 164px auto 0;
+    grid-template-columns: calc(100% - 976px) 911px;
+    grid-column-gap: 65px;
+
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+        margin: 134px auto 0;
+        padding: 45px 0;
+        grid-template-columns: calc(100% - 780px) 730px;
+        grid-column-gap: 50px;
+    }
+    @media (max-width: master.$lg) {
+        max-width: 980px;
+        margin: 115px auto 0;
+        padding: 36px 0;
+        grid-template-columns: calc(100% - 638px) 600px;
+        grid-column-gap: 38px;
+    }
+    @media (max-width: master.$md) {
+        max-width: 856px;
+        margin: 109px auto 0;
+        padding: 32px 0;
+        grid-template-columns: calc(100% - 560px) 530px;
+        grid-column-gap: 30px;
+    }
+}
+
+.singleEventSidebarContainer {
+    position: sticky;
+    top: 156px;
+    @media (max-width: master.$xl) {
+        top: 132px;
+    }
+    @media (max-width: master.$lg) {
+        top: 111px;
+    }
+    @media (max-width: master.$md) {
+        top: 107;
+    }
+    .singleEventSidebar {
+        border-radius: 50px;
+        border: solid 1px var(--overlayColor);
+        // background-color: #f9f9f9;
+        // padding: 0 0 5px;
+        width: 100%;
+        @media (max-width: master.$xl) {
+            border-radius: 38px;
+        }
+        @media (max-width: master.$lg) {
+            border-radius: 36px;
+        }
+        @media (max-width: master.$md) {
+            border-radius: 26px;
+        }
+
+        .eventInfoContainer {
+            width: 100%;
+            .eventInfo {
+                width: 100%;
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 0 31px;
+                border-bottom: 1px solid var(--overlayColor);
+                position: relative;
+                @media (max-width: master.$xl) {
+                    height: 75px;
+                    padding: 0 28px;
+                }
+                @media (max-width: master.$lg) {
+                    height: 70px;
+                    padding: 0 25px;
+                }
+                @media (max-width: master.$md) {
+                    height: 65px;
+                    padding: 0 20px;
+                }
+                & > svg {
+                    color: var(--linkActiveColor);
+                    font-size: 32px;
+                    margin-right: 15px;
+                    @media (max-width: master.$xl) {
+                        font-size: 28px;
+                        margin-right: 13px;
+                    }
+                    @media (max-width: master.$lg) {
+                        font-size: 25px;
+                        margin-right: 10px;
+                    }
+                    @media (max-width: master.$md) {
+                        font-size: 24px;
+                        margin-right: 12px;
+                    }
+                }
+                & > p {
+                    font-size: 16px;
+                    color: var(--textColor);
+                    margin-right: 15px;
+                    text-transform: capitalize;
+                    @media (max-width: master.$xl) {
+                        font-size: 14px;
+                        margin-right: 13px;
+                    }
+                    @media (max-width: master.$lg) {
+                        font-size: 13px;
+                        margin-right: 10px;
+                    }
+                    @media (max-width: master.$md) {
+                        margin-right: 12px;
+                    }
+                }
+                & > span {
+                    font-size: 18px;
+                    color: var(--linkActiveColor);
+                    text-transform: capitalize;
+                    @media (max-width: master.$xl) {
+                        font-size: 16px;
+                    }
+                    @media (max-width: master.$lg) {
+                        font-size: 14px;
+                    }
+                }
+                .prevPrice {
+                    text-decoration: line-through;
+                    margin-right: 10px;
+                    color: var(--blogTextColor);
+                    font-size: 16px;
+                    @media (max-width: master.$xl) {
+                        font-size: 14px;
+                    }
+                    @media (max-width: master.$lg) {
+                        font-size: 13px;
+                    }
+                }
+                .eventSessionsFloatBtn {
+                    position: absolute;
+                    width: 120px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #f9f9f9;
+                    right: 0;
+                    top: 50px;
+                    z-index: 999;
+                    @media (max-width: master.$xl) {
+                        width: 100px;
+                        height: 50px;
+                    }
+                    @media (max-width: master.$lg) {
+                        width: 90px;
+                        height: 45px;
+                        top: 47.5px;
+                    }
+                    @media (max-width: master.$md) {
+                        top: 42.5px;
+                    }
+                    button {
+                        width: 60px !important;
+                        max-width: 60px !important;
+                        min-width: 60px !important;
+                        height: 60px !important;
+                        border: 1px solid var(--overlayColor) !important;
+                        border-radius: 50% !important;
+                        @media (max-width: master.$xl) {
+                            width: 50px !important;
+                            max-width: 50px !important;
+                            min-width: 50px !important;
+                            height: 50px !important;
+                        }
+                        @media (max-width: master.$lg) {
+                            width: 45px !important;
+                            max-width: 45px !important;
+                            min-width: 45px !important;
+                            height: 45px !important;
+                        }
+                        svg {
+                            width: 32px;
+                            height: 32px;
+                            color: var(--overlayColor) !important;
+                            @media (max-width: master.$xl) {
+                                width: 28px;
+                                height: 28px;
+                            }
+                            @media (max-width: master.$lg) {
+                                width: 25px;
+                                height: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.eventSidebarInputs {
+    width: 100%;
+    padding: 0 31px;
+    height: 106px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--overlayColor);
+    @media (max-width: master.$xl) {
+        padding: 0 28px;
+        height: 100px;
+    }
+    @media (max-width: master.$lg) {
+        padding: 0 25px;
+        height: 85px;
+    }
+    @media (max-width: master.$md) {
+        padding: 0 20px;
+        height: 80px;
+    }
+    .couponApplySection {
+        height: 46px;
+        border-radius: 23px;
+        border: 1px solid var(--overlayColor);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 9px 10px 9px 20px;
+        width: 187px;
+        @media (max-width: master.$xl) {
+            height: 40px;
+            padding: 5px 7px 5px 16px;
+            border-radius: 26px;
+            width: 140px;
+        }
+        @media (max-width: master.$lg) {
+            border-radius: 24px;
+            height: 34px;
+            padding: 5px 6px 5px 14px;
+            width: 125px;
+        }
+        @media (max-width: master.$md) {
+            border-radius: 40px;
+            height: 36px;
+            width: 110px;
+        }
+        & > input {
+            width: calc(100% - 40px);
+            border: none !important;
+            outline: none !important;
+            background-color: #f9f9f9 !important;
+            font-size: 18px;
+            @media (max-width: master.$xl) {
+                font-size: 16px;
+            }
+            @media (max-width: master.$lg) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .submitCouponButton {
+        width: 28px;
+        height: 28px;
+        min-width: 28px !important;
+        max-width: 28px !important;
+        border: 1px solid var(--linkActiveColor) !important;
+        border-radius: 50% !important;
+        @media (max-width: master.$xl) {
+            width: 24px;
+            height: 24px;
+            min-width: 24px !important;
+            max-width: 24px !important;
+        }
+        @media (max-width: master.$lg) {
+            width: 20px;
+            height: 20px;
+            min-width: 20px !important;
+            max-width: 20px !important;
+        }
+        & svg {
+            color: var(--linkActiveColor);
+            @media (max-width: master.$lg) {
+                font-size: 12px !important;
+            }
+        }
+        & img {
+            @media (max-width: master.$lg) {
+                width: 10px;
+            }
+        }
+    }
+    .submitCouponDisabled {
+        border: 1px solid rgba(41, 23, 32, 0.5) !important;
+        pointer-events: none;
+    }
+    .disabledInput {
+        pointer-events: none;
+    }
+    //timezones list
+    & .openTimezonesBtn {
+        width: 180px;
+        height: 46px;
+        border-radius: 23px;
+        border: 1px solid var(--overlayColor);
+        display: flex;
+        align-items: center;
+        justify-content: space-between !important;
+        padding: 0 17px !important;
+        text-transform: capitalize !important;
+        font-size: 18px !important;
+        @media (max-width: master.$xl) {
+            height: 40px;
+            font-size: 16px !important;
+            border-radius: 26px;
+            width: 160px;
+        }
+        @media (max-width: master.$lg) {
+            border-radius: 24px;
+            width: 150px;
+            height: 34px;
+            font-size: 14px !important;
+        }
+        @media (max-width: master.$md) {
+            border-radius: 22px;
+            height: 36px;
+            font-size: 14px !important;
+            padding: 0 10px 0 12px !important;
+            width: 135px;
+            font-size: 13px !important;
+        }
+    }
+    & .timezonesListContainer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        border-radius: 30px;
+        padding: 10px 30px;
+        @media (max-width: master.$xl) {
+            border-radius: 26px;
+        }
+        @media (max-width: master.$lg) {
+            border-radius: 24px;
+        }
+        @media (max-width: master.$md) {
+            border-radius: 22px;
+            padding: 5px 12px 11px;
+        }
+        & > ul {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            height: 100%;
+            overflow: scroll;
+            & > li {
+                width: 100%;
+                height: 46px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                @media (max-width: master.$md) {
+                    height: 36px;
+                }
+                & > div {
+                    height: 46px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    span {
+                        @media (max-width: master.$md) {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.eventCountDownContainer {
+    width: 100%;
+    background-color: var(--greenBgColor);
+    height: 140px;
+    padding: 0 31px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--overlayColor);
+
+    @media (max-width: master.$xl) {
+        height: 125px;
+        padding: 0 28px;
+    }
+    @media (max-width: master.$lg) {
+        height: 105px;
+        padding: 0 25px;
+    }
+    @media (max-width: master.$md) {
+        height: 95px;
+        padding: 0 20px;
+    }
+    .countDownItem {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        border: 1px solid var(--linkActiveColor);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        background-color: #fff;
+        @media (max-width: master.$xl) {
+            width: 68px;
+            height: 68px;
+        }
+        @media (max-width: master.$lg) {
+            width: 62px;
+            height: 62px;
+        }
+        @media (max-width: master.$md) {
+            width: 56px;
+            height: 56px;
+        }
+        & > p {
+            color: var(--linkActiveColor);
+            &:nth-child(1) {
+                font-size: 40px;
+                line-height: 53px;
+                font-weight: bolder;
+                margin-bottom: 5px;
+                @media (max-width: master.$xl) {
+                    font-size: 36px;
+                    line-height: 46px;
+                    margin-bottom: 2px;
+                }
+                @media (max-width: master.$lg) {
+                    font-size: 32px;
+                    line-height: 40px;
+                    margin-bottom: 2px;
+                }
+                @media (max-width: master.$md) {
+                    font-size: 28px;
+                    line-height: 37px;
+                    margin-bottom: 0;
+                }
+            }
+            &:nth-child(2) {
+                font-size: 12px;
+                line-height: 16px;
+                @media (max-width: master.$xl) {
+                    font-size: 11px;
+                    line-height: 14px;
+                }
+            }
+        }
+    }
+}
+.eventRegisterContainer {
+    width: 100%;
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 31px;
+    @media (max-width: master.$xl) {
+        padding: 0 28px;
+        height: 95px;
+    }
+    @media (max-width: master.$lg) {
+        padding: 0 25px;
+        height: 85px;
+    }
+    @media (max-width: master.$md) {
+        padding: 0 20px;
+        height: 80px;
+    }
+    button {
+        width: 100% !important;
+        height: 55px !important;
+        border-radius: 28px !important;
+        border: 1px solid var(--linkActiveColor) !important;
+        background-color: rgba(4, 167, 119, 0.3) !important;
+        text-transform: capitalize !important;
+        color: var(--textColor) !important;
+        @media (max-width: master.$xl) {
+            height: 50px !important;
+        }
+        @media (max-width: master.$lg) {
+            height: 45px !important;
+        }
+        @media (max-width: master.$md) {
+            height: 43px !important;
+        }
+        span {
+            font-size: 18px !important;
+            font-weight: bolder !important;
+            @media (max-width: master.$xl) {
+                font-size: 16px !important;
+            }
+            @media (max-width: master.$lg) {
+                font-size: 14px !important;
+            }
+        }
+    }
+}
+.eventSkeleton {
+    border-radius: 30px !important;
+    height: 800px !important;
+    @media (max-width: master.$xl) {
+        border-radius: 26px !important;
+        height: 700px !important;
+    }
+    @media (max-width: master.$lg) {
+        border-radius: 24px !important;
+        height: 600px !important;
+    }
+    @media (max-width: master.$md) {
+        border-radius: 22px !important;
+        height: 500px !important;
+    }
+}
+.eventBodyContainer {
+    & > img {
+        width: 100%;
+        border-radius: 50px 50px 50px 0;
+        margin-bottom: 37px;
+        @media (max-width: master.$xl) {
+            border-radius: 48px 48px 48px 0;
+            margin-bottom: 30px;
+        }
+        @media (max-width: master.$lg) {
+            border-radius: 46px 46px 46px 0;
+            margin-bottom: 25px;
+        }
+        @media (max-width: master.$md) {
+            border-radius: 44px 44px 44px 0;
+            margin-bottom: 22px;
+        }
+    }
+    h2 {
+        font-size: 20px;
+        line-height: 27px;
+        margin-bottom: 38px;
+        font-weight: bolder;
+        @media (max-width: master.$xl) {
+            font-size: 18px;
+            line-height: 25px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 25px;
+        }
+   
+    }
+    .eventDesc {
+        font-size: 16px;
+        line-height: 30px;
+        @media (max-width: master.$xl) {
+            font-size: 14px;
+            line-height: 28px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 13px;
+            line-height: 26px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 30px;
+            @media (max-width: master.$xl) {
+                font-size: 14px;
+                line-height: 28px;
+            }
+            @media (max-width: master.$lg) {
+                font-size: 13px;
+                line-height: 26px;
+            }
+        }
+    }
+}
+
+.eventSessionsTableContainer {
+    border: 1px solid var(--linkActiveColor);
+    border-radius: 30px;
+    padding: 23px 0 30px;
+    @media (max-width: master.$xl) {
+        padding: 20px 0 25px;
+        border-radius: 26px;
+    }
+
+    @media (max-width: master.$lg) {
+        padding: 18px 0 19px;
+        border-radius: 24px;
+    }
+    @media (max-width: master.$md) {
+        padding: 11px 0 12px;
+        border-radius: 22px;
+    }
+    & > .eventSessionsTableHeader {
+        font-size: 18px;
+        color: var(--linkActiveColor);
+        width: 100%;
+        margin-bottom: 21px;
+        line-height: 24px;
+        text-align: center;
+        @media (max-width: master.$xl) {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 24px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 14px;
+            margin-bottom: 19px;
+            line-height: 24px;
+        }
+        @media (max-width: master.$md) {
+            font-size: 13px;
+            margin-bottom: 12px;
+            line-height: 24px;
+        }
+    }
+    & > .eventSessionsTable {
+        width: 100%;
+        & > .eventSessionsTableThead,
+        & > .eventSessionsTableTBody {
+            display: flex;
+            flex-direction: column;
+            & > div {
+                display: grid;
+                grid-template-columns: 111px 138px 161px 106px;
+                justify-content: space-between;
+                padding: 0 20px 0 46px;
+                @media (max-width: master.$xl) {
+                    grid-template-columns: 88px 110px 128px 85px;
+                    padding: 0 16px 0 37px;
+                }
+                @media (max-width: master.$lg) {
+                    grid-template-columns: 70px 88px 102px 68px;
+                    padding: 0 14px 0 32px;
+                }
+                @media (max-width: master.$md) {
+                    grid-template-columns: 70px 88px 102px 68px;
+                    padding: 0 10px 0 27px;
+                }
+                & > div {
+                    font-size: 18px;
+                    line-height: 40px;
+                    @media (max-width: master.$xl) {
+                        font-size: 16px;
+                        line-height: 36px;
+                    }
+                    @media (max-width: master.$lg) {
+                        font-size: 14px;
+                        line-height: 30px;
+                    }
+                    @media (max-width: master.$md) {
+                        font-size: 13px;
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+        & > .eventSessionsTableThead {
+            background-color: var(--greenBgColor);
+            margin-bottom: 20px;
+            height: 42px;
+            justify-content: center;
+            @media (max-width: master.$lg) {
+                height: 30px;
+                margin-bottom: 15px;
+            }
+            & > div {
+                & > div {
+                    color: var(--textColor);
+                }
+            }
+        }
+
+        & > .eventSessionsTableTBody {
+            max-height: 305px;
+            overflow: scroll;
+            @media (max-width: master.$xl) {
+                max-height: 260px;
+            }
+            @media (max-width: master.$lg) {
+                max-height: 220px;
+            }
+            & > div {
+                height: 40px;
+                position: relative;
+                &:nth-child(even) {
+                    background-color: var(--greenBgColor);
+                }
+                &:before {
+                    content: "";
+                    width: calc(100% - 40px);
+                    position: absolute;
+                    bottom: 0;
+                    height: 1px;
+                    background-color: var(--headerBgColor);
+                    left: 20px;
+                }
+                &:last-child {
+                    &:before {
+                        display: none;
+                    }
+                }
+                & > div {
+                    color: var(--textColor);
+                }
+            }
+        }
+    }
+}

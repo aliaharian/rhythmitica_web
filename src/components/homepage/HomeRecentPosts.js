@@ -13,18 +13,22 @@ const HomeRecentPosts = ({ posts }) => {
                 {
                     posts.slice(0, 3).map((post) => {
                         return (
-                            <Post
-                                image={process.env.REACT_APP_IMAGE_URL + post.banner}
-                                name={post.title}
-                                brief={post.brief}
-                                date={post.created_at}
-                            />
+                            <Link href={`/blog/${post.id}/${post.slug}`}>
+                                <a>
+                                    <Post
+                                        image={process.env.REACT_APP_IMAGE_URL + post.banner}
+                                        name={post.title}
+                                        brief={post.brief}
+                                        date={post.created_at}
+                                    />
+                                </a>
+                            </Link>
                         )
                     })
                 }
             </div>
             <Link href={"/blog"}>
-                <a className={clsx(classes.moreBtn,classes.morePostBtn)} title="all posts">
+                <a className={clsx(classes.moreBtn, classes.morePostBtn)} title="all posts">
                     <div></div><div></div><div></div>
                 </a>
             </Link>

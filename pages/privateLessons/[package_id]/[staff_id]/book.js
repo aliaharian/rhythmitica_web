@@ -2,6 +2,7 @@ import Layout from '../../../../src/components/layout/Layout'
 import { wrapper } from "../../../../redux/store";
 import axios from 'axios'
 import Booking from '../../../../src/components/booking/Booking';
+import { setTimezones } from '../../../../redux/users';
 
 function bookingPage({ packageInfo }) {
     return (
@@ -12,13 +13,19 @@ function bookingPage({ packageInfo }) {
 }
 export const getServerSideProps = wrapper.getServerSideProps(
     (store) =>
-        async ({ store, req, res, query }) => {
+        async ({ req, res, query }) => {
             try {
-                const packageInfo = await axios.post(`${process.env.REACT_APP_BASE_URL}/v1.0/staffs/${query.package_id}/${query.staff_id}/booking/summery`, null,{
+                const timezoneRes = await fetch(`${process.env.REACT_APP_BASE_URL}/timezones`);
+                const timezoneData = await timezoneRes.json();
+                store.dispatch(setTimezones(true, timezoneData));
+
+                const packageInfo = await axios.post(`${process.env.REACT_APP_BASE_URL}/v1.0/staffs/${query.staff_id}/${query.package_id}/booking/summery`, null,{
                     headers: {
                         site: process.env.REACT_APP_SITE_TOKEN
                     },
                 });
+
+          
         
                 return {
                     props: {

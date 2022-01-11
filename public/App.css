@@ -47,9 +47,12 @@ p {
     --liteGreenColor: #c7e8bf;
     --textColor: #291720;
     --litePurple: #ecdee9;
+    --yellowColor: #ffcf34;
     --darkPurple: #820263;
+    --darkPurpleHover: #8202630d;
     --bgPurple: rgba(130, 2, 99, 0.2);
     --blogTextColor: #707070;
+    --aboutColor: #31bada;
 
     --borderColor: #a69fa2;
     --overlayColor: rgba(41, 23, 32, 0.4);
@@ -180,4 +183,9 @@ a {
     .slick-dots li.slick-active button:before {
         font-size: 5px !important;
     }
+}
+.MuiSnackbarContent-root{
+    border-radius: 50px !important;
+    background: var(--textColor) !important;
+    padding: 6px 15px !important;
 }

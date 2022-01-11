@@ -29,25 +29,25 @@ const Footer = () => {
                         <h3>Site Links</h3>
                         <ul>
                             <li>
-                                <Link href={'#'}><a>Home</a></Link>
+                                <Link href={'/'}><a>Home</a></Link>
                             </li>
                             <li>
-                                <Link href={'#'}><a>Private lessons</a></Link>
+                                <Link href={'/privateLessons'}><a>Private lessons</a></Link>
                             </li>
                             <li>
-                                <Link href={'#'}><a>Group lessons</a></Link>
+                                <Link href={'/events'}><a>Group lessons</a></Link>
                             </li>
                             <li>
-                                <Link href={'#'}><a>Blog</a></Link>
+                                <Link href={'/blog'}><a>Blog</a></Link>
                             </li>
                             <li>
-                                <Link href={'#'}><a>Branch</a></Link>
+                                <Link href={'/partners'}><a>Partners</a></Link>
                             </li>
                             <li>
-                                <Link href={'#'}><a>Contact us</a></Link>
+                                <Link href={'/contactUs'}><a>Contact us</a></Link>
                             </li>
                             <li>
-                                <Link href={'#'}><a>About us</a></Link>
+                                <Link href={'/aboutUs'}><a>About us</a></Link>
                             </li>
                         </ul>
                     </div>
@@ -74,7 +74,7 @@ const Footer = () => {
             </div>
             <div className={classes.copyrightGrandContainer}>
                 <div className={classes.copyrightContainer}>
-                    <p>© 2020 Rhythmitica. All rights reserved</p>
+                    <p>© 2022 Rhythmitica. All rights reserved</p>
                     <div className={classes.copyrightLinks}>
                     <Link href={'#'}><a><img src={instagram}/></a></Link>
                     <Link href={'#'}><a><img src={pinterest}/></a></Link>

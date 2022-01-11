@@ -1,0 +1,210 @@
+@use "../master.module.scss" as master;
+
+@import "../functions";
+.calendar,
+.calendar * {
+  @include noUserSelect;
+  font-size: 18px;
+}
+.calendar {
+  display: block;
+  @include borderRadius(30px);
+  background-color: #f9f9f9;
+  overflow: hidden;
+  border: 1px solid var(--darkPurple);
+}
+
+.calendarHeader {
+  background-color: #f9f9f9;
+  height: 68px;
+  padding: 0 36px;
+  @include row;
+  & svg {
+    color: var(--darkPurple);
+  }
+  & span:hover {
+    background-color: #f9f9f9 !important;
+  }
+  @media (max-width: master.$xl) {
+    height: 65px;
+  }
+  @media (max-width: master.$lg) {
+    height: 60px;
+  }
+  @media (max-width: master.$md) {
+    height: 47px;
+  }
+}
+.calendarHeaderTitle {
+  flex: 1;
+  @include row;
+  align-items: center;
+  justify-content: center;
+  color: var(--darkPurple);
+  font-size: 20px;
+  @media (max-width: master.$xl) {
+    font-size: 18px;
+  }
+  @media (max-width: master.$lg) {
+    font-size: 16px;
+  }
+  @media (max-width: master.$md) {
+    font-size: 14px;
+  }
+}
+.calendarBody {
+  width: 100%;
+  border-collapse: collapse;
+}
+.calendarTitle {
+  display: flex;
+  padding: 0 26px;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--litePurple);
+  height: 42px;
+  margin-bottom: 28px;
+  @media (max-width: master.$xl) {
+    height: 38px;
+    margin-bottom: 30px;
+    padding: 0 17px;
+  }
+  @media (max-width: master.$lg) {
+    height: 35px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
+  @media (max-width: master.$md) {
+    height: 26px;
+    margin-bottom: 20px;
+    padding: 0 12px;
+  }
+  & > div {
+    color: #fff;
+    width: 44px;
+    min-width: 44px;
+    margin-right: 15px;
+    text-align: center;
+    @media (max-width: master.$xl) {
+      width: 35px;
+      min-width: 35px;
+    }
+    @media (max-width: master.$lg) {
+      width: 30px;
+      min-width: 30px;
+      font-size:13px;
+      margin-right: 12px;
+    }
+    @media (max-width: master.$md) {
+      width: 30px;
+      min-width: 30px;
+      font-size:13px;
+      margin-right: 8px;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.calendarDates {
+  display: flex;
+  padding: 0 35px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  @media (max-width: master.$xl) {
+    padding: 0 17px;
+
+  }
+  @media (max-width: master.$lg) {
+    padding: 0 15px;
+
+  }
+  @media (max-width: master.$md) {
+    padding: 0 12px;
+
+  }
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 17px;
+    @media (max-width: master.$lg) {
+      margin-bottom: 12px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    & > div {
+      height: 44px !important;
+      min-height: 44px !important;
+      max-height: 44px !important;
+      width: 44px !important;
+      min-width: 44px !important;
+      max-width: 44px !important;
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:last-child {
+        margin-right: 0;
+      }
+      @media (max-width: master.$xl) {
+        height: 35px !important;
+        min-height: 35px !important;
+        max-height: 35px !important;
+        width: 35px !important;
+        min-width: 35px !important;
+        max-width: 35px !important;
+    
+      }
+      @media (max-width: master.$lg) {
+        height: 30px !important;
+        min-height: 30px !important;
+        max-height: 30px !important;
+        width: 30px !important;
+        min-width: 30px !important;
+        max-width: 30px !important;
+        margin-right: 12px;
+        &>span{
+          font-size:13px;
+        }
+    
+      }
+      @media (max-width: master.$md) {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.available {
+  cursor: pointer;
+}
+.available span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include borderRadius(50%);
+  background-color: transparent;
+  border: 1px solid var(--darkPurple);
+  width: 100%;
+  height: 100%;
+  @include transition(background-color 0.2s);
+}
+.selected span {
+  background-color: var(--darkPurple);
+  border: 2px solid var(--darkPurple);
+  color: #ffffff;
+}
+.selected {
+  //background-color: #967737;
+  color: #ffffff;
+}
+@media (max-width: 700px) {
+  .wrapper {
+    @include col;
+  }
+}

@@ -48,6 +48,6 @@ export const getEventsList = (isServer, payload, filter, page = 1, max = 10) => 
         });
 
     } catch (e) {
-        dispatch(errorSnackbar(e));
+        console.log(e)
     }
 };

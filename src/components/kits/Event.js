@@ -4,6 +4,7 @@ import arrowRight from '../../assets/images/icons/right-arrow.svg'
 // import ArrowRight from '../../assets/images/icons/RightArrow'
 // import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Button } from '@material-ui/core';
+import Link from 'next/link'
 const Event = ({
     image,
     name,
@@ -11,7 +12,8 @@ const Event = ({
     price,
     sessions,
     sm,
-    whiteBg
+    whiteBg,
+    id
 }) => {
     //needs container for width
     return (
@@ -29,10 +31,12 @@ const Event = ({
                 <p>Sessions: {sessions}</p>
                 <p>Price: {price}</p>
             </div>
-            <Button className={classes.actionBtn}>
-                <img src={arrowRight} />
-                {/* <ChevronRightIcon /> */}
-            </Button>
+            {/* <Link href={`/events/${id}`}> */}
+                <Button className={classes.actionBtn}>
+                    <img src={arrowRight} />
+                    {/* <ChevronRightIcon /> */}
+                </Button>
+            {/* </Link> */}
         </div>
     )
 }

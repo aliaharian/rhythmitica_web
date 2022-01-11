@@ -9,7 +9,8 @@ import Link from 'next/link';
 const EventsList = ({ handlePaginate }) => {
     const events = useSelector((state) => state.events.events);
     const eventsLoading = useSelector((state) => state.events.eventsLoading);
-    console.log('eventsLoading',eventsLoading)
+
+
     return (
         <div className={classes.eventsListContainer}>
             {eventsLoading ?
@@ -34,18 +35,19 @@ const EventsList = ({ handlePaginate }) => {
                         <div className={classes.eventsList}>
                             {
                                 events.data.map((event) => (
-                                    // <Link href={'#'}>
-                                    //     <a>
-                                    <Event
-                                        image={process.env.REACT_APP_IMAGE_URL + event.banner}
-                                        name={event.title}
-                                        instructor={event.staff.user.name + " " + event.staff.user.family}
-                                        price={event.price + " $"}
-                                        sessions={event.sessions.length}
-                                        whiteBg
-                                    />
-                                    //     </a>
-                                    // </Link>
+                                    <Link href={'/events/'+event.id+'/'+event.slug}>
+                                        <a>
+                                            <Event
+                                                image={process.env.REACT_APP_IMAGE_URL + event.banner}
+                                                name={event.title}
+                                                instructor={event.staff.user.name + " " + event.staff.user.family}
+                                                price={event.price + " $"}
+                                                sessions={event.sessions.length}
+                                                // id={event.id}
+                                                whiteBg
+                                            />
+                                        </a>
+                                    </Link>
                                 ))
 
                             }

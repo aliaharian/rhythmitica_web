@@ -10,7 +10,8 @@ const Instructor = ({
     family,
     sm,
     disableLangs,
-    imageBorder
+    imageBorder,
+    nameBgColorTransparent
 }) => {
     const theme = useTheme();
     const md = useMediaQuery(theme.breakpoints.down(1300));
@@ -27,7 +28,7 @@ const Instructor = ({
                         }
                     </div>}
             </div>
-            <div className={classes.dataContainer}>
+            <div className={clsx(classes.dataContainer , nameBgColorTransparent&&classes.nameBgColorTransparent)}>
                 {
                     // md ?
                     //     <h3>{name}<br /> {family}</h3>

@@ -34,7 +34,7 @@ const StaffsList = ({ handlePaginate }) => {
                             {
                                 
                                 staffs.data.map((staff) => (
-                                    <Link href={`privateLessons/${staff.staff_id}/${staff.package_id}`}>
+                                    <Link href={`privateLessons/${staff.package_id}/${staff.staff_id}/${staff?.staff_name?.replace(/\s+/g, '-')}-${staff?.staff_family?.replace(/\s+/g, '-')}`}>
                                         <a>
                                             <Instructor
                                                 sm

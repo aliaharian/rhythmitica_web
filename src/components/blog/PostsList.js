@@ -57,18 +57,18 @@ const PostsList = ({ handlePaginate }) => {
                             <div className={classes.postsListRow}>
                                 {
                                     renderedPost[0].map((post, index) => (
-                                        // <Link href={'#'}>
-                                        //     <a>
-                                        <Post
-                                            image={process.env.REACT_APP_IMAGE_URL + post.banner}
-                                            name={post.title}
-                                            brief={post.brief}
-                                            date={post.created_at}
-                                            unsplashMode
-                                            sm={index % 2 == 0}
-                                        />
-                                        //     </a>
-                                        // </Link>
+                                        <Link href={`/blog/${post.id}/${post.slug}`}>
+                                            <a>
+                                                <Post
+                                                    image={process.env.REACT_APP_IMAGE_URL + post.banner}
+                                                    name={post.title}
+                                                    brief={post.brief}
+                                                    date={post.created_at}
+                                                    unsplashMode
+                                                    sm={index % 2 == 0}
+                                                />
+                                            </a>
+                                        </Link>
                                     ))
 
                                 }
@@ -76,18 +76,18 @@ const PostsList = ({ handlePaginate }) => {
                             <div className={classes.postsListRow}>
                                 {
                                     renderedPost[1].map((post, index) => (
-                                        // <Link href={'#'}>
-                                        //     <a>
-                                        <Post
-                                            image={process.env.REACT_APP_IMAGE_URL + post.banner}
-                                            name={post.title}
-                                            brief={post.brief}
-                                            date={post.created_at}
-                                            unsplashMode
-                                            sm={index % 2 != 0}
-                                        />
-                                        //     </a>
-                                        // </Link>
+                                        <Link href={`/blog/${post.id}/${post.slug}`}>
+                                            <a>
+                                                <Post
+                                                    image={process.env.REACT_APP_IMAGE_URL + post.banner}
+                                                    name={post.title}
+                                                    brief={post.brief}
+                                                    date={post.created_at}
+                                                    unsplashMode
+                                                    sm={index % 2 != 0}
+                                                />
+                                            </a>
+                                        </Link>
                                     ))
 
                                 }
@@ -95,18 +95,18 @@ const PostsList = ({ handlePaginate }) => {
                             <div className={classes.postsListRow}>
                                 {
                                     renderedPost[2].map((post, index) => (
-                                        // <Link href={'#'}>
-                                        //     <a>
-                                        <Post
-                                            image={process.env.REACT_APP_IMAGE_URL + post.banner}
-                                            name={post.title}
-                                            brief={post.brief}
-                                            date={post.created_at}
-                                            unsplashMode
-                                            sm={index % 2 == 0}
-                                        />
-                                        //     </a>
-                                        // </Link>
+                                        <Link href={`/blog/${post.id}/${post.slug}`}>
+                                            <a>
+                                                <Post
+                                                    image={process.env.REACT_APP_IMAGE_URL + post.banner}
+                                                    name={post.title}
+                                                    brief={post.brief}
+                                                    date={post.created_at}
+                                                    unsplashMode
+                                                    sm={index % 2 == 0}
+                                                />
+                                            </a>
+                                        </Link>
                                     ))
 
                                 }

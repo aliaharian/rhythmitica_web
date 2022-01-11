@@ -1,0 +1,295 @@
+@use "./master.module.scss" as master;
+
+.singlePostHeader {
+    width: 100%;
+    position: relative;
+    height: 894px;
+    @media (max-width: master.$xl) {
+        height: 730px;
+    }
+    @media (max-width: master.$lg) {
+        height: 600px;
+    }
+    @media (max-width: master.$md) {
+        height: 470px;
+    }
+
+    & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.shareFloatBtn {
+    position: absolute;
+    width: 136px;
+    height: 136px;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    bottom: -68px;
+    right: 207px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: master.$xl) {
+        width: 100px;
+        height: 100px;
+        bottom: -50px;
+        right: 180px;
+    }
+    @media (max-width: master.$lg) {
+        width: 86px;
+        height: 86px;
+        bottom: -43px;
+        right: 150px;
+    }
+    @media (max-width: master.$md) {
+        width: 80px;
+        height: 80px;
+        bottom: -40px;
+        right: 120px;
+    }
+    &:hover {
+        & .shareList {
+            height: auto;
+            padding: 60px 0 36px;
+            opacity: 1;
+            transition: all 250ms ease;
+            @media (max-width: master.$xl) {
+                padding: 35px 0 20px;
+            }
+            @media (max-width: master.$lg) {
+                padding: 20px 0 10px;
+            }
+            @media (max-width: master.$md) {
+                padding: 10px 0 8px;
+            }
+        }
+    }
+    & > button {
+        width: 65px !important;
+        height: 65px !important;
+        max-width: 65px !important;
+        min-width: 65px !important;
+        z-index: 12;
+        border: 1px solid var(--pinkColor) !important;
+        border-radius: 50% !important;
+        background-color: rgba(217, 3, 104, 0.1) !important;
+        @media (max-width: master.$xl) {
+            width: 50px !important;
+            height: 50px !important;
+            max-width: 50px !important;
+            min-width: 50px !important;
+        }
+        @media (max-width: master.$lg) {
+            width: 45px !important;
+            height: 45px !important;
+            max-width: 45px !important;
+            min-width: 45px !important;
+        }
+        @media (max-width: master.$md) {
+            width: 40px !important;
+            height: 40px !important;
+            max-width: 40px !important;
+            min-width: 40px !important;
+        }
+        & svg {
+            color: var(--pinkColor) !important;
+            @media (max-width: master.$xl) {
+                font-size: 20px;
+            }
+            @media (max-width: master.$lg) {
+                font-size: 17px;
+            }
+            @media (max-width: master.$md) {
+                font-size: 14px;
+            }
+        }
+    }
+    & > .shareList {
+        position: absolute;
+        width: 100%;
+        overflow: hidden !important;
+        opacity: 0;
+        // transition: all 250ms ease;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        // height:232px;
+        height: 100px;
+        top: 73px;
+        z-index: 10;
+        background-color: #f9f9f9;
+        // padding: 60px 0 36px;
+        padding: 0;
+        border-radius: 0 0 68px 68px;
+        & > button {
+            width: 65px !important;
+            height: 65px !important;
+            max-width: 65px !important;
+            min-width: 65px !important;
+            margin-bottom: 15px;
+            z-index: 12;
+            border-radius: 50% !important;
+            @media (max-width: master.$xl) {
+                width: 50px !important;
+                height: 50px !important;
+                max-width: 50px !important;
+                min-width: 50px !important;
+            }
+            @media (max-width: master.$lg) {
+                width: 45px !important;
+                height: 45px !important;
+                max-width: 45px !important;
+                min-width: 45px !important;
+            }
+            @media (max-width: master.$md) {
+                width: 40px !important;
+                height: 40px !important;
+                max-width: 40px !important;
+                min-width: 40px !important;
+            }
+
+            & svg {
+                @media (max-width: master.$xl) {
+                    font-size: 20px;
+                }
+                @media (max-width: master.$lg) {
+                    font-size: 17px;
+                }
+                @media (max-width: master.$md) {
+                    font-size: 14px;
+                }
+            }
+            &:nth-child(1) {
+                border: 1px solid rgba(0, 136, 204, 1) !important;
+                background-color: rgba(0, 136, 204, 0.1) !important;
+                & svg {
+                    color: rgba(0, 136, 204, 1) !important;
+                }
+            }
+            &:nth-child(2) {
+                border: 1px solid rgba(189, 8, 28, 1) !important;
+                background-color: rgba(189, 8, 28, 0.1) !important;
+                & svg {
+                    color: rgba(189, 8, 28, 1) !important;
+                }
+            }
+            &:nth-child(3) {
+                border: 1px solid rgba(24, 119, 242, 1) !important;
+                background-color: rgba(24, 119, 242, 0.1) !important;
+                & svg {
+                    color: rgba(24, 119, 242, 1) !important;
+                }
+            }
+            &:nth-child(4) {
+                border: 1px solid rgba(29, 161, 242, 1) !important;
+                background-color: rgba(29, 161, 242, 0.1) !important;
+                & svg {
+                    color: rgba(29, 161, 242, 1) !important;
+                }
+            }
+        }
+    }
+}
+.singlePostBody {
+    max-width: 1436px;
+    margin: 80px auto 0;
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+        margin: 60px auto 0;
+    }
+    @media (max-width: master.$lg) {
+        max-width: 980px;
+        margin: 50px auto 0;
+
+    }
+    @media (max-width: master.$md) {
+        max-width: 856px;
+        margin: 40px auto 0;
+
+    }
+    & > h2 {
+        font-size: 40px;
+        line-height: 53px;
+        color: var(--pinkColor);
+        margin-bottom: 80px;
+        @media (max-width: master.$xl) {
+            font-size: 36px;
+            line-height: 48px;
+            margin-bottom: 60px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 32px;
+            line-height: 45px;
+            margin-bottom: 50px;
+        }
+        @media (max-width: master.$md) {
+            font-size: 28px;
+            line-height: 42px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.postDate {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 80px;
+    @media (max-width: master.$xl) {
+        margin-bottom: 60px;
+    }
+    @media (max-width: master.$lg) {
+        margin-bottom: 50px;
+    }
+    @media (max-width: master.$md) {
+        margin-bottom: 40px;
+    }
+    & > svg {
+        font-size: 32px;
+        color: var(--pinkColor);
+        margin-right: 10px;
+        @media (max-width: master.$xl) {
+            font-size: 28px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 24px;
+        }
+        @media (max-width: master.$md) {
+            font-size: 20px;
+        }
+    }
+    & > p {
+        font-size: 16px;
+        @media (max-width: master.$xl) {
+            font-size: 14px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 13px;
+        }
+        @media (max-width: master.$md) {
+            font-size: 13px;
+        }
+    }
+}
+.postDesc {
+    margin-bottom: 100px;
+    @media (max-width: master.$xl) {
+        margin-bottom: 90px;
+    }
+    @media (max-width: master.$lg) {
+        margin-bottom: 80px;
+    }
+    p {
+        font-size: 16px;
+        @media (max-width: master.$xl) {
+            font-size: 14px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 13px;
+        }
+    }
+}

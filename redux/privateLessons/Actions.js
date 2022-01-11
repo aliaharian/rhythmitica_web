@@ -47,6 +47,6 @@ export const getStaffList = (isServer, payload, filter, page = 0, max = 10) => a
         });
 
     } catch (e) {
-        dispatch(errorSnackbar(e));
+        console.log(e)
     }
 };

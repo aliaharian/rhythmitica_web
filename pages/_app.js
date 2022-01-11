@@ -16,32 +16,37 @@ import "slick-carousel/slick/slick-theme.css";
 import cookies from 'next-cookies'
 
 import axios from 'axios';
+import { setTimezones, setUserIp, SET_USER_IP } from "../redux/users";
+import { useDispatch } from "react-redux";
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
 
 function MyApp(props) {
-  const { Component, pageProps, store, classes, cookiesRhy } = props;
+  const { Component, pageProps, store, classes, cookiesRhy, userIp, timezones } = props;
   console.log('cookiesRhy', cookiesRhy)
+  const Dispatch = useDispatch()
 
-  const getCookieByName = (name) => {
-    //get uclaim cookie from all!
-    const parts = cookiesRhy.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-  }
-  // axios.defaults.withCredentials = true;
+  // const getCookieByName = (name) => {
+  //   //get uclaim cookie from all!
+  //   const parts = cookiesRhy.split(`; ${name}=`);
+  //   if (parts.length === 2) return parts.pop().split(';').shift();
+  // }
+  axios.defaults.withCredentials = false;
   axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
   axios.defaults.headers.post["Content-Type"] = "application/json";
   axios.defaults.headers.common['site'] = process.env.REACT_APP_SITE_TOKEN;
-  axios.defaults.headers.common['Authorization'] = 'Bearer ' + getCookieByName('uclaim')
-  // React.useEffect(() => {
-  //   // set axios defaults
-  //   if (typeof window !== 'undefined') {
-  // axios.defaults.headers.common['Authorization'] = 'Bearer '+localStorage.getItem('Authorization');
-  //     }
-  // }, []);
-  
+  axios.defaults.headers.common['Authorization'] = 'Bearer ' + cookiesRhy
+  React.useEffect(() => {
+    // if (timezones) {
+    //   Dispatch(setTimezones(true, timezones))
+    // }
+    if (userIp) {
+      Dispatch(setUserIp(true, userIp))
+    }
+  }, []);
+
 
 
   return (
@@ -76,34 +81,27 @@ MyApp.getInitialProps = async ({ ctx }) => {
 
   console.log(ctx)
   console.log(ctx.req.headers.cookie)
-  // const { user } = ctx.store.getState();
 
-  // if (ctx.req) {
-  //   try {
-  // const res = await fetch(`${BASE_URL}/user/profile`, {
-  //     withCredentials: true,
-  //     headers: { cookie: ctx.req.headers.cookie },
-  // });
-  // const data = await res.json();
-  // const res2 = await fetch(`${BASE_URL}/user/view?chatUserId=${data.chatUserId || 0}&teacher=true&groupOwner=true`, {
-  //     withCredentials: true,
-  //     headers: { cookie: ctx.req.headers.cookie },
-  // });
-  // const data2 = await res2.json();
-
-  // ctx.store.dispatch({ type: LOAD_SUCCESS, payload: { user: data, userDetail: data2 } });
-  // ctx.store.dispatch(getContactDetail(data2));
-
-
-
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
   if (ctx.req) {
-    return {
-      cookiesRhy: cookies(ctx).uclaim || ''
-    };
+    try {
+      const res = await fetch(`${process.env.REACT_APP_BASE_URL}/ip_info`);
+      const data = await res.json();
+
+      // const timezoneRes = await fetch(`${process.env.REACT_APP_BASE_URL}/timezones`);
+      // const timezoneData = await timezoneRes.json();
+      // ctx.store.dispatch({ type: SET_USER_IP, payload: data });
+      // ctx.store.dispatch(getContactDetail(data2));
+
+      return {
+        cookiesRhy: cookies(ctx).uclaim || '',
+        userIp: data,
+        // timezones: timezoneData
+
+      };
+
+    } catch (err) {
+      console.log(err);
+    }
   }
 };
 

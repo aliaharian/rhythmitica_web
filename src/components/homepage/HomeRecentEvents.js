@@ -12,20 +12,25 @@ const HomeRecentEvents = ({ events }) => {
                 {
                     events.slice(0, 3).map((event) => {
                         return (
-                            <Event
-                                image={process.env.REACT_APP_IMAGE_URL + event.banner}
-                                name={event.title}
-                                instructor={event.staff.user.name + " " + event.staff.user.family}
-                                price={event.price + " $"}
-                                sessions={event.sessions.length}
-                                sm
-                            />
+                            <Link href={'/events/'+event.id+'/'+event.slug}>
+                            <a>
+                                    <Event
+                                        image={process.env.REACT_APP_IMAGE_URL + event.banner}
+                                        name={event.title}
+                                        instructor={event.staff.user.name + " " + event.staff.user.family}
+                                        price={event.price + " $"}
+                                        sessions={event.sessions.length}
+                                        id={event.id}
+                                        sm
+                                    />
+                                </a>
+                            </Link>
                         )
                     })
                 }
             </div>
             <Link href={"/events"}>
-                <a className={clsx(classes.moreBtn,classes.moreEventBtn)} title="all events">
+                <a className={clsx(classes.moreBtn, classes.moreEventBtn)} title="all events">
                     <div></div><div></div><div></div>
                 </a>
             </Link>

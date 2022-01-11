@@ -2,10 +2,6 @@ import { useEffect, useState } from 'react';
 import classes from '../../../assets/styleSheets/booking.module.scss'
 import Instructor from '../../kits/Instructor';
 import RhRadioButton from '../../kits/RhRadioButton';
-import durationIcon from '../../../assets/images/icons/durationIcon.svg'
-import listIcon from '../../../assets/images/icons/listIcon.svg'
-import updateIcon from '../../../assets/images/icons/updateIcon.svg'
-import priceIcon from '../../../assets/images/icons/priceIcon.svg'
 import clsx from 'clsx'
 import { Button } from '@mui/material';
 import grayCheckIcon from '../../../assets/images/icons/grayCheckIcon.svg'
@@ -13,14 +9,27 @@ import purpleCheckIcon from '../../../assets/images/icons/purpleCheckIcon.svg'
 import { useSnackbar } from 'notistack';
 import axios from 'axios';
 import CloseIcon from '@mui/icons-material/Close';
+import FormatListNumberedRoundedIcon from '@mui/icons-material/FormatListNumberedRounded';
+import TimelapseIcon from '@mui/icons-material/Timelapse';
+import UpdateIcon from '@mui/icons-material/Update';
+import PaidOutlinedIcon from '@mui/icons-material/PaidOutlined';
+import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
+const BookingSummery = ({
+    packageInfo,
+    bookingData,
+    setBookingData,
+    sessions,
+    renderOffText,
+    handleSubmitCoupon,
+    handleChangeCouponCode
 
-const BookingSummery = ({ packageInfo, bookingData, setBookingData ,sessions}) => {
-    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
-    const [couponCode, setCouponCode] = useState('')
+}) => {
     const [showTrial, setShowTrial] = useState(false)
-    console.log('bookingData',bookingData)
+    const [activeCouponInput, setActiveCouponInput] = useState(false)
+    // console.log('bookingData',bookingData)
+    console.log('packageInfo', packageInfo)
     useEffect(() => {
-        if (packageInfo) {
+        if (packageInfo && !bookingData?.selectedType) {
             setBookingData({
                 ...bookingData,
                 selectedDuration: packageInfo.durations[0],
@@ -28,7 +37,6 @@ const BookingSummery = ({ packageInfo, bookingData, setBookingData ,sessions}) =
                 selectedType: packageInfo.durations[0].types[0]
             })
             handleCheckshowTrial();
-
         }
     }, [])
     const handleChangeDuration = (duration) => {
@@ -51,23 +59,12 @@ const BookingSummery = ({ packageInfo, bookingData, setBookingData ,sessions}) =
             selectedType: type
         })
     }
-    const renderOffText = () => {
-        if (bookingData.appliedCoupon) {
-            return (`${parseInt(bookingData.appliedCoupon.code.percentage)}% off discount code`)
-        } else if (bookingData.selectedSession.off > 0 && bookingData.selectedType.type == 'weekly') {
-            return (`${bookingData.selectedSession.off}% off for ${bookingData.selectedSession.count} sessions`)
-        } else {
-            return (`...`)
 
-        }
-    }
-    const handleChangeCouponCode = (e) => {
-        setCouponCode(e.target.value)
-    }
+
 
     const handleCheckshowTrial = async () => {
         try {
-            const response = await axios.get(`v1.0/staffs/${packageInfo.package.id}/${packageInfo.staff.id}/booking/checkShowTrial`);
+            const response = await axios.get(`v1.0/staffs/${packageInfo.staff.id}/${packageInfo.package.id}/booking/checkShowTrial`);
             setShowTrial(true)
         }
         catch (e) {
@@ -78,48 +75,7 @@ const BookingSummery = ({ packageInfo, bookingData, setBookingData ,sessions}) =
 
     }
 
-    const handleSubmitCoupon = async () => {
-        let isAuth = localStorage.getItem("isAuth");
-        if (bookingData.appliedCoupon) {
-            setBookingData({
-                ...bookingData,
-                appliedCoupon: null
-            })
-            setCouponCode('');
-        } else {
-            if (!isAuth) {
-                enqueueSnackbar('Log in to use your coupon', {
-                    variant: 'error'
-                })
-            } else {
-                const key = enqueueSnackbar('please wait...', {
-                    variant: 'info',
-                })
-                try {
-                    const response = await axios.post('admin/mc/coupons/check', {
-                        code: couponCode,
-                        place_type: 'PACKAGE',
-                        place_id: packageInfo.package.id
-                    })
-                    setBookingData({
-                        ...bookingData,
-                        appliedCoupon: response.data.data
-                    })
-                    closeSnackbar(key);
-                    enqueueSnackbar('your coupon has been applied!', {
-                        variant: 'success',
-                    })
-                }
-                catch (e) {
-                    closeSnackbar(key);
-                    enqueueSnackbar('your coupon code is wrong!', {
-                        variant: 'error'
-                    })
-                }
-            }
-        }
 
-    }
 
 
     return (
@@ -133,13 +89,15 @@ const BookingSummery = ({ packageInfo, bookingData, setBookingData ,sessions}) =
                         instrument={packageInfo.package.name}
                         disableLangs
                         imageBorder={'#820263'}
+                    // nameBgColorTransparent
                     />
                     <div className={classes.summeryItem}>
                         <div className={classes.summeryIcon}>
-                            <img src={durationIcon} />
+                            {/* <img src={durationIcon} /> */}
+                            <TimelapseIcon />
                         </div>
                         <p className={classes.summeryTitle}>Duration</p>
-                        <div className={clsx(classes.summeryBody, classes.dFlexCenter, classes.pl30)}>
+                        <div className={clsx(classes.summeryBody, classes.dFlexCenter, classes.pl18)}>
                             {packageInfo.durations.map((duration, index) => {
                                 if ((duration.trial && showTrial) || (duration.gift && showTrial) || (!duration.gift && !duration.trial)) {
                                     return (
@@ -148,7 +106,7 @@ const BookingSummery = ({ packageInfo, bookingData, setBookingData ,sessions}) =
                                             checked={duration.id == bookingData.selectedDuration.id}
                                             key={duration.id + 'duration'}
                                             onChange={() => { handleChangeDuration(duration) }}
-                                            style={index < packageInfo.durations.length - 1 ? { marginBottom: 28 } : {}}
+                                            className={index < packageInfo.durations.length - 1 ? classes.radioButtonMb : ""}
                                             xl
                                         />
                                     )
@@ -158,10 +116,11 @@ const BookingSummery = ({ packageInfo, bookingData, setBookingData ,sessions}) =
                     </div>
                     <div className={classes.summeryItem}>
                         <div className={classes.summeryIcon}>
-                            <img src={listIcon} />
+                            {/* <img src={listIcon} /> */}
+                            <FormatListNumberedRoundedIcon />
                         </div>
                         <p className={classes.summeryTitle}>Session</p>
-                        <div className={clsx(classes.summeryBody, classes.dFlexCenter, classes.pl30)}>
+                        <div className={clsx(classes.summeryBody, classes.dFlexCenter, classes.pl18)}>
                             {((bookingData.selectedDuration.gift || bookingData.selectedDuration.trial) ?
                                 sessions.slice(0, 1)
                                 :
@@ -171,7 +130,7 @@ const BookingSummery = ({ packageInfo, bookingData, setBookingData ,sessions}) =
                                         checked={bookingData.selectedSession.count === session.count}
                                         key={session.count + 'session'}
                                         onChange={() => { handleChangeSession(session) }}
-                                        style={index < sessions.length - 1 ? { marginBottom: 28 } : {}}
+                                        className={index < sessions.length - 1 ? classes.radioButtonMb : ""}
                                         xl
                                     />
                                 ))}
@@ -180,10 +139,11 @@ const BookingSummery = ({ packageInfo, bookingData, setBookingData ,sessions}) =
                     </div>
                     <div className={classes.summeryItem}>
                         <div className={classes.summeryIcon}>
-                            <img src={updateIcon} />
+                            {/* <img src={updateIcon} /> */}
+                            <UpdateIcon />
                         </div>
                         <p className={classes.summeryTitle}>Type</p>
-                        <div className={clsx(classes.summeryBody, classes.dFlexCenter, classes.pl30)}>
+                        <div className={clsx(classes.summeryBody, classes.dFlexCenter, classes.pl18)}>
                             {((bookingData.selectedSession.count == 1) ?
                                 bookingData.selectedDuration.types.slice(0, 1)
                                 :
@@ -193,16 +153,17 @@ const BookingSummery = ({ packageInfo, bookingData, setBookingData ,sessions}) =
                                         checked={bookingData.selectedType?.id == type.id}
                                         key={type.id + 'type'}
                                         onChange={() => { handleChangeType(type) }}
-                                        style={index < bookingData.selectedDuration.types.length - 1 ? { marginBottom: 28 } : {}}
+                                        className={index < bookingData.selectedDuration.types.length - 1 ? classes.radioButtonMb : ""}
                                         xl
                                     />
                                 ))}
 
                         </div>
                     </div>
-                    <div className={classes.summeryItem} style={{ paddingBottom: 32 }}>
+                    <div className={classes.summeryItem}>
                         <div className={classes.summeryIcon}>
-                            <img src={priceIcon} />
+                            {/* <img src={priceIcon} /> */}
+                            <PaidOutlinedIcon />
                         </div>
                         <p className={classes.summeryTitle}>Price</p>
                         <p className={classes.offStat}>{renderOffText()}</p>
@@ -230,16 +191,22 @@ const BookingSummery = ({ packageInfo, bookingData, setBookingData ,sessions}) =
                             </div>
                             <p>$</p>
                         </div>
-                        {/* <button onClick={handleCheckshowTrial}>click</button>
-                        <button onClick={handleSetCookie}>setCookie</button> */}
-                        <div className={classes.couponApplySection}>
-                            <input className={bookingData.appliedCoupon && classes.disabledInput} disabled={bookingData.appliedCoupon} value={couponCode} onChange={handleChangeCouponCode} placeholder={`Coupon`} />
-                            <Button onClick={handleSubmitCoupon} className={clsx(classes.submitCouponButton, couponCode == '' && classes.submitCouponDisabled)}>
+                        <div className={clsx(classes.couponApplySection, (activeCouponInput || bookingData.couponCode !== '') && classes.couponApplySectionActive)}>
+                            <input
+                                className={bookingData.appliedCoupon && classes.disabledInput}
+                                disabled={bookingData.appliedCoupon} value={bookingData.couponCode}
+                                onChange={handleChangeCouponCode}
+                                placeholder={`Coupon`}
+                                onFocus={() => setActiveCouponInput(true)}
+                                onBlur={() => setActiveCouponInput(false)}
+                            />
+                            <Button onClick={handleSubmitCoupon} className={clsx(classes.submitCouponButton, bookingData.couponCode == '' && classes.submitCouponDisabled)}>
 
                                 {bookingData.appliedCoupon ?
                                     <CloseIcon style={{ fontSize: 20 }} />
                                     :
-                                    <img src={couponCode == '' ? grayCheckIcon : purpleCheckIcon} />
+                                    <CheckRoundedIcon style={{ color: bookingData.couponCode == '' ? 'rgba(41, 23, 32, 0.4)' : '#820263' }} />
+                                    // <img src={bookingData.couponCode == '' ? grayCheckIcon : purpleCheckIcon} />
                                 }
                             </Button>
                         </div>

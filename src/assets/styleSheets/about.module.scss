@@ -1,0 +1,163 @@
+@use "./master.module.scss" as master;
+
+.topColor {
+    width: 100%;
+    height: 400px;
+    top: 0;
+    background-color: var(--aboutColor);
+    position: absolute;
+    z-index: -1;
+    @media (max-width: master.$xl) {
+        height: 380px;
+    }
+    @media (max-width: master.$lg) {
+        height: 340px;
+    }
+}
+.aboutGrandContainer {
+    margin-top: 218px;
+    @media (max-width: master.$xl) {
+        margin-top: 180px;
+    }
+    @media (max-width: master.$lg) {
+        margin-top: 150px;
+    }
+}
+.aboutContainer {
+    max-width: 1436px;
+    margin: 0 auto;
+    @media (max-width: master.$xl) {
+        max-width: 1150px;
+    }
+    @media (max-width: master.$lg) {
+        max-width: 980px;
+    }
+    @media (max-width: master.$md) {
+        max-width: 856px;
+    }
+}
+.aboutTitle {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--textColor);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    padding-bottom: 25px;
+    line-height: 30px;
+    @media (max-width: master.$xl) {
+        font-size: 20px;
+        margin-bottom: 22px;
+        padding-bottom: 18px;
+    }
+    @media (max-width: master.$lg) {
+        font-size: 18px;
+        margin-bottom: 20px;
+        padding-bottom: 17px;
+    }
+    @media (max-width: master.$md) {
+        font-size: 18px;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+    }
+    &:after {
+        width: 73px;
+        height: 5px;
+        bottom: 0;
+        content: "";
+        position: absolute;
+        border-radius: 51px;
+        background-color: #f9f9f9;
+        @media (max-width: master.$xl) {
+            width: 68px;
+            height: 5px;
+        }
+        @media (max-width: master.$lg) {
+            width: 65px;
+            height: 4px;
+        }
+        @media (max-width: master.$md) {
+            width: 63px;
+            height: 3px;
+        }
+    }
+}
+
+.aboutBodyContainer {
+    padding: 93px 95px;
+    border-radius: 50px;
+    border: solid 1px var(--aboutColor);
+    background-color: #f9f9f9;
+    margin-bottom: 92px;
+    @media (max-width: master.$xl) {
+        padding: 90px 92px;
+        border-radius: 48px;
+        margin-bottom: 90px;
+    }
+    @media (max-width: master.$lg) {
+        padding: 88px 90px;
+        border-radius: 46px;
+        margin-bottom: 85px;
+    }
+    @media (max-width: master.$md) {
+        padding: 85px 87px;
+        border-radius: 44px;
+        margin-bottom: 80px;
+    }
+    h3 {
+        font-size: 20px;
+        line-height: 27px;
+        color: var(--aboutColor);
+        margin-bottom: 35px;
+        text-transform: uppercase;
+        @media (max-width: master.$xl) {
+            font-size: 18px;
+            line-height: 25px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 28px;
+        }
+        @media (max-width: master.$md) {
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 26px;
+        }
+    }
+    p {
+        font-size: 16px;
+        line-height: 30px;
+        color: var(--blogTextColor);
+        @media (max-width: master.$xl) {
+            font-size: 15px;
+            line-height: 30px;
+        }
+        @media (max-width: master.$lg) {
+            font-size: 13px;
+            line-height: 26px;
+        }
+        @media (max-width: master.$md) {
+            font-size: 14px;
+            line-height: 26px;
+        }
+    }
+    .hr {
+        background-color: var(--headerBgColor);
+        width: 100%;
+        height: 1px;
+        margin: 80px 0;
+        @media (max-width: master.$xl) {
+            margin: 70px 0;
+        }
+        @media (max-width: master.$lg) {
+            margin: 55px 0;
+        }
+        @media (max-width: master.$md) {
+            margin: 50px 0;
+        }
+    }
+}
