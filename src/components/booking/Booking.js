@@ -79,16 +79,29 @@ const Booking = ({ packageInfo }) => {
         }
     }
     const handleStep = () => {
+        let flag = true;
         switch (step) {
             case 0:
                 setTimesData(null);
                 setDisabledNext(true)
                 break;
             case 1:
+                if (disabledNext) {
+                    enqueueSnackbar('Please choose the date and time.', {
+                        variant: 'error',
+                        anchorOrigin: {
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }
+                    })
+                    flag = false;
+                }
                 setDisabledNext(true)
                 break;
         }
-        setStep(step + 1);
+        if (flag) {
+            setStep(step + 1);
+        }
     }
     const handleBack = () => {
         switch (step) {
@@ -177,6 +190,26 @@ const Booking = ({ packageInfo }) => {
         }
 
     }
+    const termsAcceptError = () => {
+        console.log('here')
+        enqueueSnackbar('Please accept terms!', {
+            variant: 'error',
+            anchorOrigin: {
+                vertical: 'bottom',
+                horizontal: 'center',
+            }
+        })
+    }
+    const handleClickBookMore = () => {
+        if (disabledNext) {
+            termsAcceptError()
+        }
+    }
+    const handleClickPay = () => {
+        if (disabledNext) {
+            termsAcceptError()
+        }
+    }
     return (
         <>
             <div className={classes.topColor}></div>
@@ -195,24 +228,26 @@ const Booking = ({ packageInfo }) => {
                         <div className={classes.bookingFormFooter}>
                             {step == 2 &&
                                 <div>
-                                    {isAuth ?
-                                        <>
-                                            <Button onClick={() => { }} disabled={disabledNext} className={classes.bookingBookMoreBtn}>
-                                                Book More
-                                            </Button>
-                                            <Button onClick={() => { }} disabled={disabledNext} className={classes.bookingPayBtn}>
-                                                Pay Now
-                                            </Button>
-                                        </>
-                                        :
+                                    {/* {isAuth ? */}
+                                    <>
+                                        <Button onClick={handleClickBookMore} className={classes.bookingBookMoreBtn}>
+                                            Book More
+                                        </Button>
+                                        <Button onClick={handleClickPay} className={classes.bookingPayBtn}>
+                                            Pay Now
+                                        </Button>
+                                    </>
+                                    {/* :
                                         <Button onClick={() => { }} disabled={disabledNext} className={classes.bookingLoginBtn}>
                                             Login
-                                        </Button>}
+                                        </Button>} */}
                                 </div>
                             }
 
                             {step < 2 &&
-                                <Button onClick={handleStep} disabled={disabledNext} className={classes.bookingNextBtn}>
+                                <Button onClick={handleStep}
+                                    // disabled={disabledNext}
+                                    className={classes.bookingNextBtn}>
                                     Next
                                     <img src={arrowNext} />
                                 </Button>

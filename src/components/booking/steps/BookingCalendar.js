@@ -142,6 +142,7 @@ const BookingCalendar = ({
 
 
     return (
+
         <>
             {timesData ?
                 <div className={classes.bookingTimesContainer}>
@@ -228,12 +229,16 @@ const BookingCalendar = ({
                                 {
                                     (activeDay.day != 0 && allHours) ? allHours[activeDay.date]?.map((time) => {
                                         return (
-                                            <div
-                                                className={clsx(time.available == false && classes.timeDisabled, selectedHour?.time == time.time && classes.timeSelected)}
-                                                onClick={() => handleSelectHour(time)}
-                                            >
-                                                {time.time.replace(':', ' : ')}
-                                            </div>
+                                            <>
+                                                <div
+                                                    className={clsx(time.available == false && classes.timeDisabled, selectedHour?.time == time.time && classes.timeSelected)}
+                                                    onClick={() => handleSelectHour(time)}
+                                                >
+                                                    {time.time.replace(':', ' : ')}
+                                                </div>
+                                              
+                                            </>
+
                                         )
                                     }) :
                                         <>
@@ -249,7 +254,7 @@ const BookingCalendar = ({
                             </div>
                         </Scrollbars>
                     </div>
-                </div>
+                </div >
                 :
                 <div className={classes.bookingTimesContainer}>
                     <Skeleton

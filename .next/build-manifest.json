@@ -24,6 +24,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/privateLessons/[package_id]/[staff_id]/[staff_slug]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/privateLessons/[package_id]/[staff_id]/[staff_slug].js"
+    ],
     "/privateLessons/[package_id]/[staff_id]/book": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

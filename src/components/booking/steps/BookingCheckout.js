@@ -1,11 +1,5 @@
 import { useEffect, useState } from 'react';
 import classes from '../../../assets/styleSheets/booking.module.scss'
-import personIcon from '../../../assets/images/icons/personIcon.svg'
-import listIcon from '../../../assets/images/icons/listIcon.svg'
-import updateIcon from '../../../assets/images/icons/updateIcon.svg'
-import durationIcon from '../../../assets/images/icons/durationIcon.svg'
-import calendarIcon from '../../../assets/images/icons/calendarIcon.svg'
-import clockIcon from '../../../assets/images/icons/clockIcon.svg'
 import clsx from 'clsx'
 import { Button, Skeleton } from '@mui/material';
 import { useSnackbar } from 'notistack';
@@ -17,6 +11,15 @@ import grayCheckIcon from '../../../assets/images/icons/grayCheckIcon.svg'
 import purpleCheckIcon from '../../../assets/images/icons/purpleCheckIcon.svg'
 import RhCheckbox from '../../kits/RhCheckbox';
 import TermsDialog from '../TermsDialog';
+import FormatListNumberedRoundedIcon from '@mui/icons-material/FormatListNumberedRounded';
+import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
+import TimelapseRoundedIcon from '@mui/icons-material/TimelapseRounded';
+import UpdateRoundedIcon from '@mui/icons-material/UpdateRounded';
+import DateRangeRoundedIcon from '@mui/icons-material/DateRangeRounded';
+import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
+import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
+import Scrollbars from "react-custom-scrollbars"
+
 const BookingCheckout = ({
     packageInfo,
     bookingData,
@@ -34,6 +37,8 @@ const BookingCheckout = ({
     const [checkoutTable, setCheckoutTable] = useState();
     const [openTermsModal, setOpenTermsModal] = useState(false);
     const [checkedTerms, setCheckedTerms] = useState(false);
+    const [activeCouponInput, setActiveCouponInput] = useState(false)
+
     useEffect(() => {
         if (packageInfo, bookingData.selectedDuration) {
             handleFetchCheckoutTable();
@@ -90,32 +95,32 @@ const BookingCheckout = ({
                         <p className={classes.bookingDetailsHeader}>Booking Details</p>
                         <ul>
                             <li>
-                                <img src={personIcon} />
+                                <PersonOutlineRoundedIcon />
                                 <span>Teacher : </span>
                                 <span>{packageInfo.staff.name} {packageInfo.staff.family}</span>
                             </li>
                             <li>
-                                <img src={listIcon} />
+                                <FormatListNumberedRoundedIcon />
                                 <span>Sessions : </span>
                                 <span>{bookingData.selectedSession.count}</span>
                             </li>
                             <li>
-                                <img src={durationIcon} />
+                                <TimelapseRoundedIcon />
                                 <span>Sessions : </span>
                                 <span>{bookingData.selectedDuration.duration} minutes</span>
                             </li>
                             <li>
-                                <img src={updateIcon} />
+                                <UpdateRoundedIcon />
                                 <span>Type : </span>
                                 <span>{bookingData.selectedType.type}</span>
                             </li>
                             <li>
-                                <img src={calendarIcon} />
+                                <DateRangeRoundedIcon />
                                 <span>Start Date : </span>
                                 <span>{bookingData.selectedDay.date}</span>
                             </li>
                             <li style={{ marginBottom: 0 }}>
-                                <img src={clockIcon} />
+                                <AccessTimeRoundedIcon />
                                 <span>Start Time : </span>
                                 <span>{bookingData.selectedTime.time}</span>
                             </li>
@@ -133,28 +138,39 @@ const BookingCheckout = ({
                                 </div>
                             </div>
                             <div className={classes.bookingCheckoutTableTBody}>
-                                {
-                                    Object.keys(checkoutTable).map(function (key, index) {
-                                        let dateArray = checkoutTable[key].date.split(',');
-                                        return (
-                                            <div className={!checkoutTable[key].valid && classes.errorColor}>
-                                                <div>{index + 1}</div>
-                                                <div>{dateArray[0]}</div>
-                                                <div>{dateArray[1]}</div>
-                                                <div>{dateArray[2].replace('$', '')}</div>
-                                            </div>)
-                                    })
-                                }
+
+                                <Scrollbars
+                                    renderTrackHorizontal={props => <div {...props} style={{ display: 'none' }} className="track-horizontal" />}
+                                    autoHide
+                                    autoHideTimeout={1000}
+                                    autoHideDuration={200}
+                                >
+                                    <div className={classes.bookingCheckoutTableTBodyChild}>
+                                        {
+                                            Object.keys(checkoutTable).map(function (key, index) {
+                                                let dateArray = checkoutTable[key].date.split(',');
+                                                return (
+                                                    <div className={!checkoutTable[key].valid && classes.errorColor}>
+                                                        <div>{index + 1}</div>
+                                                        <div>{dateArray[0]}</div>
+                                                        <div>{dateArray[1]}</div>
+                                                        <div>{dateArray[2].replace('$', '')}</div>
+                                                    </div>)
+                                            })
+                                        }
+                                    </div>
 
 
+                                </Scrollbars>
                             </div>
+
                         </div>
 
                     </div>
                     <div className={classes.bookingFinalPriceContainer}>
                         <p className={classes.bookingFinalPriceHeader}>Total Price</p>
                         <div className={classes.bookingFinalPriceItems}>
-                            <p className={classes.offStat}>{renderOffText()}</p>
+                            <p className={clsx(classes.offStat , classes.w100)}>{renderOffText()}</p>
                             <div className={classes.finalPriceDetails}>
                                 <p>Subtotal :</p>
                                 <p>$ {bookingData.selectedDuration.price * bookingData.selectedSession.count}</p>
@@ -181,14 +197,22 @@ const BookingCheckout = ({
                             </div>
 
                             <div className={classes.couponApplySectionContainer}>
-                                <div className={classes.couponApplySection}>
-                                    <input className={bookingData.appliedCoupon && classes.disabledInput} disabled={bookingData.appliedCoupon} value={bookingData.couponCode} onChange={handleChangeCouponCode} placeholder={`Coupon`} />
+                                <div className={clsx(classes.couponApplySection,classes.couponApplyCustomHeight ,  (activeCouponInput || bookingData.couponCode !== '') && classes.couponApplySectionActive)}>
+                                    <input
+                                        className={bookingData.appliedCoupon && classes.disabledInput}
+                                        disabled={bookingData.appliedCoupon}
+                                        value={bookingData.couponCode}
+                                        onChange={handleChangeCouponCode}
+                                        placeholder={`Coupon`}
+                                        onFocus={() => setActiveCouponInput(true)}
+                                        onBlur={() => setActiveCouponInput(false)}
+                                    />
                                     <Button onClick={handleSubmitCoupon} className={clsx(classes.submitCouponButton, bookingData.couponCode == '' && classes.submitCouponDisabled)}>
 
                                         {bookingData.appliedCoupon ?
                                             <CloseIcon style={{ fontSize: 20 }} />
                                             :
-                                            <img src={bookingData.couponCode == '' ? grayCheckIcon : purpleCheckIcon} />
+                                            <CheckRoundedIcon style={{ color: bookingData.couponCode == '' ? 'rgba(41, 23, 32, 0.4)' : '#820263' }} />
                                         }
                                     </Button>
                                 </div>

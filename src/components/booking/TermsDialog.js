@@ -5,12 +5,13 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import classes from '../../assets/styleSheets/booking.module.scss'
 
 export default function TermsDialog({
-    open ,
-    setOpen,
-    handleAccept,
-    termsText
+  open,
+  setOpen,
+  handleAccept,
+  termsText
 }) {
 
   const handleClickOpen = () => {
@@ -22,26 +23,30 @@ export default function TermsDialog({
   };
 
   return (
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">
-          {"Rhythmitica Terms"}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            <div dangerouslySetInnerHTML={{__html:termsText}}></div>
-          </DialogContentText>
-        </DialogContent>
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+      disableScrollLock
+      PaperProps={{ className: classes.termsDialog }}
+    >
+
+      <DialogTitle id="alert-dialog-title">
+        {"Rhythmitica Terms"}
+      </DialogTitle>
+      <DialogContent>
+        <DialogContentText id="alert-dialog-description">
+          <div dangerouslySetInnerHTML={{ __html: termsText }}></div>
+        </DialogContentText>
         <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleAccept} autoFocus>
+          <Button className={classes.bookingBookMoreBtn} onClick={handleClose}>Disagree</Button>
+          <Button className={classes.bookingPayBtn} onClick={handleAccept} autoFocus>
             Agree
           </Button>
         </DialogActions>
-      </Dialog>
+      </DialogContent>
+
+    </Dialog>
   );
 }

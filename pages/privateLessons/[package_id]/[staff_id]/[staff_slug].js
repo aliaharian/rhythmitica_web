@@ -5,7 +5,7 @@ import SingleStaff from '../../../../src/components/singleStaff/SingleStaff';
 
 function staffSinglePage({ staffInfo }) {
     return (
-        <Layout page={'singleStaff'}>
+        <Layout page={'privateLessons'}>
             <SingleStaff staffInfo={staffInfo} />
         </Layout>
     )

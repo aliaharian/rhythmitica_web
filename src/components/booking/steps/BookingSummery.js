@@ -3,7 +3,8 @@ import classes from '../../../assets/styleSheets/booking.module.scss'
 import Instructor from '../../kits/Instructor';
 import RhRadioButton from '../../kits/RhRadioButton';
 import clsx from 'clsx'
-import { Button } from '@mui/material';
+import { Button, Tooltip } from '@mui/material';
+import { withStyles } from '@mui/styles';
 import grayCheckIcon from '../../../assets/images/icons/grayCheckIcon.svg'
 import purpleCheckIcon from '../../../assets/images/icons/purpleCheckIcon.svg'
 import { useSnackbar } from 'notistack';
@@ -24,8 +25,18 @@ const BookingSummery = ({
     handleChangeCouponCode
 
 }) => {
+
     const [showTrial, setShowTrial] = useState(false)
     const [activeCouponInput, setActiveCouponInput] = useState(false)
+
+    const HtmlTooltip = withStyles((theme) => ({
+        tooltip: {
+            backgroundColor: '#9a3381',
+
+        },
+    }))(Tooltip);
+
+
     // console.log('bookingData',bookingData)
     console.log('packageInfo', packageInfo)
     useEffect(() => {
@@ -166,7 +177,9 @@ const BookingSummery = ({
                             <PaidOutlinedIcon />
                         </div>
                         <p className={classes.summeryTitle}>Price</p>
-                        <p className={classes.offStat}>{renderOffText()}</p>
+                        <HtmlTooltip title={renderOffText()}>
+                            <p className={classes.offStat}>{renderOffText()}</p>
+                        </HtmlTooltip>
                         <div className={classes.showOffSection}>
                             <div className={classes.offPriceContainer}>
                                 {
@@ -194,7 +207,8 @@ const BookingSummery = ({
                         <div className={clsx(classes.couponApplySection, (activeCouponInput || bookingData.couponCode !== '') && classes.couponApplySectionActive)}>
                             <input
                                 className={bookingData.appliedCoupon && classes.disabledInput}
-                                disabled={bookingData.appliedCoupon} value={bookingData.couponCode}
+                                disabled={bookingData.appliedCoupon}
+                                value={bookingData.couponCode}
                                 onChange={handleChangeCouponCode}
                                 placeholder={`Coupon`}
                                 onFocus={() => setActiveCouponInput(true)}
@@ -206,7 +220,6 @@ const BookingSummery = ({
                                     <CloseIcon style={{ fontSize: 20 }} />
                                     :
                                     <CheckRoundedIcon style={{ color: bookingData.couponCode == '' ? 'rgba(41, 23, 32, 0.4)' : '#820263' }} />
-                                    // <img src={bookingData.couponCode == '' ? grayCheckIcon : purpleCheckIcon} />
                                 }
                             </Button>
                         </div>

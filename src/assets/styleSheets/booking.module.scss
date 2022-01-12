@@ -8,19 +8,19 @@
     position: absolute;
     z-index: -1;
     @media (max-width: master.$xl) {
-        height: 460px;
+        height: 420px;
     }
     @media (max-width: master.$lg) {
-        height: 370px;
+        height: 360px;
     }
 }
 .bookingGrandContainer {
     margin-top: 276px;
     @media (max-width: master.$xl) {
-        margin-top: 250px;
+        margin-top: 216px;
     }
     @media (max-width: master.$lg) {
-        margin-top: 200px;
+        margin-top: 177px;
     }
 }
 .bookingContainer {
@@ -39,10 +39,22 @@
 .stepperContainer {
     max-width: 553px;
     margin: 0 auto 15px;
+    @media (max-width: master.$xl) {
+        margin: 0 auto 7px;
+        transform: scale(0.85);
+    }
+    @media (max-width: master.$lg) {
+        margin: 0 auto 3px;
+        transform: scale(0.8);
+        max-width: 550px;
+    }
 }
 .stepperLabel {
     & > span:last-child {
         transform: translateY(-85px);
+        @media (max-width: master.$xl) {
+            transform: translateY(-81px);
+        }
         @media (max-width: master.$lg) {
             transform: translateY(-75px);
         }
@@ -53,7 +65,7 @@
                 font-size: 18px;
             }
             @media (max-width: master.$lg) {
-                font-size: 16px;
+                font-size: 17px;
             }
             @media (max-width: master.$md) {
                 font-size: 14px;
@@ -84,13 +96,10 @@
     padding: 45px 47px 47px;
     // background-color:#f9f9f9;
     @media (max-width: master.$xl) {
-        padding: 30px 30px 35px;
+        padding: 35px;
     }
     @media (max-width: master.$lg) {
-        padding: 25px 25px 30px;
-    }
-    @media (max-width: master.$lg) {
-        padding: 22px 20px 28px;
+        padding: 24px;
     }
 }
 .bookingFormFooter {
@@ -103,14 +112,14 @@
     padding: 0 48px;
     flex-direction: row-reverse;
     @media (max-width: master.$xl) {
-        padding: 0 30px;
+        padding: 0 38px;
         height: 90px;
         border-radius: 0 0 40px 40px;
     }
     @media (max-width: master.$lg) {
         border-radius: 0 0 30px 30px;
-        padding: 0 25px;
-        height: 75px;
+        padding: 0 27px;
+        height: 76px;
     }
     @media (max-width: master.$md) {
         border-radius: 0 0 25px 25px;
@@ -124,14 +133,14 @@
     margin-top: 36px;
     height: 366px;
     @media (max-width: master.$xl) {
-        grid-template-columns: repeat(5, 197px);
-        grid-column-gap: 25px;
-        height: 302px;
+        grid-template-columns: 200px repeat(4, 190px);
+        grid-column-gap: 29px;
+        height: 307px;
         margin-top: 26px;
     }
     @media (max-width: master.$lg) {
-        grid-template-columns: repeat(5, 168px);
-        grid-column-gap: 22px;
+        grid-template-columns: 174px repeat(4, 169px);
+        grid-column-gap: 20px;
         height: 260px;
         margin-top: 23px;
     }
@@ -145,7 +154,7 @@
         border: 1px solid var(--darkPurple);
         height: 366px;
         @media (max-width: master.$xl) {
-            height: 302px;
+            height: 307px;
         }
         @media (max-width: master.$lg) {
             height: 260px;
@@ -160,12 +169,12 @@
     position: relative;
     padding: 52px 24px 0;
     @media (max-width: master.$xl) {
-        padding: 40px 16px 0;
+        padding: 42px 20px 0;
         border-radius: 26px;
     }
     @media (max-width: master.$lg) {
         border-radius: 24px;
-        padding: 32px 12px 0;
+        padding: 32px 16px 0;
     }
     @media (max-width: master.$md) {
         border-radius: 22px;
@@ -229,13 +238,13 @@
         margin-bottom: 31px;
         line-height: 24px;
         @media (max-width: master.$xl) {
-            padding-bottom: 12px;
+            padding-bottom: 16px;
             margin-bottom: 25px;
             font-size: 16px;
             line-height: 24px;
         }
         @media (max-width: master.$lg) {
-            padding-bottom: 10px;
+            padding-bottom: 13px;
             margin-bottom: 20px;
             font-size: 14px;
             line-height: 20px;
@@ -269,9 +278,10 @@
 .pl18 {
     padding-left: 18px;
     @media (max-width: master.$xl) {
-        padding: 0;
-        margin: 0 auto;
-        width: max-content;
+        padding-left: 10px;
+    }
+    @media (max-width: master.$lg) {
+        padding-left: 10px;
     }
 }
 .offStat {
@@ -281,12 +291,17 @@
     text-align: center;
     margin-bottom: 31px;
     @media (max-width: master.$xl) {
-        margin-bottom: 19px;
+        margin-bottom: 25px;
         font-size: 16px;
         line-height: 20px;
+
+        max-width: 151px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
     @media (max-width: master.$lg) {
-        margin-bottom: 16px;
+        margin-bottom: 20px;
         font-size: 13px;
         line-height: 17px;
     }
@@ -310,14 +325,14 @@
     margin-bottom: 26px;
     @media (max-width: master.$xl) {
         height: 68px;
-        margin: 0 -16px 25px;
-        width: calc(100% + 32px);
+        margin: 0 -20px 25px;
+        width: calc(100% + 40px);
         padding: 0 21px;
     }
     @media (max-width: master.$lg) {
-        height: 60px;
-        margin: 0 -12px 25px;
-        width: calc(100% + 24px);
+        height: 62px;
+        margin: 0 -16px 20px;
+        width: calc(100% + 32px);
         padding: 0 18px;
     }
     & > p {
@@ -341,7 +356,7 @@
         }
         @media (max-width: master.$lg) {
             font-size: 15px;
-            line-height: 22px;
+            line-height: 20px;
         }
 
         &:after {
@@ -360,15 +375,22 @@
         line-height: 36px;
         @media (max-width: master.$xl) {
             font-size: 24px;
-            line-height: 25px;
+            line-height: 24px;
         }
-        @media (max-width: master.$xl) {
+        @media (max-width: master.$lg) {
             font-size: 21px;
             line-height: 24px;
         }
     }
 }
-
+.couponApplyCustomHeight {
+    @media (max-width: master.$xl) {
+        height: 40px !important;
+    }
+    @media (max-width: master.$lg) {
+        height: 36px !important;
+    }
+}
 .couponApplySection {
     height: 46px;
     border-radius: 23px;
@@ -378,14 +400,14 @@
     justify-content: space-between;
     padding: 9px 10px 9px 20px;
     @media (max-width: master.$xl) {
-        height: 40px;
-        padding: 5px 7px 5px 16px;
+        height: 38px;
+        padding: 5px 7px 5px 14px;
         border-radius: 26px;
     }
     @media (max-width: master.$lg) {
         border-radius: 24px;
         height: 34px;
-        padding: 5px 6px 5px 14px;
+        padding: 5px 6px 5px 12px;
     }
     @media (max-width: master.$md) {
         border-radius: 40px;
@@ -402,6 +424,7 @@
         }
         @media (max-width: master.$lg) {
             font-size: 14px;
+            padding: 0;
         }
     }
 }
@@ -469,13 +492,13 @@
         background-color: var(--darkPurpleHover) !important;
     }
     @media (max-width: master.$xl) {
-        width: 100px !important;
-        height: 46px !important;
+        width: 96px !important;
+        height: 42px !important;
         font-size: 15px !important;
     }
     @media (max-width: master.$lg) {
-        width: 90px !important;
-        height: 40px !important;
+        width: 87px !important;
+        height: 38px !important;
         font-size: 14px !important;
     }
     @media (max-width: master.$md) {
@@ -493,10 +516,12 @@
     & img {
         margin-left: 10px !important;
         @media (max-width: master.$xl) {
-            width: 16px;
+            width: 14px;
+            margin-left: 8px !important;
         }
         @media (max-width: master.$lg) {
-            width: 13px;
+            width: 12px;
+            margin-left: 7px !important;
         }
         @media (max-width: master.$md) {
             width: 12px;
@@ -514,9 +539,11 @@
         transform: rotate(180deg) !important;
         @media (max-width: master.$xl) {
             width: 16px;
+            margin-right: 9px !important;
+
         }
         @media (max-width: master.$lg) {
-            width: 13px;
+            width: 12px;
         }
         @media (max-width: master.$md) {
             width: 12px;
@@ -533,14 +560,15 @@
     border: solid 1px var(--darkPurple) !important;
     text-transform: capitalize !important;
     font-size: 18px !important;
+
     @media (max-width: master.$xl) {
-        width: 100px !important;
-        height: 46px !important;
+        width: 96px !important;
+        height: 42px !important;
         font-size: 15px !important;
     }
     @media (max-width: master.$lg) {
         width: 90px !important;
-        height: 40px !important;
+        height: 38px !important;
         font-size: 14px !important;
     }
     @media (max-width: master.$md) {
@@ -551,15 +579,41 @@
 }
 .bookingBookMoreBtn {
     color: var(--darkPurple) !important;
+    padding: 0 26px !important;
+    width: auto !important;
+    @media (max-width: master.$xl) {
+        padding: 0 20px !important;
+    }
+    @media (max-width: master.$lg) {
+        padding: 0 19px !important;
+    }
+    &:hover {
+        background-color: var(--darkPurpleHover) !important;
+    }
 }
 .bookingPayBtn {
     background-color: var(--darkPurple) !important;
     color: #fff !important;
-    margin-left: 23px !important;
+    margin-left: 26px !important;
+    @media (max-width: master.$xl) {
+        margin-left: 20px !important;
+        padding: 0 20px !important;
+        width: auto !important;
+    }
+    @media (max-width: master.$lg) {
+        margin-left: 20px !important;
+        padding: 0 19px !important;
+    }
+    &:hover {
+        background-color: #9a3381 !important;
+    }
 }
 
 .bookingLoginBtn {
     color: var(--darkPurple) !important;
+    &:hover {
+        background-color: var(--darkPurpleHover) !important;
+    }
 }
 
 ///step 2
@@ -571,14 +625,15 @@
     height: 471px;
     margin-top: 2px;
     @media (max-width: master.$xl) {
-        column-gap: 32px;
-        grid-template-columns: 266px 372px 384px;
+        column-gap: 29px;
+        grid-template-columns: 298px 398px 323px;
         height: 413px;
+        margin-top: 0;
     }
     @media (max-width: master.$lg) {
-        column-gap: 28px;
-        grid-template-columns: 240px 315px 316px;
-        height: 348px;
+        column-gap: 20px;
+        grid-template-columns: 260px 363px 265px;
+        height: 361px;
     }
     @media (max-width: master.$md) {
         column-gap: 18px;
@@ -611,12 +666,12 @@
     border-radius: 30px;
     position: relative;
     @media (max-width: master.$xl) {
-        padding: 20px 21px;
+        padding: 20px;
         border-radius: 26px;
     }
     @media (max-width: master.$lg) {
         border-radius: 24px;
-        padding: 18px 19px;
+        padding: 20px 16px 16px;
     }
     @media (max-width: master.$md) {
         border-radius: 22px;
@@ -638,8 +693,8 @@
         }
         @media (max-width: master.$lg) {
             font-size: 14px;
-            padding-bottom: 18px;
-            margin-bottom: 30px;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
         }
         @media (max-width: master.$md) {
             font-size: 13px;
@@ -674,7 +729,7 @@
                 margin-right: 9px;
                 color: var(--darkPurple);
                 @media (max-width: master.$xl) {
-                    font-size: 28px;
+                    font-size: 26px;
                     margin-right: 8px;
                 }
                 @media (max-width: master.$lg) {
@@ -712,7 +767,7 @@
                     @media (max-width: master.$xl) {
                         margin-left: 8px;
                         font-size: 16px;
-                        max-width: 121px;
+                        max-width: 145px;
                         white-space: nowrap;
                         text-overflow: ellipsis;
                         line-height: 24px;
@@ -721,7 +776,7 @@
                     @media (max-width: master.$lg) {
                         margin-left: 7px;
                         font-size: 14px;
-                        max-width: 112px;
+                        max-width: 130px;
                         line-height: 20px;
                     }
                     @media (max-width: master.$md) {
@@ -758,10 +813,13 @@
             height: 40px;
             font-size: 16px !important;
             border-radius: 26px;
+            padding: 0 17px 0 18px !important;
         }
         @media (max-width: master.$lg) {
             border-radius: 24px;
-            margin-top: 20px;
+            margin-top: 43px;
+            padding: 0 12px 0 16px !important;
+            height: 38px;
         }
         @media (max-width: master.$md) {
             border-radius: 22px;
@@ -780,8 +838,14 @@
         align-items: center;
         justify-content: center;
         svg {
-            font-size: 48px;
+            font-size: 46px;
             color: var(--darkPurple);
+            @media (max-width: master.$xl) {
+                font-size: 42px;
+            }
+            @media (max-width: master.$lg) {
+                font-size: 37px;
+            }
         }
     }
     & .timezonesListContainer {
@@ -789,15 +853,18 @@
         width: 100%;
         height: 100%;
         top: 0;
+
         left: 0;
         background-color: #fff;
         border-radius: 30px;
         padding: 30px 5px 30px 30px;
         @media (max-width: master.$xl) {
             border-radius: 26px;
+            padding: 25px 5px 25px 25px;
         }
         @media (max-width: master.$lg) {
             border-radius: 24px;
+            padding: 20px 5px 20px 20px;
         }
         @media (max-width: master.$md) {
             border-radius: 22px;
@@ -826,6 +893,12 @@
                     align-items: center;
                     justify-content: flex-start;
                     span {
+                        @media (max-width: master.$xl) {
+                            font-size: 15px;
+                        }
+                        @media (max-width: master.$lg) {
+                            font-size: 14px;
+                        }
                         @media (max-width: master.$md) {
                             font-size: 14px;
                         }
@@ -846,7 +919,7 @@
     }
     @media (max-width: master.$lg) {
         border-radius: 24px;
-        padding: 18px 19px;
+        padding: 20px 16px;
     }
     @media (max-width: master.$md) {
         border-radius: 22px;
@@ -864,7 +937,7 @@
         @media (max-width: master.$xl) {
             font-size: 16px;
             padding-bottom: 20px;
-            margin-bottom: 34px;
+            margin-bottom: 37px;
         }
         @media (max-width: master.$lg) {
             font-size: 14px;
@@ -892,28 +965,37 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            border:none !important;
+            border: none !important;
             display: flex;
             flex-direction: column;
-            height:300px;
+            height: 300px;
             align-items: center;
             justify-content: flex-start;
             p {
                 color: var(--darkPurple);
                 font-size: 18px;
+                @media (max-width: master.$xl) {
+                    font-size: 16px;
+                }
+                @media (max-width: master.$lg) {
+                    font-size: 14px;
+                }
+                @media (max-width: master.$md) {
+                    font-size: 13px;
+                }
             }
         }
         @media (max-width: master.$xl) {
-            column-gap: 20px;
-            row-gap: 20px;
-            grid-template-columns: repeat(3, calc((100% - 40px) / 3));
+            column-gap: 17px;
+            row-gap: 17px;
+            grid-template-columns: repeat(3, calc((100% - 34px) / 3));
             max-height: 260px;
         }
         @media (max-width: master.$lg) {
-            padding: 0 8px;
-            column-gap: 19px;
-            row-gap: 19px;
-            grid-template-columns: repeat(3, calc((100% - 38px) / 3));
+            padding: 0 9px;
+            column-gap: 12px;
+            row-gap: 0;
+            grid-template-columns: repeat(3, calc((100% - 24px) / 3));
             max-height: 220px;
         }
         @media (max-width: master.$md) {
@@ -934,14 +1016,14 @@
             cursor: pointer;
             font-size: 18px;
             @media (max-width: master.$xl) {
-                height: 40px;
+                height: 36px;
                 font-size: 16px;
-                border-radius: 9px;
+                border-radius: 8px;
             }
             @media (max-width: master.$lg) {
-                border-radius: 8px;
-                height: 38px;
+                height: 32px;
                 font-size: 14px;
+                border-radius: 7px;
             }
             @media (max-width: master.$md) {
                 border-radius: 7px;
@@ -965,18 +1047,18 @@
 //step 3
 .bookingCheckoutContainer {
     display: grid;
-    column-gap: 48px;
-    grid-template-columns: 333px 584px 333px;
+    column-gap: 39px;
+    grid-template-columns: 340px 581px 340px;
     height: 471px;
     @media (max-width: master.$xl) {
-        column-gap: 35px;
-        grid-template-columns: 266px 484px 266px;
-        height: 413px;
+        column-gap: 29px;
+        grid-template-columns: 298px 461px 260px;
+        height: 415px;
     }
     @media (max-width: master.$lg) {
-        column-gap: 30px;
-        grid-template-columns: 240px 387px 240px;
-        height: 348px;
+        column-gap: 20px;
+        grid-template-columns: 260px 388px 240px;
+        height: 368px;
     }
     @media (max-width: master.$md) {
         column-gap: 18px;
@@ -987,14 +1069,14 @@
 .bookingCheckoutTableContainer {
     border: 1px solid var(--darkPurple);
     border-radius: 30px;
-    padding: 23px 0 30px;
+    padding: 23px 0 15px;
     @media (max-width: master.$xl) {
-        padding: 20px 0 25px;
+        padding: 20px 0 0;
         border-radius: 26px;
     }
 
     @media (max-width: master.$lg) {
-        padding: 18px 0 19px;
+        padding: 15px 0 19px;
         border-radius: 24px;
     }
     @media (max-width: master.$md) {
@@ -1015,7 +1097,7 @@
         }
         @media (max-width: master.$lg) {
             font-size: 14px;
-            margin-bottom: 19px;
+            margin-bottom: 20px;
             line-height: 24px;
         }
         @media (max-width: master.$md) {
@@ -1027,20 +1109,20 @@
     & > .bookingCheckoutTable {
         width: 100%;
         & > .bookingCheckoutTableThead,
-        & > .bookingCheckoutTableTBody {
+        & .bookingCheckoutTableTBodyChild {
             display: flex;
             flex-direction: column;
             & > div {
                 display: grid;
-                grid-template-columns: 111px 138px 161px 106px;
+                grid-template-columns: 109px 142px 165px 98px;
                 justify-content: space-between;
-                padding: 0 20px 0 46px;
+                padding: 0 12px 0 54px;
                 @media (max-width: master.$xl) {
                     grid-template-columns: 88px 110px 128px 85px;
                     padding: 0 16px 0 37px;
                 }
                 @media (max-width: master.$lg) {
-                    grid-template-columns: 70px 88px 102px 68px;
+                    grid-template-columns: 70px 92px 106px 56px;
                     padding: 0 14px 0 32px;
                 }
                 @media (max-width: master.$md) {
@@ -1051,12 +1133,12 @@
                     font-size: 18px;
                     line-height: 40px;
                     @media (max-width: master.$xl) {
-                        font-size: 16px;
+                        font-size: 15px;
                         line-height: 36px;
                     }
                     @media (max-width: master.$lg) {
-                        font-size: 14px;
-                        line-height: 30px;
+                        font-size: 13px;
+                        line-height: 31px;
                     }
                     @media (max-width: master.$md) {
                         font-size: 13px;
@@ -1067,12 +1149,16 @@
         }
         & > .bookingCheckoutTableThead {
             background-color: var(--litePurple);
-            margin-bottom: 20px;
+            margin-bottom: 8px;
             height: 42px;
             justify-content: center;
+            @media (max-width: master.$xl) {
+                height: 37px;
+                margin-bottom: 4px;
+            }
             @media (max-width: master.$lg) {
-                height: 30px;
-                margin-bottom: 15px;
+                height: 32px;
+                margin-bottom: 7px;
             }
             & > div {
                 & > div {
@@ -1081,18 +1167,30 @@
             }
         }
 
-        & > .bookingCheckoutTableTBody {
-            max-height: 305px;
-            overflow: scroll;
+        & .bookingCheckoutTableTBodyChild {
+            padding-bottom: 15px;
+            @media (max-width: master.$lg) {
+                padding-bottom: 1px;
+            }
+        }
+        & .bookingCheckoutTableTBody {
+            height: 335px;
+            // overflow: scroll;
             @media (max-width: master.$xl) {
-                max-height: 260px;
+                height: 303px;
             }
             @media (max-width: master.$lg) {
-                max-height: 220px;
+                height: 249px;
             }
-            & > div {
+            & .bookingCheckoutTableTBodyChild > div {
                 height: 40px;
                 position: relative;
+                @media (max-width: master.$xl) {
+                    height: 36px;
+                }
+                @media (max-width: master.$lg) {
+                    height: 31px;
+                }
                 &:nth-child(even) {
                     background-color: rgba(237, 224, 234, 0.3);
                 }
@@ -1122,11 +1220,11 @@
     border-radius: 30px;
     padding: 23px 24px;
     @media (max-width: master.$xl) {
-        padding: 20px 21px;
+        padding: 20px;
         border-radius: 26px;
     }
     @media (max-width: master.$lg) {
-        padding: 18px 19px;
+        padding: 20px 16px 16px;
         border-radius: 24px;
     }
     @media (max-width: master.$md) {
@@ -1139,13 +1237,13 @@
         width: 100%;
         border-bottom: 1px solid var(--darkPurple);
         padding-bottom: 21px;
-        margin-bottom: 26px;
+        margin-bottom: 31px;
         line-height: 24px;
         text-align: center;
         @media (max-width: master.$xl) {
             font-size: 16px;
             padding-bottom: 20px;
-            margin-bottom: 26px;
+            margin-bottom: 25px;
             line-height: 24px;
         }
         @media (max-width: master.$lg) {
@@ -1167,14 +1265,14 @@
         display: flex;
         flex-direction: column;
         column-gap: 22px;
-        overflow: scroll;
+        // overflow: hidden;
         @media (max-width: master.$xl) {
-            margin: 0 -21px;
-            width: calc(100% + 42px);
+            margin: 0 -20px;
+            width: calc(100% + 40px);
         }
         @media (max-width: master.$lg) {
-            margin: 0 -19px;
-            width: calc(100% + 38px);
+            margin: 0 -16px;
+            width: calc(100% + 32px);
         }
         @media (max-width: master.$md) {
             margin: 0 -12px;
@@ -1189,16 +1287,16 @@
     justify-content: space-between;
     width: 100%;
     padding: 0 24px;
-    margin-bottom: 17px;
+    margin-bottom: 16px;
     margin-top: 2px;
     @media (max-width: master.$xl) {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         padding: 0 21px;
     }
     @media (max-width: master.$lg) {
         margin-bottom: 2px;
-        margin-top: 0;
-        padding: 0 19px;
+        margin-top: 7px;
+        padding: 0 16px;
     }
     @media (max-width: master.$md) {
         margin-bottom: 2px;
@@ -1244,20 +1342,20 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 67px;
+    height: 69px;
     background-color: var(--litePurple);
     border-top: 1px solid var(--darkPurple);
     border-bottom: 1px solid var(--darkPurple);
     padding: 0 24px;
     margin-top: 8px;
     @media (max-width: master.$xl) {
-        height: 58px;
+        height: 62px;
         padding: 0 21px;
     }
     @media (max-width: master.$lg) {
-        height: 45px;
-        margin-top: 6px;
-        padding: 0 19px;
+        height: 56px;
+        margin-top: 16px;
+        padding: 0 16px;
     }
     @media (max-width: master.$md) {
         height: 40px;
@@ -1287,7 +1385,7 @@
             line-height: 27px;
             font-weight: bolder;
             @media (max-width: master.$xl) {
-                font-size: 26px;
+                font-size: 24px;
                 line-height: 24px;
             }
             @media (max-width: master.$lg) {
@@ -1306,14 +1404,14 @@
 }
 .couponApplySectionContainer {
     padding: 0 24px;
-    margin-top: 28px;
+    margin-top: 26px;
     @media (max-width: master.$xl) {
         margin-top: 25px;
-        padding: 0 21px;
+        padding: 0 20px;
     }
     @media (max-width: master.$lg) {
         margin-top: 20px;
-        padding: 0 19px;
+        padding: 0 16px;
     }
     @media (max-width: master.$md) {
         margin-top: 18px;
@@ -1325,12 +1423,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 41px;
+    margin-top: 26px;
     @media (max-width: master.$xl) {
-        margin-top: 30px;
+        margin-top: 25px;
     }
     @media (max-width: master.$lg) {
-        margin-top: 20px;
+        margin-top: 15px;
     }
     @media (max-width: master.$md) {
         margin-top: 18px;
@@ -1340,12 +1438,12 @@
             width: 20px;
             height: 20px;
             @media (max-width: master.$xl) {
-                width: 18px;
-                height: 18px;
-            }
-            @media (max-width: master.$lg) {
                 width: 16px;
                 height: 16px;
+            }
+            @media (max-width: master.$lg) {
+                width: 15px;
+                height: 15px;
             }
             @media (max-width: master.$md) {
                 width: 14px;
@@ -1356,10 +1454,12 @@
             font-size: 18px;
             line-height: 24px;
             @media (max-width: master.$xl) {
-                font-size: 16px;
+                font-size: 15px;
+                margin-left: 15px;
             }
             @media (max-width: master.$lg) {
-                font-size: 14px;
+                font-size: 13px;
+                margin-left: 12px;
             }
             @media (max-width: master.$md) {
                 font-size: 12px;
@@ -1367,4 +1467,70 @@
             }
         }
     }
+}
+
+.termsDialog {
+    background-color: #f9f9f9 !important;
+    border-radius: 30px !important;
+    border: 1px solid var(--darkPurple) !important;
+    max-width: 700px !important;
+    padding-bottom: 40px;
+    @media (max-width: master.$xl) {
+        max-width: 580px !important;
+    }
+    @media (max-width: master.$lg) {
+        max-width: 500px !important;
+    }
+    & > div {
+        padding: 40px 40px 0 !important;
+        border-radius: 30px 0;
+
+        p,
+        ul,
+        li,
+        ol,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--textColor) !important;
+            @media (max-width: master.$xl) {
+                font-size: 14px !important;
+            }
+            @media (max-width: master.$lg) {
+                font-size: 13px !important;
+            }
+        }
+    }
+    & > h2 {
+        color: var(--darkPurple) !important;
+        background-color: #ede0ea !important;
+        height: 112px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border-bottom: 1px solid var(--darkPurple) !important;
+        @media (max-width: master.$xl) {
+            height: 90px;
+        }
+        @media (max-width: master.$lg) {
+            height: 76px;
+        }
+    }
+    & ul,
+    & ol {
+        padding-left: 18px !important;
+    }
+
+    :global(.MuiDialogActions-root) {
+        padding: 0 !important;
+    }
+}
+
+.w100 {
+    width: 100% !important;
+    max-width: 100% !important;
 }

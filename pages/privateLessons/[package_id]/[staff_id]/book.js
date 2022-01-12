@@ -6,7 +6,7 @@ import { setTimezones } from '../../../../redux/users';
 
 function bookingPage({ packageInfo }) {
     return (
-        <Layout page={'booking'}>
+        <Layout page={'privateLessons'}>
             <Booking packageInfo={packageInfo} />
         </Layout>
     )

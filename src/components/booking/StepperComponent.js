@@ -31,6 +31,10 @@ const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
         border: 0,
         backgroundColor:'rgba(234, 232, 217, 0.46)',
         borderRadius: 1,
+        // [theme.breakpoints.down(1900)]: {
+        //     height: 2,
+
+        // },
     },
 }));
 
@@ -44,6 +48,14 @@ const ColorlibStepIconRoot = styled('div')(({ theme, ownerState }) => ({
     borderRadius: '50%',
     justifyContent: 'center',
     alignItems: 'center',
+    // [theme.breakpoints.down(1900)]: {
+    //     width: 18,
+    //     height: 18,
+    // },
+    [theme.breakpoints.down(1600)]: {
+        // height: 54,
+
+    },
     ...(ownerState.active && {
         backgroundColor: '#fff',
     }),
