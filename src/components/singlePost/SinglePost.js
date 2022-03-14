@@ -26,6 +26,9 @@ const SinglePost = ({ postInfo }) => {
     return (<>
         <div className={classes.singlePostHeader}>
             <img src={banner} />
+
+        </div>
+        <div className={classes.singlePostBody}>
             <div className={classes.shareFloatBtn}>
                 <Button>
                     <ShareIcon />
@@ -45,8 +48,6 @@ const SinglePost = ({ postInfo }) => {
                     </Button>
                 </div>
             </div>
-        </div>
-        <div className={classes.singlePostBody}>
             <h2>{postInfo.title}</h2>
             <div className={classes.postDate}>
                 <DateRangeIcon />

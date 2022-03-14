@@ -24,15 +24,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/privateLessons/[package_id]/[staff_id]/[staff_slug]": [
+    "/contactUs": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/privateLessons/[package_id]/[staff_id]/[staff_slug].js"
+      "static/chunks/pages/contactUs.js"
     ],
-    "/privateLessons/[package_id]/[staff_id]/book": [
+    "/partners": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/privateLessons/[package_id]/[staff_id]/book.js"
+      "static/chunks/pages/partners.js"
     ]
   },
   "ampFirstPages": []

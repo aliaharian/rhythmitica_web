@@ -5,7 +5,7 @@ import Partners from '../src/components/partners/Partners';
 function PartnersPage() {
   return (
     <Layout page={'partners'}>
-      {/* <Partners /> */}
+      <Partners />
     </Layout>
   )
 }

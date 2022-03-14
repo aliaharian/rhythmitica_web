@@ -6,6 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import classes from '../../assets/styleSheets/singleEvent.module.scss'
+import CloseIcon from '@mui/icons-material/Close';
 import moment from 'moment'
 export default function EventSessionsDialog({
   open,
@@ -20,11 +21,13 @@ export default function EventSessionsDialog({
   return (
     <Dialog
       open={open}
+      className={classes.eventSessionsDialog}
       onClose={handleClose}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
     >
       <DialogContent>
+        <CloseIcon className={classes.closeBtn} onClick={handleClose}/>
         <DialogContentText className={classes.eventSessionsTableContainer} id="alert-dialog-description">
         <p className={classes.eventSessionsTableHeader}>Event Schedule</p>
           <div className={classes.eventSessionsTable}>

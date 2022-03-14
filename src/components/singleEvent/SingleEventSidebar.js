@@ -13,10 +13,12 @@ import grayCheckIcon from '../../assets/images/icons/grayCheckIcon.svg'
 import greenCheckIcon from '../../assets/images/icons/greenCheckIcon.svg'
 import { useState } from "react";
 import clsx from 'clsx'
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { ListItemButton } from "@mui/material";
 import SingleEventcountdown from "./SingleEventcountdown";
+import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
+
 const SingleEventSidebar = ({
     eventInfo,
     handleChangeTimezone,
@@ -32,6 +34,7 @@ const SingleEventSidebar = ({
     handleOpenSessionsDialog
 }) => {
 
+    const [activeCouponInput, setActiveCouponInput] = useState(false)
 
 
     return (
@@ -71,17 +74,21 @@ const SingleEventSidebar = ({
                         </div>
                         <div className={classes.eventInfo}>
                             <DateRangeOutlinedIcon />
-                            <p>start date: </p>
+                            <p>{eventInfo.parsedSessions.length > 1 ? 'start' : 'event'} date: </p>
                             <span>{eventInfo.parsedSessions.length > 0 && eventInfo.parsedSessions[0]?.start_date.split(' ')[0]}</span>
-                            <div className={classes.eventSessionsFloatBtn}>
-                                <Button onClick={handleOpenSessionsDialog}>
-                                    <DateRangeOutlinedIcon />
-                                </Button>
-                            </div>
+
+                            {
+                                eventInfo.parsedSessions.length > 1 &&
+                                <div className={classes.eventSessionsFloatBtn}>
+                                    <Button onClick={handleOpenSessionsDialog}>
+                                        <DateRangeOutlinedIcon />
+                                    </Button>
+                                </div>
+                            }
                         </div>
                         <div className={classes.eventInfo}>
                             <AccessTimeOutlinedIcon />
-                            <p>start time: </p>
+                            <p>{eventInfo.parsedSessions.length > 1 ? 'start' : 'event'} time: </p>
                             <span>{eventInfo.parsedSessions.length > 0 && eventInfo.parsedSessions[0]?.start_date.split(' ')[1]}</span>
                         </div>
                         <div className={classes.eventInfo}>
@@ -91,21 +98,34 @@ const SingleEventSidebar = ({
                         </div>
                     </div>
                     <div className={classes.eventSidebarInputs}>
-                        <div className={classes.couponApplySection}>
-                            <input className={appliedCoupon && classes.disabledInput} disabled={appliedCoupon} value={couponCode} onChange={handleChangeCouponCode} placeholder={`Coupon`} />
-                            <Button onClick={handleSubmitCoupon} className={clsx(classes.submitCouponButton, couponCode == '' && classes.submitCouponDisabled)}>
+                        <div className={clsx(classes.couponApplySection, (activeCouponInput || couponCode !== '') && classes.couponApplySectionActive)}>
+                            <input
+                                className={appliedCoupon && classes.disabledInput}
+                                disabled={appliedCoupon}
+                                value={couponCode}
+                                onChange={handleChangeCouponCode}
+                                placeholder={`Coupon`}
+                                onFocus={() => setActiveCouponInput(true)}
+                                onBlur={() => setActiveCouponInput(false)}
+                            />
+                            <Button
+                                onClick={handleSubmitCoupon}
+                                className={clsx(classes.submitCouponButton, couponCode == '' && classes.submitCouponDisabled)}
+                            >
 
                                 {appliedCoupon ?
                                     <CloseIcon style={{ fontSize: 20 }} />
                                     :
-                                    <img src={couponCode == '' ? grayCheckIcon : greenCheckIcon} />
+                                    <CheckRoundedIcon style={{ color: couponCode == '' ? 'rgba(41, 23, 32, 0.4)' : '#04a777' }} />
                                 }
                             </Button>
                         </div>
 
                         <Button className={classes.openTimezonesBtn} onClick={handleOpenTimezones}>
                             {selectedTimezone}
-                            <ArrowDropDownIcon />
+                            <div className={classes.timezoneBtnIcon}>
+                                <ArrowDropDownRoundedIcon />
+                            </div>
                         </Button>
                         {openTimeZones ? (
                             <div className={classes.timezonesListContainer}>

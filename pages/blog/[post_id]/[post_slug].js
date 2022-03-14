@@ -6,7 +6,7 @@ import SinglePost from '../../../src/components/singlePost/SinglePost';
 function singlePostPage({ postInfo }) {
     return (
         <Layout page={'singleEvent'}>
-            {/* <SinglePost postInfo={postInfo} /> */}
+            <SinglePost postInfo={postInfo} />
         </Layout>
     )
 }

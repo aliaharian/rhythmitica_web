@@ -27,30 +27,36 @@
     height: 136px;
     background-color: #f9f9f9;
     border-radius: 50%;
-    bottom: -68px;
-    right: 207px;
+    top: -144px;
+    right: -35px;
     display: flex;
     align-items: center;
     justify-content: center;
     @media (max-width: master.$xl) {
-        width: 100px;
-        height: 100px;
-        bottom: -50px;
-        right: 180px;
+        width: 110px;
+        height: 110px;
+        top: -114px;
+        right: -30px;
     }
     @media (max-width: master.$lg) {
-        width: 86px;
-        height: 86px;
-        bottom: -43px;
-        right: 150px;
+        width: 96px;
+        height: 96px;
+        top: -93px;
+        right: -25px;
     }
     @media (max-width: master.$md) {
         width: 80px;
         height: 80px;
-        bottom: -40px;
-        right: 120px;
+        top: -80px;
+        right: -20px;
     }
     &:hover {
+        & > button {
+            background-color: var(--pinkColor) !important;
+            svg {
+                color: #fff !important;
+            }
+        }
         & .shareList {
             height: auto;
             padding: 60px 0 36px;
@@ -68,25 +74,26 @@
         }
     }
     & > button {
-        width: 65px !important;
-        height: 65px !important;
-        max-width: 65px !important;
-        min-width: 65px !important;
+        width: 64px !important;
+        height: 64px !important;
+        max-width: 64px !important;
+        min-width: 64px !important;
         z-index: 12;
         border: 1px solid var(--pinkColor) !important;
         border-radius: 50% !important;
         background-color: rgba(217, 3, 104, 0.1) !important;
+
         @media (max-width: master.$xl) {
-            width: 50px !important;
-            height: 50px !important;
-            max-width: 50px !important;
-            min-width: 50px !important;
+            width: 52px !important;
+            height: 52px !important;
+            max-width: 52px !important;
+            min-width: 52px !important;
         }
         @media (max-width: master.$lg) {
-            width: 45px !important;
-            height: 45px !important;
-            max-width: 45px !important;
-            min-width: 45px !important;
+            width: 46px !important;
+            height: 46px !important;
+            max-width: 46px !important;
+            min-width: 46px !important;
         }
         @media (max-width: master.$md) {
             width: 40px !important;
@@ -126,24 +133,24 @@
         padding: 0;
         border-radius: 0 0 68px 68px;
         & > button {
-            width: 65px !important;
-            height: 65px !important;
-            max-width: 65px !important;
-            min-width: 65px !important;
+            width: 64px !important;
+            height: 64px !important;
+            max-width: 64px !important;
+            min-width: 64px !important;
             margin-bottom: 15px;
             z-index: 12;
             border-radius: 50% !important;
             @media (max-width: master.$xl) {
-                width: 50px !important;
-                height: 50px !important;
-                max-width: 50px !important;
-                min-width: 50px !important;
+                width: 52px !important;
+                height: 52px !important;
+                max-width: 52px !important;
+                min-width: 52px !important;
             }
             @media (max-width: master.$lg) {
-                width: 45px !important;
-                height: 45px !important;
-                max-width: 45px !important;
-                min-width: 45px !important;
+                width: 46px !important;
+                height: 46px !important;
+                max-width: 46px !important;
+                min-width: 46px !important;
             }
             @media (max-width: master.$md) {
                 width: 40px !important;
@@ -169,12 +176,24 @@
                 & svg {
                     color: rgba(0, 136, 204, 1) !important;
                 }
+                &:hover {
+                    background-color: rgba(0, 136, 204, 1) !important;
+                    & svg {
+                        color: #fff !important;
+                    }
+                }
             }
             &:nth-child(2) {
                 border: 1px solid rgba(189, 8, 28, 1) !important;
                 background-color: rgba(189, 8, 28, 0.1) !important;
                 & svg {
                     color: rgba(189, 8, 28, 1) !important;
+                }
+                &:hover {
+                    background-color: rgba(189, 8, 28, 1) !important;
+                    & svg {
+                        color: #fff !important;
+                    }
                 }
             }
             &:nth-child(3) {
@@ -183,12 +202,24 @@
                 & svg {
                     color: rgba(24, 119, 242, 1) !important;
                 }
+                &:hover {
+                    background-color: rgba(24, 119, 242, 1) !important;
+                    & svg {
+                        color: #fff !important;
+                    }
+                }
             }
             &:nth-child(4) {
                 border: 1px solid rgba(29, 161, 242, 1) !important;
                 background-color: rgba(29, 161, 242, 0.1) !important;
                 & svg {
                     color: rgba(29, 161, 242, 1) !important;
+                }
+                &:hover {
+                    background-color: rgba(29, 161, 242, 1) !important;
+                    & svg {
+                        color: #fff !important;
+                    }
                 }
             }
         }
@@ -197,6 +228,7 @@
 .singlePostBody {
     max-width: 1436px;
     margin: 80px auto 0;
+    position:relative;
     @media (max-width: master.$xl) {
         max-width: 1150px;
         margin: 60px auto 0;
@@ -204,32 +236,37 @@
     @media (max-width: master.$lg) {
         max-width: 980px;
         margin: 50px auto 0;
-
     }
     @media (max-width: master.$md) {
         max-width: 856px;
         margin: 40px auto 0;
-
     }
     & > h2 {
         font-size: 40px;
         line-height: 53px;
         color: var(--pinkColor);
         margin-bottom: 80px;
+        max-width: 1300px;
         @media (max-width: master.$xl) {
             font-size: 36px;
             line-height: 48px;
             margin-bottom: 60px;
+            max-width: 1070px;
+
         }
         @media (max-width: master.$lg) {
             font-size: 32px;
             line-height: 45px;
             margin-bottom: 50px;
+            max-width: 890px;
+
         }
         @media (max-width: master.$md) {
             font-size: 28px;
             line-height: 42px;
             margin-bottom: 40px;
+            max-width: 781px;
+
         }
     }
 }
@@ -264,14 +301,17 @@
     }
     & > p {
         font-size: 16px;
+        line-height:30px;
         @media (max-width: master.$xl) {
-            font-size: 14px;
+            font-size: 15px;
+            line-height:28px;
         }
         @media (max-width: master.$lg) {
             font-size: 13px;
+            line-height:25px;
         }
         @media (max-width: master.$md) {
-            font-size: 13px;
+            font-size: 14px;
         }
     }
 }

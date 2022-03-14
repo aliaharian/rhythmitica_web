@@ -2,25 +2,28 @@
 
 .topColor {
     width: 100%;
-    height: 400px;
+    height: 420px;
     top: 0;
     background-color: var(--aboutColor);
     position: absolute;
     z-index: -1;
     @media (max-width: master.$xl) {
-        height: 380px;
+        height: 360px;
     }
     @media (max-width: master.$lg) {
-        height: 340px;
+        height: 304px;
+    }
+    @media (max-width: master.$md) {
+        height: 286px;
     }
 }
 .aboutGrandContainer {
-    margin-top: 218px;
+    margin-top: 223px;
     @media (max-width: master.$xl) {
-        margin-top: 180px;
+        margin-top: 179px;
     }
     @media (max-width: master.$lg) {
-        margin-top: 150px;
+        margin-top: 139px;
     }
 }
 .aboutContainer {
@@ -49,13 +52,13 @@
     line-height: 30px;
     @media (max-width: master.$xl) {
         font-size: 20px;
-        margin-bottom: 22px;
-        padding-bottom: 18px;
+        margin-bottom: 24px;
+        padding-bottom: 20px;
     }
     @media (max-width: master.$lg) {
         font-size: 18px;
-        margin-bottom: 20px;
-        padding-bottom: 17px;
+        margin-bottom: 19px;
+        padding-bottom: 16px;
     }
     @media (max-width: master.$md) {
         font-size: 18px;
@@ -63,7 +66,7 @@
         padding-bottom: 16px;
     }
     &:after {
-        width: 73px;
+        width: 60px;
         height: 5px;
         bottom: 0;
         content: "";
@@ -71,16 +74,16 @@
         border-radius: 51px;
         background-color: #f9f9f9;
         @media (max-width: master.$xl) {
-            width: 68px;
-            height: 5px;
+            width: 50px;
+            height: 4px;
         }
         @media (max-width: master.$lg) {
-            width: 65px;
+            width: 40px;
             height: 4px;
         }
         @media (max-width: master.$md) {
-            width: 63px;
-            height: 3px;
+            width: 34px;
+            height: 4px;
         }
     }
 }
@@ -90,21 +93,21 @@
     border-radius: 50px;
     border: solid 1px var(--aboutColor);
     background-color: #f9f9f9;
-    margin-bottom: 92px;
+    margin-bottom: 120px;
     @media (max-width: master.$xl) {
-        padding: 90px 92px;
+        padding: 80px;
         border-radius: 48px;
-        margin-bottom: 90px;
+        margin-bottom: 92px;
     }
     @media (max-width: master.$lg) {
-        padding: 88px 90px;
+        padding: 64px;
         border-radius: 46px;
-        margin-bottom: 85px;
+        margin-bottom: 72px;
     }
     @media (max-width: master.$md) {
-        padding: 85px 87px;
+        padding: 54px;
         border-radius: 44px;
-        margin-bottom: 80px;
+        margin-bottom: 64px;
     }
     h3 {
         font-size: 20px;
@@ -120,12 +123,12 @@
         @media (max-width: master.$lg) {
             font-size: 16px;
             line-height: 22px;
-            margin-bottom: 28px;
+            margin-bottom: 26px;
         }
         @media (max-width: master.$md) {
             font-size: 16px;
             line-height: 20px;
-            margin-bottom: 26px;
+            margin-bottom: 22px;
         }
     }
     p {
@@ -134,15 +137,15 @@
         color: var(--blogTextColor);
         @media (max-width: master.$xl) {
             font-size: 15px;
-            line-height: 30px;
+            line-height: 28px;
         }
         @media (max-width: master.$lg) {
             font-size: 13px;
-            line-height: 26px;
+            line-height: 25px;
         }
         @media (max-width: master.$md) {
             font-size: 14px;
-            line-height: 26px;
+            line-height: 25px;
         }
     }
     .hr {
@@ -151,13 +154,13 @@
         height: 1px;
         margin: 80px 0;
         @media (max-width: master.$xl) {
-            margin: 70px 0;
+            margin: 68px 0;
         }
         @media (max-width: master.$lg) {
-            margin: 55px 0;
+            margin: 56px 0;
         }
         @media (max-width: master.$md) {
-            margin: 50px 0;
+            margin: 48px 0;
         }
     }
 }

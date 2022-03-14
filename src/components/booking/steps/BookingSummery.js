@@ -204,6 +204,7 @@ const BookingSummery = ({
                             </div>
                             <p>$</p>
                         </div>
+
                         <div className={clsx(classes.couponApplySection, (activeCouponInput || bookingData.couponCode !== '') && classes.couponApplySectionActive)}>
                             <input
                                 className={bookingData.appliedCoupon && classes.disabledInput}
@@ -214,7 +215,10 @@ const BookingSummery = ({
                                 onFocus={() => setActiveCouponInput(true)}
                                 onBlur={() => setActiveCouponInput(false)}
                             />
-                            <Button onClick={handleSubmitCoupon} className={clsx(classes.submitCouponButton, bookingData.couponCode == '' && classes.submitCouponDisabled)}>
+                            <Button
+                             onClick={handleSubmitCoupon} 
+                             className={clsx(classes.submitCouponButton, bookingData.couponCode == '' && classes.submitCouponDisabled)}
+                             >
 
                                 {bookingData.appliedCoupon ?
                                     <CloseIcon style={{ fontSize: 20 }} />

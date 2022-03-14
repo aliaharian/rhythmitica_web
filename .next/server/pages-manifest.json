@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/privateLessons/[package_id]/[staff_id]/[staff_slug]": "pages/privateLessons/[package_id]/[staff_id]/[staff_slug].js",
-  "/privateLessons/[package_id]/[staff_id]/book": "pages/privateLessons/[package_id]/[staff_id]/book.js"
+  "/contactUs": "pages/contactUs.js",
+  "/partners": "pages/partners.js"
 }

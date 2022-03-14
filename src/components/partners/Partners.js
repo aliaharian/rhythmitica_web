@@ -33,7 +33,7 @@ const Partners = () => {
         {
             key: 2,
             title: 'Rhythmitica Online Shop',
-            desc: 'World Music Traditional Musical instrument ',
+            desc: 'World Musical instrument ',
             image: partner3,
             link: '#'
         },
@@ -54,7 +54,7 @@ const Partners = () => {
         {
             key: 2,
             title: 'Rhythmitica Online Shop',
-            desc: 'World Music Traditional Musical instrument ',
+            desc: 'World Musical instrument ',
             image: partner3,
             link: '#'
         }

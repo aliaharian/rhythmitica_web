@@ -1,31 +1,31 @@
 @use "./master.module.scss" as master;
 
 .singleEventMainContainer {
-    padding: 58px 0 58px;
+    padding: 58px 0 120px;
     display: grid;
     max-width: 1436px;
     margin: 164px auto 0;
-    grid-template-columns: calc(100% - 976px) 911px;
-    grid-column-gap: 65px;
+    grid-template-columns: calc(100% - 971px) 911px;
+    grid-column-gap: 60px;
 
     @media (max-width: master.$xl) {
         max-width: 1150px;
         margin: 134px auto 0;
-        padding: 45px 0;
+        padding: 45px 0 92px;
         grid-template-columns: calc(100% - 780px) 730px;
         grid-column-gap: 50px;
     }
     @media (max-width: master.$lg) {
         max-width: 980px;
         margin: 115px auto 0;
-        padding: 36px 0;
+        padding: 36px 0 72px;
         grid-template-columns: calc(100% - 638px) 600px;
         grid-column-gap: 38px;
     }
     @media (max-width: master.$md) {
         max-width: 856px;
         margin: 109px auto 0;
-        padding: 32px 0;
+        padding: 32px 0 64px;
         grid-template-columns: calc(100% - 560px) 530px;
         grid-column-gap: 30px;
     }
@@ -44,6 +44,7 @@
         top: 107;
     }
     .singleEventSidebar {
+        position: relative;
         border-radius: 50px;
         border: solid 1px var(--overlayColor);
         // background-color: #f9f9f9;
@@ -71,12 +72,12 @@
                 border-bottom: 1px solid var(--overlayColor);
                 position: relative;
                 @media (max-width: master.$xl) {
-                    height: 75px;
-                    padding: 0 28px;
+                    height: 66px;
+                    padding: 0 24px;
                 }
                 @media (max-width: master.$lg) {
-                    height: 70px;
-                    padding: 0 25px;
+                    height: 60px;
+                    padding: 0 20px;
                 }
                 @media (max-width: master.$md) {
                     height: 65px;
@@ -87,12 +88,12 @@
                     font-size: 32px;
                     margin-right: 15px;
                     @media (max-width: master.$xl) {
-                        font-size: 28px;
+                        font-size: 26px;
                         margin-right: 13px;
                     }
                     @media (max-width: master.$lg) {
-                        font-size: 25px;
-                        margin-right: 10px;
+                        font-size: 24px;
+                        margin-right: 14px;
                     }
                     @media (max-width: master.$md) {
                         font-size: 24px;
@@ -110,7 +111,7 @@
                     }
                     @media (max-width: master.$lg) {
                         font-size: 13px;
-                        margin-right: 10px;
+                        margin-right: 14px;
                     }
                     @media (max-width: master.$md) {
                         margin-right: 12px;
@@ -151,13 +152,14 @@
                     top: 50px;
                     z-index: 999;
                     @media (max-width: master.$xl) {
-                        width: 100px;
-                        height: 50px;
+                        width: 96px;
+                        height: 48px;
+                        top: 41px;
                     }
                     @media (max-width: master.$lg) {
                         width: 90px;
                         height: 45px;
-                        top: 47.5px;
+                        top: 36px;
                     }
                     @media (max-width: master.$md) {
                         top: 42.5px;
@@ -167,31 +169,35 @@
                         max-width: 60px !important;
                         min-width: 60px !important;
                         height: 60px !important;
-                        border: 1px solid var(--overlayColor) !important;
+                        border: 1px solid var(--linkActiveColor) !important;
                         border-radius: 50% !important;
+                        color: var(--linkActiveColor) !important;
+                        &:hover {
+                            background-color: var(--greenBgColor) !important;
+                        }
                         @media (max-width: master.$xl) {
-                            width: 50px !important;
-                            max-width: 50px !important;
-                            min-width: 50px !important;
-                            height: 50px !important;
+                            width: 48px !important;
+                            max-width: 48px !important;
+                            min-width: 48px !important;
+                            height: 48px !important;
                         }
                         @media (max-width: master.$lg) {
-                            width: 45px !important;
-                            max-width: 45px !important;
-                            min-width: 45px !important;
-                            height: 45px !important;
+                            width: 44px !important;
+                            max-width: 44px !important;
+                            min-width: 44px !important;
+                            height: 44px !important;
                         }
                         svg {
                             width: 32px;
                             height: 32px;
-                            color: var(--overlayColor) !important;
+                            color: var(--linkActiveColor) !important;
                             @media (max-width: master.$xl) {
-                                width: 28px;
-                                height: 28px;
+                                width: 26px;
+                                height: 26px;
                             }
                             @media (max-width: master.$lg) {
-                                width: 25px;
-                                height: 25px;
+                                width: 24px;
+                                height: 24px;
                             }
                         }
                     }
@@ -203,19 +209,20 @@
 
 .eventSidebarInputs {
     width: 100%;
-    padding: 0 31px;
-    height: 106px;
+    padding: 30px 31px;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
     border-bottom: 1px solid var(--overlayColor);
     @media (max-width: master.$xl) {
-        padding: 0 28px;
-        height: 100px;
+        padding: 24px;
+        height: 151px;
     }
     @media (max-width: master.$lg) {
-        padding: 0 25px;
-        height: 85px;
+        padding: 20px;
+        height: 136px;
     }
     @media (max-width: master.$md) {
         padding: 0 20px;
@@ -224,44 +231,47 @@
     .couponApplySection {
         height: 46px;
         border-radius: 23px;
-        border: 1px solid var(--overlayColor);
+        border: 1px solid rgba(41, 23, 32, 0.5);
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 9px 10px 9px 20px;
-        width: 187px;
+        width: 100%;
         @media (max-width: master.$xl) {
-            height: 40px;
-            padding: 5px 7px 5px 16px;
+            height: 38px;
+            padding: 5px 7px 5px 14px;
             border-radius: 26px;
-            width: 140px;
+            // width: 140px;
         }
         @media (max-width: master.$lg) {
             border-radius: 24px;
-            height: 34px;
-            padding: 5px 6px 5px 14px;
-            width: 125px;
+            height: 38px;
+            padding: 5px 6px 5px 12px;
+            // width: 125px;
         }
         @media (max-width: master.$md) {
             border-radius: 40px;
-            height: 36px;
-            width: 110px;
+            // width: 100px;
         }
         & > input {
             width: calc(100% - 40px);
             border: none !important;
             outline: none !important;
-            background-color: #f9f9f9 !important;
             font-size: 18px;
+            color: var(--textColor);
+            background: transparent !important;
             @media (max-width: master.$xl) {
                 font-size: 16px;
             }
             @media (max-width: master.$lg) {
                 font-size: 14px;
+                padding: 0;
             }
         }
     }
-
+    .couponApplySectionActive {
+        border: 1px solid var(--linkActiveColor);
+    }
     .submitCouponButton {
         width: 28px;
         height: 28px;
@@ -269,6 +279,10 @@
         max-width: 28px !important;
         border: 1px solid var(--linkActiveColor) !important;
         border-radius: 50% !important;
+        color: var(--linkActiveColor) !important;
+        &:hover {
+            background-color: var(--greenBgColor) !important;
+        }
         @media (max-width: master.$xl) {
             width: 24px;
             height: 24px;
@@ -283,6 +297,7 @@
         }
         & svg {
             color: var(--linkActiveColor);
+            font-size: 18px;
             @media (max-width: master.$lg) {
                 font-size: 12px !important;
             }
@@ -299,67 +314,96 @@
     }
     .disabledInput {
         pointer-events: none;
+        color: var(--linkActiveColor) !important;
     }
     //timezones list
     & .openTimezonesBtn {
-        width: 180px;
+        width: 100%;
         height: 46px;
         border-radius: 23px;
-        border: 1px solid var(--overlayColor);
+        border: 1px solid var(--linkActiveColor);
+        color: var(--linkActiveColor) !important;
         display: flex;
         align-items: center;
         justify-content: space-between !important;
-        padding: 0 17px !important;
+        padding: 0 17px 0 20px !important;
         text-transform: capitalize !important;
         font-size: 18px !important;
+        transition: all 250ms ease;
+        &:hover {
+            background-color: var(--greenBgColor);
+        }
         @media (max-width: master.$xl) {
             height: 40px;
             font-size: 16px !important;
             border-radius: 26px;
-            width: 160px;
+            padding: 0 17px 0 18px !important;
         }
         @media (max-width: master.$lg) {
             border-radius: 24px;
-            width: 150px;
-            height: 34px;
-            font-size: 14px !important;
+            padding: 0 12px 0 16px !important;
+            height: 38px;
         }
         @media (max-width: master.$md) {
             border-radius: 22px;
             height: 36px;
             font-size: 14px !important;
-            padding: 0 10px 0 12px !important;
-            width: 135px;
-            font-size: 13px !important;
+            padding: 0 10px 0 17px !important;
         }
     }
+    .timezoneBtnIcon {
+        width: 28px;
+        height: 28px;
+        // border:1px solid var(--darkPurple);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: master.$xl) {
+            width: 13px;
+        }
+        svg {
+            font-size: 46px;
+            color: var(--linkActiveColor);
+            @media (max-width: master.$xl) {
+                font-size: 42px;
+            }
+            @media (max-width: master.$lg) {
+                font-size: 37px;
+            }
+        }
+    }
+
     & .timezonesListContainer {
         position: absolute;
         width: 100%;
         height: 100%;
-        z-index: 1000;
         top: 0;
+        z-index: 999999;
         left: 0;
         background-color: #fff;
-        border-radius: 30px;
-        padding: 10px 30px;
+        border-radius: 60px;
+        padding: 30px 5px 30px 30px;
         @media (max-width: master.$xl) {
             border-radius: 26px;
+            padding: 25px 5px 25px 25px;
         }
         @media (max-width: master.$lg) {
             border-radius: 24px;
+            padding: 20px 5px 20px 20px;
         }
         @media (max-width: master.$md) {
             border-radius: 22px;
             padding: 5px 12px 11px;
         }
-        & > ul {
+        & ul {
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
             flex-direction: column;
             height: 100%;
-            overflow: scroll;
+            overflow-y: scroll;
+            padding-right: 25px;
             & > li {
                 width: 100%;
                 height: 46px;
@@ -375,6 +419,12 @@
                     align-items: center;
                     justify-content: flex-start;
                     span {
+                        @media (max-width: master.$xl) {
+                            font-size: 15px;
+                        }
+                        @media (max-width: master.$lg) {
+                            font-size: 14px;
+                        }
                         @media (max-width: master.$md) {
                             font-size: 14px;
                         }
@@ -395,12 +445,12 @@
     border-bottom: 1px solid var(--overlayColor);
 
     @media (max-width: master.$xl) {
-        height: 125px;
-        padding: 0 28px;
+        height: 114px;
+        padding: 0 24px;
     }
     @media (max-width: master.$lg) {
         height: 105px;
-        padding: 0 25px;
+        padding: 0 20px;
     }
     @media (max-width: master.$md) {
         height: 95px;
@@ -417,12 +467,12 @@
         flex-direction: column;
         background-color: #fff;
         @media (max-width: master.$xl) {
-            width: 68px;
-            height: 68px;
+            width: 66px;
+            height: 66px;
         }
         @media (max-width: master.$lg) {
-            width: 62px;
-            height: 62px;
+            width: 60px;
+            height: 60px;
         }
         @media (max-width: master.$md) {
             width: 56px;
@@ -434,16 +484,18 @@
                 font-size: 40px;
                 line-height: 53px;
                 font-weight: bolder;
-                margin-bottom: 5px;
+                margin-bottom: 3px;
+                margin-top: 1px;
                 @media (max-width: master.$xl) {
-                    font-size: 36px;
-                    line-height: 46px;
+                    font-size: 34px;
+                    line-height: 43px;
                     margin-bottom: 2px;
+                    margin-top:1px;
                 }
                 @media (max-width: master.$lg) {
-                    font-size: 32px;
+                    font-size: 28px;
                     line-height: 40px;
-                    margin-bottom: 2px;
+                    margin-bottom: -1px;
                 }
                 @media (max-width: master.$md) {
                     font-size: 28px;
@@ -464,17 +516,17 @@
 }
 .eventRegisterContainer {
     width: 100%;
-    height: 115px;
+    height: 117px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 31px;
     @media (max-width: master.$xl) {
-        padding: 0 28px;
-        height: 95px;
+        padding: 0 24px;
+        height: 98px;
     }
     @media (max-width: master.$lg) {
-        padding: 0 25px;
+        padding: 0 20px;
         height: 85px;
     }
     @media (max-width: master.$md) {
@@ -483,17 +535,20 @@
     }
     button {
         width: 100% !important;
-        height: 55px !important;
+        height: 54px !important;
         border-radius: 28px !important;
         border: 1px solid var(--linkActiveColor) !important;
         background-color: rgba(4, 167, 119, 0.3) !important;
         text-transform: capitalize !important;
-        color: var(--textColor) !important;
+        color: var(--linkActiveColor) !important;
+        :global(.MuiButton-label) {
+            color: var(--textColor);
+        }
         @media (max-width: master.$xl) {
-            height: 50px !important;
+            height: 48px !important;
         }
         @media (max-width: master.$lg) {
-            height: 45px !important;
+            height: 44px !important;
         }
         @media (max-width: master.$md) {
             height: 43px !important;
@@ -530,14 +585,14 @@
     & > img {
         width: 100%;
         border-radius: 50px 50px 50px 0;
-        margin-bottom: 37px;
+        margin-bottom: 30px;
         @media (max-width: master.$xl) {
             border-radius: 48px 48px 48px 0;
-            margin-bottom: 30px;
+            margin-bottom: 26px;
         }
         @media (max-width: master.$lg) {
             border-radius: 46px 46px 46px 0;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
         @media (max-width: master.$md) {
             border-radius: 44px 44px 44px 0;
@@ -547,19 +602,18 @@
     h2 {
         font-size: 20px;
         line-height: 27px;
-        margin-bottom: 38px;
+        margin-bottom: 27px;
         font-weight: bolder;
         @media (max-width: master.$xl) {
             font-size: 18px;
             line-height: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 23px;
         }
         @media (max-width: master.$lg) {
             font-size: 16px;
             line-height: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 21px;
         }
-   
     }
     .eventDesc {
         font-size: 16px;
@@ -575,13 +629,18 @@
         p {
             font-size: 16px;
             line-height: 30px;
+            color: var(--blogTextColor);
             @media (max-width: master.$xl) {
-                font-size: 14px;
+                font-size: 15px;
                 line-height: 28px;
             }
             @media (max-width: master.$lg) {
                 font-size: 13px;
-                line-height: 26px;
+                line-height: 25px;
+            }
+            @media (max-width: master.$md) {
+                font-size: 14px;
+                line-height: 25px;
             }
         }
     }
@@ -718,5 +777,27 @@
                 }
             }
         }
+    }
+}
+.eventSessionsDialog {
+    :global(.MuiPaper-root) {
+        border-radius: 40px;
+    }
+    :global(.MuiDialogContent-root) {
+        padding: 20px;
+    }
+}
+.closeBtn {
+    position: absolute;
+    top: 44px;
+    left: 62px;
+    color: rgba(41, 23, 32, 0.5);
+    cursor: pointer;
+    @media (max-width: master.$lg) {
+        top: 39px;
+        left: 57px;
+    }
+    &:hover {
+        color: var(--linkActiveColor);
     }
 }

@@ -7,7 +7,7 @@ import { setTimezones } from '../../../redux/users';
 function eventSinglePage({ eventInfo, timezone }) {
     return (
         <Layout page={'singleEvent'}>
-            {/* <SingleEvent eventInfo={eventInfo} timezone={timezone} /> */}
+            <SingleEvent eventInfo={eventInfo} timezone={timezone} />
         </Layout>
     )
 }

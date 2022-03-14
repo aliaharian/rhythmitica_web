@@ -5,7 +5,7 @@ import Contact from '../src/components/contact/Contact';
 function contactUsPage() {
   return (
     <Layout page={'contact'}>
-      {/* <Contact /> */}
+      <Contact />
     </Layout>
   )
 }

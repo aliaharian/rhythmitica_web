@@ -5,7 +5,7 @@ import { wrapper } from "../redux/store";
 function AboutUsPage() {
   return (
     <Layout page={'about'}>
-      {/* <About /> */}
+      <About />
     </Layout>
   )
 }
