@@ -3,7 +3,7 @@ import classes from '../../assets/styleSheets/homepage.module.scss';
 // import groupImg from '../../assets/images/groupLessonBanner.jpg';
 // import privateImg from '../../assets/images/PrivateLessonBanner.jpg';
 import groupImg from '../../assets/images/Group-lessons.jpg';
-import privateImg from '../../assets/images/Private-lessonssh.jpg';
+import privateImg from '../../assets/images/Private-lessons.jpg';
 import Link from 'next/link';
 const HomeIntro = () => {
     return (
