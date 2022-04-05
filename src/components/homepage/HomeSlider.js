@@ -23,17 +23,17 @@ const HomeSlider = () => {
         <div className={classes.sliderContainer}>
             <Slider {...settings}>
             <div className={classes.slideItem}>
-                    <img src={slide1}/>
-                </div>
-                <div className={classes.slideItem}>
-                    <img src={slide2}/>
+                    <img src={slide0}/>
                 </div>
                 <div className={classes.slideItem}>
                     <img src={slide3}/>
                 </div>
                 <div className={classes.slideItem}>
-                    <img src={slide4}/>
+                    <img src={slide2}/>
                 </div>
+                {/* <div className={classes.slideItem}>
+                    <img src={slide4}/>
+                </div> */}
                 
             </Slider>
         </div>
