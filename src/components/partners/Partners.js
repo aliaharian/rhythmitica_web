@@ -1,8 +1,10 @@
 import classes from '../../assets/styleSheets/partners.module.scss'
 import Slider from "react-slick";
 import partner1 from '../../assets/images/partners/0.jpg';
-import partner2 from '../../assets/images/partners/1.jpg';
-import partner3 from '../../assets/images/partners/2.jpg';
+// import partner2 from '../../assets/images/partners/1.jpg';
+// import partner3 from '../../assets/images/partners/2.jpg';
+import partner2 from '../../assets/images/partners/SHOP.jpg';
+import partner3 from '../../assets/images/partners/KIDS.jpg';
 import PartnerItem from './PartnerItem';
 const Partners = () => {
     const settings = {
@@ -25,39 +27,19 @@ const Partners = () => {
         },
         {
             key: 1,
-            title: 'Rhythmitica Kids',
-            desc: 'Online Music & Farsi Lessons For Kids',
-            image: partner2,
-            link: '#'
-        },
-        {
-            key: 2,
             title: 'Rhythmitica Online Shop',
             desc: 'World Musical instrument ',
             image: partner3,
             link: '#'
         },
         {
-            key: 0,
-            title: 'Rhythmitica',
-            desc: 'Online Music Academy',
-            image: partner1,
-            link: '#'
-        },
-        {
-            key: 1,
+            key: 2,
             title: 'Rhythmitica Kids',
             desc: 'Online Music & Farsi Lessons For Kids',
             image: partner2,
             link: '#'
         },
-        {
-            key: 2,
-            title: 'Rhythmitica Online Shop',
-            desc: 'World Musical instrument ',
-            image: partner3,
-            link: '#'
-        }
+        
     ]
     return (
         <>
