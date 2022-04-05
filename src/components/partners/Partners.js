@@ -29,14 +29,14 @@ const Partners = () => {
             key: 1,
             title: 'Rhythmitica Online Shop',
             desc: 'World Musical instrument ',
-            image: partner3,
+            image: partner2,
             link: '#'
         },
         {
             key: 2,
             title: 'Rhythmitica Kids',
             desc: 'Online Music & Farsi Lessons For Kids',
-            image: partner2,
+            image: partner3,
             link: '#'
         },
         
