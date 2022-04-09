@@ -104,7 +104,6 @@ const BookingSummery = ({
                     />
                     <div className={classes.summeryItem}>
                         <div className={classes.summeryIcon}>
-                            {/* <img src={durationIcon} /> */}
                             <TimelapseIcon />
                         </div>
                         <p className={classes.summeryTitle}>Duration</p>
@@ -127,7 +126,6 @@ const BookingSummery = ({
                     </div>
                     <div className={classes.summeryItem}>
                         <div className={classes.summeryIcon}>
-                            {/* <img src={listIcon} /> */}
                             <FormatListNumberedRoundedIcon />
                         </div>
                         <p className={classes.summeryTitle}>Session</p>
@@ -150,7 +148,6 @@ const BookingSummery = ({
                     </div>
                     <div className={classes.summeryItem}>
                         <div className={classes.summeryIcon}>
-                            {/* <img src={updateIcon} /> */}
                             <UpdateIcon />
                         </div>
                         <p className={classes.summeryTitle}>Type</p>
@@ -173,7 +170,6 @@ const BookingSummery = ({
                     </div>
                     <div className={classes.summeryItem}>
                         <div className={classes.summeryIcon}>
-                            {/* <img src={priceIcon} /> */}
                             <PaidOutlinedIcon />
                         </div>
                         <p className={classes.summeryTitle}>Price</p>

@@ -39,7 +39,6 @@ const Post = ({
     return (
         <div className={clsx(classes.postContainer, sm && classes.postContainerSm, unsplashMode && classes.postUnsplashMode, muiClass.postContainer)}>
             <div className={classes.imageContainer}>
-                {/* <img src={image} /> */}
                 <Image alt={name} layout="fill" src={image} />
             </div>
             <div ref={overlayRef} className={clsx(classes.overlay, muiClass.overlay)}>

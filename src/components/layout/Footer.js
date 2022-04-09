@@ -10,6 +10,7 @@ import pinterest from '../../assets/images/icons/pinterest.svg'
 import instagram from '../../assets/images/icons/instagram.svg'
 import gplus from '../../assets/images/icons/gplus.svg'
 import twitter from '../../assets/images/icons/twitter.svg'
+import Image from 'next/image'
 
 import clsx from 'clsx';
 const Footer = () => {
@@ -55,20 +56,20 @@ const Footer = () => {
                         <h3>Downloads</h3>
                         <Link href={'#'}>
                             <a>
-                                <img src={ibook} />
+                                <Image alt="Our Free iBook" width={47} height={47} src={ibook} />
                                 <p>Our Free iBook</p>
                             </a>
                         </Link>
                         <Link href={'#'}>
                             <a>
-                                <img src={loops} />
+                            <Image alt="Persion Loops App" width={47} height={47} src={loops} />
                                 <p>Persion Loops App</p>
                             </a>
                         </Link>
                     </div>
                     <div className={classes.footerSsl}>
                         <h3>PositiveSSL Secure</h3>
-                        <img src={ssl} />
+                        <Image alt="ssl" width={150} height={36} src={ssl} />
                     </div>
                 </div>
             </div>
@@ -76,11 +77,11 @@ const Footer = () => {
                 <div className={classes.copyrightContainer}>
                     <p>© 2022 Rhythmitica. All rights reserved</p>
                     <div className={classes.copyrightLinks}>
-                    <Link href={'#'}><a><img src={instagram}/></a></Link>
-                    <Link href={'#'}><a><img src={pinterest}/></a></Link>
-                    <Link href={'#'}><a><img src={twitter}/></a></Link>
-                    <Link href={'#'}><a><img src={facebook}/></a></Link>
-                    <Link href={'#'}><a><img src={gplus}/></a></Link>
+                        <Link href={'#'}><a><Image layout='fill' alt="" src={instagram} /></a></Link>
+                        <Link href={'#'}><a><Image layout='fill' alt="" src={pinterest} /></a></Link>
+                        <Link href={'#'}><a><Image layout='fill' alt="" src={twitter} /></a></Link>
+                        <Link href={'#'}><a><Image layout='fill' alt="" src={facebook} /></a></Link>
+                        <Link href={'#'}><a><Image layout='fill' alt="" src={gplus} /></a></Link>
                     </div>
                 </div>
             </div>

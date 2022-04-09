@@ -22,7 +22,6 @@ const Event = ({
         <div className={clsx(classes.eventContainer, sm && classes.eventSm, whiteBg && classes.eventWhite)}>
             <div className={classes.imageContainer}>
                 <Image alt={name} src={image} layout="fill"/>
-                {/* <img src={image} /> */}
             </div>
             <div className={classes.dataContainer}>
                 <h3>{name}</h3>

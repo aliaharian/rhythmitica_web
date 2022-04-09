@@ -22,10 +22,10 @@
         width: 66px;
         height: 66px;
     }
-    & > img {
+    & > div {
         filter: grayscale(100) opacity(0.5);
         width: 52px;
-
+        height: 100%;
         @media (max-width: master.$xl) {
             width: 40px;
         }
@@ -37,7 +37,7 @@
         }
     }
     &:hover {
-        & > img {
+        & > div {
             filter: grayscale(0);
         }
     }

@@ -20,7 +20,6 @@ const Instructor = ({
     return (
         <div className={clsx(classes.instructorContainer, sm && classes.instructorContainerSm)}>
             <div className={classes.imageContainer} style={imageBorder?{borderColor:imageBorder}:{}}>
-                {/* <img alt={`${name} ${family}`} src={image}/> */}
                 <Image layout='fill' alt={`${name} ${family}`} src={image}/>
 
                 {!disableLangs &&
