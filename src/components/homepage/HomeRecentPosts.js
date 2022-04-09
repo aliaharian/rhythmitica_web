@@ -13,7 +13,7 @@ const HomeRecentPosts = ({ posts }) => {
                 {
                     posts.slice(0, 3).map((post) => {
                         return (
-                            <Link href={`/blog/${post.id}/${post.slug}`}>
+                            <Link key={post.id} href={`/blog/${post.id}/${post.slug}`}>
                                 <a>
                                     <Post
                                         image={process.env.REACT_APP_IMAGE_URL + post.banner}

@@ -1,6 +1,8 @@
 import classes from '../../assets/styleSheets/kits/instructor.module.scss';
 import clsx from 'clsx';
 import { useMediaQuery, useTheme } from '@material-ui/core';
+import Image from 'next/image'
+
 const Instructor = ({
 
     image,
@@ -18,12 +20,14 @@ const Instructor = ({
     return (
         <div className={clsx(classes.instructorContainer, sm && classes.instructorContainerSm)}>
             <div className={classes.imageContainer} style={imageBorder?{borderColor:imageBorder}:{}}>
-                <img src={image} />
+                {/* <img alt={`${name} ${family}`} src={image}/> */}
+                <Image layout='fill' alt={`${name} ${family}`} src={image}/>
+
                 {!disableLangs &&
                     <div className={classes.languagesContainer}>
                         {
-                            languages.map((lang) => (
-                                <div className={classes.language}>{lang}</div>
+                            languages.map((lang , index) => (
+                                <div key={index} className={classes.language}>{lang}</div>
                             ))
                         }
                     </div>}

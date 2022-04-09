@@ -1,7 +1,6 @@
 import React from "react";
 
 const convertLaravelTime = (input) => {
-    console.log('in', input)
     var months = [
         'January',
         'February',

@@ -32,7 +32,6 @@ const reducer = (state, action) => {
   }
 };
 
-// export default createStore(rootReducer, enhancer);
 
 const initStore = () => {
   return createStore(reducer, enhancer);

@@ -12,7 +12,7 @@ const HomeRecentEvents = ({ events }) => {
                 {
                     events.slice(0, 3).map((event) => {
                         return (
-                            <Link href={'/events/'+event.id+'/'+event.slug}>
+                            <Link key={event.id} href={'/events/'+event.id+'/'+event.slug}>
                             <a>
                                     <Event
                                         image={process.env.REACT_APP_IMAGE_URL + event.banner}

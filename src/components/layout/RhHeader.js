@@ -28,7 +28,6 @@ const RhHeader = ({ page }) => {
             top = 45;
         }else{
             top = 55;
-
         }
         let currentScrollPos = window.pageYOffset;
         if (currentScrollPos > top) {
@@ -45,13 +44,13 @@ const RhHeader = ({ page }) => {
                         <img src={logoImg} />
                     </div>
                     <div className={classes.navBar}>
-                        <Link href="/"><a className={page == 'home' && classes.active}>home</a></Link>
-                        <Link href="/privateLessons"><a className={page == 'privateLessons' && classes.active}>private lessons</a></Link>
-                        <Link href="/events"><a className={page == 'events' && classes.active}>group lessons</a></Link>
-                        <Link href="/blog"><a className={page == 'blog' && classes.active}>blog</a></Link>
-                        <Link href="/partners"><a className={page == 'partners' && classes.active}>partners</a></Link>
-                        <Link href="/contactUs"><a className={page == 'contact' && classes.active}>contact us</a></Link>
-                        <Link href="/aboutUs"><a className={page == 'about' && classes.active}>about us</a></Link>
+                        <Link href="/"><a className={page == 'home' ? classes.active : ''}>home</a></Link>
+                        <Link href="/privateLessons"><a className={page == 'privateLessons' ? classes.active : ''}>private lessons</a></Link>
+                        <Link href="/events"><a className={page == 'events' ? classes.active : ''}>group lessons</a></Link>
+                        <Link href="/blog"><a className={page == 'blog' ? classes.active : ''}>blog</a></Link>
+                        <Link href="/partners"><a className={page == 'partners' ? classes.active : ''}>partners</a></Link>
+                        <Link href="/contactUs"><a className={page == 'contact' ? classes.active : ''}>contact us</a></Link>
+                        <Link href="/aboutUs"><a className={page == 'about' ? classes.active : ''}>about us</a></Link>
                     </div>
                     <div className={classes.headerLoginBtn}>
                         <Button>

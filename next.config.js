@@ -12,6 +12,8 @@ module.exports = withImages(withFonts({
 
     },
     images: {
-        disableStaticImages: true
+        disableStaticImages: true,
+        domains: ['itica.ca'],
+
     },
 }))

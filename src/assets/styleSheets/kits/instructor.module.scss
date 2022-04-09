@@ -9,21 +9,25 @@
     overflow: hidden !important;
     background-color: #fff;
     transition: all 250ms ease;
-    &:hover{
+    min-width: 238px;
+    &:hover {
         // box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         // border-color: transparent;
     }
     @media (max-width: master.$xl) {
         height: 300px;
         border-radius: 26px;
+        min-width: 198px;
     }
     @media (max-width: master.$lg) {
         height: 255px;
         border-radius: 26px;
+        min-width: 168px;
     }
     @media (max-width: master.$md) {
         height: 230px;
         border-radius: 24px;
+        min-width: 153px;
     }
     & > .imageContainer {
         height: 255px;
@@ -54,6 +58,8 @@
 }
 .instructorContainerSm {
     height: 322px !important;
+    min-width: 0 !important;
+
     @media (max-width: master.$xl) {
         height: 265px !important;
     }
@@ -136,7 +142,8 @@
             bottom: 0;
         }
     }
-    & > img {
+
+    & img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -162,7 +169,7 @@
         border-radius: 25px 25px 0 0;
     }
     @media (max-width: master.$md) {
-        border-radius:  24px 24px 0 0;
+        border-radius: 24px 24px 0 0;
     }
     & > .language {
         width: 50px;
@@ -177,8 +184,8 @@
         cursor: auto;
         font-size: 18px;
         text-transform: uppercase;
-        &:hover{
-            background-color: #ffffff1a
+        &:hover {
+            background-color: #ffffff1a;
         }
         @media (max-width: master.$xl) {
             font-size: 15px;
@@ -235,6 +242,6 @@
     }
 }
 
-.nameBgColorTransparent{
-    background-color:transparent !important;
+.nameBgColorTransparent {
+    background-color: transparent !important;
 }

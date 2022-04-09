@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/contactUs": "pages/contactUs.js",
-  "/partners": "pages/partners.js"
+  "/": "pages/index.js",
+  "/blog": "pages/blog.js"
 }
