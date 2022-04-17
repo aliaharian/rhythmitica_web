@@ -5,6 +5,7 @@ import classes from '../../assets/styleSheets/privateLessons.module.scss'
 import searchIcon from '../../assets/images/icons/searchIcon.svg'
 import searchIconPurple from '../../assets/images/icons/searchIconPurple.svg'
 import { useState } from "react";
+import Image from 'next/image'
 
 const PrivateLessonsHeader = ({ filter, handleChangeFilter, _handleSearch, q, setQ }) => {
     const [openSearch, setOpenSearch] = useState(false)
@@ -26,7 +27,7 @@ const PrivateLessonsHeader = ({ filter, handleChangeFilter, _handleSearch, q, se
             _handleSearch()
         }
     }
-    
+
     return (
         <div className={classes.privateLessonsHeader}>
             <div className={classes.privateLessonsSort}>
@@ -39,7 +40,9 @@ const PrivateLessonsHeader = ({ filter, handleChangeFilter, _handleSearch, q, se
                 <div className={clsx(classes.privateLessonsSearch, openSearch && classes.privateLessonsSearchOpen)} >
                     <input type="text" value={q} onKeyPress={handleKeyPress} onChange={(e) => setQ(e.target.value)} />
                     <div onClick={handleSearch} className={classes.searchIconConntainer}>
-                        <img src={openSearch ? searchIconPurple : searchIcon} />
+                        <div>
+                            <Image alt="" layout="fill" src={openSearch ? searchIconPurple : searchIcon} />
+                        </div>
                     </div>
                 </div>
             </ClickAwayListener>

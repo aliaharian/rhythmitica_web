@@ -62,7 +62,7 @@ const Footer = () => {
                         </Link>
                         <Link href={'#'}>
                             <a>
-                            <Image alt="Persion Loops App" width={47} height={47} src={loops} />
+                                <Image alt="Persion Loops App" width={47} height={47} src={loops} />
                                 <p>Persion Loops App</p>
                             </a>
                         </Link>
@@ -77,11 +77,11 @@ const Footer = () => {
                 <div className={classes.copyrightContainer}>
                     <p>© 2022 Rhythmitica. All rights reserved</p>
                     <div className={classes.copyrightLinks}>
-                        <Link href={'#'}><a><Image layout='fill' alt="" src={instagram} /></a></Link>
-                        <Link href={'#'}><a><Image layout='fill' alt="" src={pinterest} /></a></Link>
-                        <Link href={'#'}><a><Image layout='fill' alt="" src={twitter} /></a></Link>
-                        <Link href={'#'}><a><Image layout='fill' alt="" src={facebook} /></a></Link>
-                        <Link href={'#'}><a><Image layout='fill' alt="" src={gplus} /></a></Link>
+                        <Link href={'https://www.instagram.com/rhythmitica/'}><a><Image layout='fill' alt="" src={instagram} /></a></Link>
+                        <Link href={'https://www.pinterest.com/rhythmitica/'}><a><Image layout='fill' alt="" src={pinterest} /></a></Link>
+                        <Link href={'https://twitter.com/Rhythmitica'}><a><Image layout='fill' alt="" src={twitter} /></a></Link>
+                        <Link href={'https://www.facebook.com/Rhythmitica'}><a><Image layout='fill' alt="" src={facebook} /></a></Link>
+                        <Link href={'https://plus.google.com/+Rhythmitica'}><a><Image layout='fill' alt="" src={gplus} /></a></Link>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,6 @@
     grid-template-columns: calc(100% - 1076px) 1014px;
     grid-column-gap: 63px;
 
-    
     @media (max-width: master.$xl) {
         max-width: 1150px;
         margin: 134px auto 0;
@@ -44,7 +43,7 @@
     margin-bottom: 45px !important;
     text-transform: capitalize !important;
     // background-color: #f9f9f9 !important;
-    &:hover{
+    &:hover {
         border: 1px solid var(--darkPurple) !important;
         background-color: #8202631a !important;
     }
@@ -63,16 +62,22 @@
         height: 57px !important;
         padding: 0 13.5px !important;
     }
-    & img {
+    & .openMapBtnImage {
         margin-right: 16px;
+        width: 42px;
+        height: 42px;
+        position: relative;
         @media (max-width: master.$xl) {
             width: 36px;
+            height: 36px;
         }
         @media (max-width: master.$lg) {
             width: 32px;
+            height: 32px;
         }
         @media (max-width: master.$md) {
             width: 30px;
+            height: 30px;
             margin-right: 13.5px;
         }
     }
@@ -296,8 +301,10 @@
             min-width: 34px;
             max-width: 34px;
         }
-        & > img {
+        & > div {
             width: 20px;
+            height: 100%;
+            position: relative;
             @media (max-width: master.$xl) {
                 width: 16px;
             }
@@ -417,6 +424,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    & > div {
+        width: 100%;
+        position: relative;
+        height: 35px;
+    }
     & > p {
         font-size: 15px;
         line-height: 1.33;

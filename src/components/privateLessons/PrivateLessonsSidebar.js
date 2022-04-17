@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import classes from '../../assets/styleSheets/privateLessons.module.scss'
 import earthIcon from '../../assets/images/icons/earthAlt.svg'
 import RhCheckbox from "../kits/RhCheckbox";
+import Image from 'next/image'
+
 const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages }) => {
     console.log('packages', packages)
     const theme = useTheme();
@@ -11,7 +13,9 @@ const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages
         <div className={classes.privateLessonsSidebarContainer}>
             <div className={classes.privateLessonsSidebar}>
                 <Button className={classes.openMapBtn} href={'/globe'}>
-                    <img src={earthIcon} />
+                    <div className={classes.openMapBtnImage}>
+                        <Image layout='fill' alt="" src={earthIcon} />
+                    </div>
                     <p>{!isTablet && <>Click to See  <br /></>} All Musical Instruments</p>
                 </Button>
                 <div className={classes.packagesContainer}>

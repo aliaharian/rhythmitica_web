@@ -490,7 +490,7 @@
                     font-size: 34px;
                     line-height: 43px;
                     margin-bottom: 2px;
-                    margin-top:1px;
+                    margin-top: 1px;
                 }
                 @media (max-width: master.$lg) {
                     font-size: 28px;
@@ -582,17 +582,23 @@
     }
 }
 .eventBodyContainer {
-    & > img {
+    & .imageContainer {
+        position: relative;
         width: 100%;
         border-radius: 50px 50px 50px 0;
         margin-bottom: 30px;
+        height:740px;
+        overflow: hidden;
         @media (max-width: master.$xl) {
             border-radius: 48px 48px 48px 0;
             margin-bottom: 26px;
+            height:590px;
+
         }
         @media (max-width: master.$lg) {
             border-radius: 46px 46px 46px 0;
             margin-bottom: 24px;
+            height:490px;
         }
         @media (max-width: master.$md) {
             border-radius: 44px 44px 44px 0;
