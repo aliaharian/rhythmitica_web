@@ -12,7 +12,7 @@ const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages
             <div className={classes.privateLessonsSidebar}>
                 <Button className={classes.openMapBtn} href={'/globe'}>
                     <img src={earthIcon} />
-                    <p>{!isTablet && <>Click to See  <br/></>} All Musical Instruments</p>
+                    <p>{!isTablet && <>Click to See  <br /></>} All Musical Instruments</p>
                 </Button>
                 <div className={classes.packagesContainer}>
                     <div className={classes.packagesTitle}>
@@ -21,7 +21,7 @@ const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages
                     <div className={classes.packagesBody}>
                         <p>Category</p>
                         {packages.data.map((pkg) => (
-                            <div className={classes.packageItem}>
+                            <div key={pkg.id} className={classes.packageItem}>
                                 <RhCheckbox
                                     label={pkg.name}
                                     checked={selectedPackages.indexOf(pkg.id) != -1}
@@ -30,7 +30,7 @@ const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages
                                 />
                             </div>
                         ))}
-                        
+
                     </div>
 
                 </div>

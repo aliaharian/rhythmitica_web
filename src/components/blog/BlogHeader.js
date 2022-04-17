@@ -5,6 +5,7 @@ import classes from '../../assets/styleSheets/blog.module.scss'
 import searchIcon from '../../assets/images/icons/searchIcon.svg'
 import searchIconPink from '../../assets/images/icons/searchIconPink.svg'
 import { useState } from "react";
+import Image from 'next/image'
 
 import useStyles from './Style'
 const BlogHeader = ({ categories, selectedCategory, handleSelectCategory, _handleSearch, q, setQ }) => {
@@ -12,7 +13,7 @@ const BlogHeader = ({ categories, selectedCategory, handleSelectCategory, _handl
 
     const muiClass = useStyles();
 
-    
+
     const handleSearch = () => {
         if (!openSearch) {
             setOpenSearch(true)
@@ -32,7 +33,7 @@ const BlogHeader = ({ categories, selectedCategory, handleSelectCategory, _handl
         }
     }
     return (
-        <div className={clsx(classes.blogHeader , muiClass.blogHeader)}>
+        <div className={clsx(classes.blogHeader, muiClass.blogHeader)}>
             <Tabs
                 value={selectedCategory}
                 onChange={handleSelectCategory}
@@ -42,7 +43,7 @@ const BlogHeader = ({ categories, selectedCategory, handleSelectCategory, _handl
                 variant="fullWidth"
             >
                 {categories.map((cat) => (
-                    <Tab value={cat.id} label={cat.title} />
+                    <Tab key={cat.id} value={cat.id} label={cat.title} />
                 ))}
             </Tabs>
 
@@ -51,7 +52,9 @@ const BlogHeader = ({ categories, selectedCategory, handleSelectCategory, _handl
                 <div className={clsx(classes.blogSearch, openSearch && classes.blogSearchOpen)} >
                     <input type="text" value={q} onKeyPress={handleKeyPress} onChange={(e) => setQ(e.target.value)} />
                     <div onClick={handleSearch} className={classes.searchIconConntainer}>
-                        <img src={openSearch ? searchIconPink : searchIcon} />
+                        <div>
+                            <Image layout="fill" src={openSearch ? searchIconPink : searchIcon} alt="search" />
+                        </div>
                     </div>
                 </div>
 

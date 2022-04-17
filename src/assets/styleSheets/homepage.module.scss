@@ -97,19 +97,22 @@
     & > div {
         width: 100%;
         position: relative;
-        & > img {
-            width: 100%;
-            border-radius: 40px;
-            @media (max-width: master.$xl) {
-                border-radius: 38px;
-            }
-            @media (max-width: master.$lg) {
-                border-radius: 36px;
-            }
-            @media (max-width: master.$md) {
-                border-radius: 34px;
-            }
+        height: 239px;
+        border-radius: 40px;
+        overflow: hidden;
+        @media (max-width: master.$xl) {
+            border-radius: 38px;
         }
+        @media (max-width: master.$lg) {
+            border-radius: 36px;
+        }
+        @media (max-width: master.$md) {
+            border-radius: 34px;
+        }
+        // & > img {
+        //     width: 100%;
+
+        // }
         & > a {
             position: absolute;
             width: 200px;
@@ -129,19 +132,20 @@
                 background-color: rgba(255, 255, 255, 0.4);
                 color: #fff;
             }
+
             @media (max-width: master.$xl) {
                 width: 164px;
                 height: 50px;
                 font-size: 18px;
                 bottom: 24px;
-                left: 24px;
+                right: 24px;
             }
             @media (max-width: master.$lg) {
                 width: 158px;
                 height: 48px;
                 font-size: 16px;
                 bottom: 18px;
-                left: 18px;
+                right: 18px;
             }
             @media (max-width: master.$md) {
                 width: 154px;
@@ -338,7 +342,7 @@
     &:hover {
         background-color: #8202630d;
     }
-    & > img {
+    & > div {
         animation: spin 5s linear infinite reverse;
     }
     &:after {
@@ -486,7 +490,6 @@
                 flex: 1 1 155px;
                 max-width: 155px;
             }
-
         }
     }
 }
@@ -573,6 +576,7 @@
     @media (max-width: master.$lg) {
         padding: 96px 0;
     }
+    
 }
 .postsTitle {
     color: var(--textColor);
@@ -608,6 +612,18 @@
     @media (max-width: master.$md) {
         max-width: 856px;
         margin: 0 auto 80px;
+    }
+    & > a {
+        min-width: 451px;
+        @media (max-width: master.$xl) {
+            min-width: 376px;
+        }
+        @media (max-width: master.$lg) {
+            min-width: 319px;
+        }
+        @media (max-width: master.$md) {
+            min-width: 275px;
+        }
     }
     & > div {
         flex: 1 1 450px;
@@ -661,6 +677,6 @@
         grid-column-gap: calc((100% - 408px) / 5);
     }
 }
-.pointer{
-    cursor:pointer;
+.pointer {
+    cursor: pointer;
 }

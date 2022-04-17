@@ -25,7 +25,6 @@ Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp(props) {
   const { Component, pageProps, store, classes, cookiesRhy, userIp, timezones } = props;
-  console.log('cookiesRhy', cookiesRhy)
   const Dispatch = useDispatch()
 
   // const getCookieByName = (name) => {
@@ -38,6 +37,11 @@ function MyApp(props) {
   axios.defaults.headers.post["Content-Type"] = "application/json";
   axios.defaults.headers.common['site'] = process.env.REACT_APP_SITE_TOKEN;
   axios.defaults.headers.common['Authorization'] = 'Bearer ' + cookiesRhy
+  // console.log = function(){
+
+  // }
+  console.log('cookiesRhy', cookiesRhy)
+
   React.useEffect(() => {
     // if (timezones) {
     //   Dispatch(setTimezones(true, timezones))

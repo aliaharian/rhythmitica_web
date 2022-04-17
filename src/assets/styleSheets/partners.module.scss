@@ -173,6 +173,7 @@
         & > .partnerItemImage {
             width: 100%;
             height: 295px;
+            position: relative;
             @media (max-width: master.$xl) {
                 height: 240px;
             }

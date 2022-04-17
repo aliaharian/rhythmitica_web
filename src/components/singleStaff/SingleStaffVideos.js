@@ -33,9 +33,10 @@ const SingleStaffVideos = ({ staffInfo }) => {
                         }
                     </div>
                     <div className={classes.thumbsContainer}>
-                        {staffInfo.staff_videos.map((video) => {
+                        {staffInfo.staff_videos.map((video, index) => {
                             return (
                                 <img
+                                    key={index}
                                     onClick={() => handleChangeVideo(video)}
                                     src={`${process.env.REACT_APP_IMAGE_URL}${video.cover}`}
                                 />

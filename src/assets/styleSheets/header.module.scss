@@ -108,6 +108,8 @@
         justify-content: center;
         &:nth-child(1) {
             grid-column-end: firstCol;
+            position: relative;
+            width: 100%;
             & > img {
                 width: 100%;
             }
