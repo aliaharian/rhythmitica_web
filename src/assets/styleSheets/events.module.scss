@@ -209,8 +209,10 @@
             min-width: 34px;
             max-width: 34px;
         }
-        & > img {
+        & > div {
             width: 20px;
+            position:relative;
+            height:100%;
             @media (max-width: master.$xl) {
                 width: 16px;
             }
@@ -330,12 +332,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height:35px;
+    position:relative;
     & > p {
         font-size: 15px;
         line-height: 1.33;
         color: var(--linkActiveColor);
         text-align: left;
-        margin-top: 15px;
+        margin-top: 70px;
     }
 }
 

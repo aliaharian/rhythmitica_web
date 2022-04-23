@@ -64,12 +64,12 @@ const Contact = () => {
                             </div>
                             <div className={classes.contactHr}></div>
                             <div className={classes.copyrightLinks}>
-                                <Link href={'#'}><a><InstagramIcon /></a></Link>
-                                <Link href={'#'}><a className={classes.socialAlt}><PinterestIcon /></a></Link>
-                                <Link href={'#'}><a><TwitterIcon /></a></Link>
-                                <Link href={'#'}><a className={classes.socialAlt}><FacebookOutlinedIcon /></a></Link>
-                                <Link href={'#'}><a><YouTubeIcon /></a></Link>
-                                <Link href={'#'}><a><WhatsAppIcon /></a></Link>
+                                <Link href={'https://www.instagram.com/rhythmitica/'}><a><InstagramIcon /></a></Link>
+                                <Link href={'https://www.pinterest.com/rhythmitica/'}><a className={classes.socialAlt}><PinterestIcon /></a></Link>
+                                <Link href={'https://twitter.com/Rhythmitica'}><a><TwitterIcon /></a></Link>
+                                <Link href={'https://www.facebook.com/Rhythmitica'}><a className={classes.socialAlt}><FacebookOutlinedIcon /></a></Link>
+                                <Link href={'https://www.youtube.com/Rhythmitica'}><a><YouTubeIcon /></a></Link>
+                                <Link href={'https://api.whatsapp.com/message/MLP6XICPPX6TC1?autoload=1&app_absent=0'}><a><WhatsAppIcon /></a></Link>
                             </div>
                         </div>
                     </div>

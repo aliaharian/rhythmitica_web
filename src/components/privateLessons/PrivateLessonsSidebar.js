@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import classes from '../../assets/styleSheets/privateLessons.module.scss'
 import earthIcon from '../../assets/images/icons/earthAlt.svg'
 import RhCheckbox from "../kits/RhCheckbox";
+import Image from 'next/image'
+
 const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages }) => {
     console.log('packages', packages)
     const theme = useTheme();
@@ -11,8 +13,10 @@ const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages
         <div className={classes.privateLessonsSidebarContainer}>
             <div className={classes.privateLessonsSidebar}>
                 <Button className={classes.openMapBtn} href={'/globe'}>
-                    <img src={earthIcon} />
-                    <p>{!isTablet && <>Click to See  <br/></>} All Musical Instruments</p>
+                    <div className={classes.openMapBtnImage}>
+                        <Image layout='fill' alt="" src={earthIcon} />
+                    </div>
+                    <p>{!isTablet && <>Click to See  <br /></>} All Musical Instruments</p>
                 </Button>
                 <div className={classes.packagesContainer}>
                     <div className={classes.packagesTitle}>
@@ -21,7 +25,7 @@ const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages
                     <div className={classes.packagesBody}>
                         <p>Category</p>
                         {packages.data.map((pkg) => (
-                            <div className={classes.packageItem}>
+                            <div key={pkg.id} className={classes.packageItem}>
                                 <RhCheckbox
                                     label={pkg.name}
                                     checked={selectedPackages.indexOf(pkg.id) != -1}
@@ -30,7 +34,7 @@ const PrivateLessonsSidebar = ({ packages, handleSelectPackage, selectedPackages
                                 />
                             </div>
                         ))}
-                        
+
                     </div>
 
                 </div>

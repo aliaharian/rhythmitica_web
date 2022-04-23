@@ -6,6 +6,8 @@ import Event from "../kits/Event";
 import transform from "../../utilities/transform";
 import noResultIcon from '../../assets/images/icons/noResultIconGreen.svg'
 import Link from 'next/link';
+import Image from 'next/image'
+
 const EventsList = ({ handlePaginate }) => {
     const events = useSelector((state) => state.events.events);
     const eventsLoading = useSelector((state) => state.events.eventsLoading);
@@ -35,7 +37,7 @@ const EventsList = ({ handlePaginate }) => {
                         <div className={classes.eventsList}>
                             {
                                 events.data.map((event) => (
-                                    <Link href={'/events/'+event.id+'/'+event.slug}>
+                                    <Link key={event.id} href={'/events/'+event.id+'/'+event.slug}>
                                         <a>
                                             <Event
                                                 image={process.env.REACT_APP_IMAGE_URL + event.banner}
@@ -56,7 +58,7 @@ const EventsList = ({ handlePaginate }) => {
                     </InfiniteScroll>
                     :
                     <div className={classes.noResult}>
-                        <img src={noResultIcon} />
+                        <Image alt="" layout="fill" src={noResultIcon} />
                         <p>No Result Found!</p>
                     </div>
             }

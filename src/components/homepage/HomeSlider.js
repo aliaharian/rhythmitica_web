@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import classes from '../../assets/styleSheets/homepage.module.scss';
+import Image from 'next/image'
+
 import slide0 from '../../assets/images/slider/slide1.jpg';
 
 import slide1 from '../../assets/images/slider/1.jpg';
@@ -15,26 +17,23 @@ const HomeSlider = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows:false,
+        arrows: false,
         fade: true,
 
-      };
+    };
     return (
         <div className={classes.sliderContainer}>
             <Slider {...settings}>
-            <div className={classes.slideItem}>
-                    <img src={slide0}/>
+                <div className={classes.slideItem}>
+                    <Image layout='fill' src={slide0} alt="rhythmitica" />
                 </div>
                 <div className={classes.slideItem}>
-                    <img src={slide3}/>
+                    <Image layout='fill' src={slide3} alt="rhythmitica" />
                 </div>
                 <div className={classes.slideItem}>
-                    <img src={slide2}/>
+                    <Image layout='fill' src={slide2} alt="rhythmitica" />
                 </div>
-                {/* <div className={classes.slideItem}>
-                    <img src={slide4}/>
-                </div> */}
-                
+
             </Slider>
         </div>
     )

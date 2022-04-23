@@ -153,25 +153,21 @@ const BookingCalendar = ({
                             <p className={classes.bookingDetailsHeader}>Booking Details</p>
                             <ul>
                                 <li>
-                                    {/* <img src={personIcon} /> */}
                                     <PersonOutlineRoundedIcon />
                                     <span>Teacher : </span>
                                     <span>{packageInfo.staff.name} {packageInfo.staff.family}</span>
                                 </li>
                                 <li>
-                                    {/* <img src={listIcon} /> */}
                                     <FormatListNumberedRoundedIcon />
                                     <span>Sessions : </span>
                                     <span>{bookingData.selectedSession.count}</span>
                                 </li>
                                 <li>
-                                    {/* <img src={durationIcon} /> */}
                                     <TimelapseRoundedIcon />
                                     <span>Sessions : </span>
                                     <span>{bookingData.selectedDuration.duration} minutes</span>
                                 </li>
                                 <li>
-                                    {/* <img src={updateIcon} /> */}
                                     <UpdateRoundedIcon />
                                     <span>Type : </span>
                                     <span>{bookingData.selectedType.type}</span>

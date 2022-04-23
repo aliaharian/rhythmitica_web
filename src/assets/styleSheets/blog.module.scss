@@ -102,8 +102,10 @@
             min-width: 34px;
             max-width: 34px;
         }
-        & > img {
+        & > div {
             width: 20px;
+            height:100%;
+            position: relative;
             @media (max-width: master.$xl) {
                 width: 16px;
             }
@@ -206,6 +208,13 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position:relative;
+
+    &>div{
+        width:100%;
+        position:relative;
+        height:35px
+    }
     & > p {
         font-size: 15px;
         line-height: 1.33;

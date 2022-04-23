@@ -6,6 +6,8 @@ import Instructor from "../kits/Instructor";
 import transform from "../../utilities/transform";
 import noResultIcon from '../../assets/images/icons/noResultIcon.svg'
 import Link from 'next/link';
+import Image from 'next/image'
+
 const StaffsList = ({ handlePaginate }) => {
     const staffs = useSelector((state) => state.privateLessons.staffs);
     const staffLoading = useSelector((state) => state.privateLessons.staffsLoading);
@@ -32,9 +34,9 @@ const StaffsList = ({ handlePaginate }) => {
                     >
                         <div className={classes.privateLessonsStaffList}>
                             {
-                                
-                                staffs.data.map((staff) => (
-                                    <Link href={`privateLessons/${staff.package_id}/${staff.staff_id}/${staff?.staff_name?.replace(/\s+/g, '-')}-${staff?.staff_family?.replace(/\s+/g, '-')}`}>
+
+                                staffs.data.map((staff , index) => (
+                                    <Link key={index} href={`privateLessons/${staff.package_id}/${staff.staff_id}/${staff?.staff_name?.replace(/\s+/g, '-')}-${staff?.staff_family?.replace(/\s+/g, '-')}`}>
                                         <a>
                                             <Instructor
                                                 sm
@@ -53,7 +55,9 @@ const StaffsList = ({ handlePaginate }) => {
                     </InfiniteScroll>
                     :
                     <div className={classes.noResult}>
-                        <img src={noResultIcon} />
+                        <div>
+                            <Image layout="fill" alt="" src={noResultIcon} />
+                        </div>
                         <p>No Result Found!</p>
                     </div>
             }

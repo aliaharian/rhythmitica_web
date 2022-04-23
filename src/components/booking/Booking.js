@@ -8,6 +8,7 @@ import { Button } from '@material-ui/core';
 import BookingCheckout from './steps/BookingCheckout';
 import { useSnackbar } from 'notistack';
 import axios from 'axios';
+
 const sessions = [
     {
         count: 1,

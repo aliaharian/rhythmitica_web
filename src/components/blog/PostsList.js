@@ -7,6 +7,8 @@ import transform from "../../utilities/transform";
 import noResultIcon from '../../assets/images/icons/noResultIconPink.svg'
 import Link from 'next/link';
 import { useEffect, useState } from "react";
+import Image from 'next/image'
+
 const PostsList = ({ handlePaginate }) => {
     const posts = useSelector((state) => state.posts.posts);
     const postsLoading = useSelector((state) => state.posts.postsLoading);
@@ -57,7 +59,7 @@ const PostsList = ({ handlePaginate }) => {
                             <div className={classes.postsListRow}>
                                 {
                                     renderedPost[0].map((post, index) => (
-                                        <Link href={`/blog/${post.id}/${post.slug}`}>
+                                        <Link key={post.id} href={`/blog/${post.id}/${post.slug}`}>
                                             <a>
                                                 <Post
                                                     image={process.env.REACT_APP_IMAGE_URL + post.banner}
@@ -76,7 +78,7 @@ const PostsList = ({ handlePaginate }) => {
                             <div className={classes.postsListRow}>
                                 {
                                     renderedPost[1].map((post, index) => (
-                                        <Link href={`/blog/${post.id}/${post.slug}`}>
+                                        <Link key={post.id} href={`/blog/${post.id}/${post.slug}`}>
                                             <a>
                                                 <Post
                                                     image={process.env.REACT_APP_IMAGE_URL + post.banner}
@@ -95,7 +97,7 @@ const PostsList = ({ handlePaginate }) => {
                             <div className={classes.postsListRow}>
                                 {
                                     renderedPost[2].map((post, index) => (
-                                        <Link href={`/blog/${post.id}/${post.slug}`}>
+                                        <Link key={post.id} href={`/blog/${post.id}/${post.slug}`}>
                                             <a>
                                                 <Post
                                                     image={process.env.REACT_APP_IMAGE_URL + post.banner}
@@ -117,7 +119,9 @@ const PostsList = ({ handlePaginate }) => {
                     </InfiniteScroll>
                     :
                     <div className={classes.noResult}>
-                        <img src={noResultIcon} />
+                        <div>
+                            <Image alt="" layout="fill" src={noResultIcon} />
+                        </div>
                         <p>No Result Found!</p>
                     </div>
             }

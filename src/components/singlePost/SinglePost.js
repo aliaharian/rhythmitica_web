@@ -8,9 +8,11 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import DateRangeIcon from '@mui/icons-material/DateRange';
 import moment from 'moment'
+import Image from 'next/image'
+
 const SinglePost = ({ postInfo }) => {
     console.log(postInfo)
-    const [banner, setBanner] = useState()
+    const [banner, setBanner] = useState(process.env.REACT_APP_IMAGE_URL + postInfo.banner)
     useEffect(() => {
         if (postInfo.json) {
             let json = JSON.parse(postInfo.json)
@@ -25,7 +27,7 @@ const SinglePost = ({ postInfo }) => {
     }, [])
     return (<>
         <div className={classes.singlePostHeader}>
-            <img src={banner} />
+            <Image layout="fill" objectFit='cover' src={banner} />
 
         </div>
         <div className={classes.singlePostBody}>

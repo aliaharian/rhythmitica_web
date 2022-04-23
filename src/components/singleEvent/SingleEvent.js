@@ -6,6 +6,7 @@ import axios from 'axios'
 import { Button, Skeleton } from '@mui/material';
 import EventSessionsDialog from './EventSessionsDialog';
 import { useSnackbar } from 'notistack';
+import Image from 'next/image'
 
 const SingleEvent = ({ eventInfo, timezone }) => {
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
@@ -111,7 +112,9 @@ const SingleEvent = ({ eventInfo, timezone }) => {
                         handleOpenSessionsDialog={handleOpenSessionsDialog}
                     />
                     <div className={classes.eventBodyContainer}>
-                        <img src={`${process.env.REACT_APP_IMAGE_URL}${eventInfoState.banner}`} />
+                        <div className={classes.imageContainer}>
+                            <Image objectFit='cover' layout="fill" alt='' src={`${process.env.REACT_APP_IMAGE_URL}${eventInfoState.banner}`} />
+                        </div>
                         <h2>{eventInfoState.title}</h2>
                         <div dangerouslySetInnerHTML={{ __html: eventInfoState.body }} className={classes.eventDesc}></div>
                     </div>
