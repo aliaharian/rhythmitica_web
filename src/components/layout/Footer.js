@@ -10,6 +10,7 @@ import pinterest from '../../assets/images/icons/pinterest.svg'
 import instagram from '../../assets/images/icons/instagram.svg'
 import gplus from '../../assets/images/icons/gplus.svg'
 import twitter from '../../assets/images/icons/twitter.svg'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 import clsx from 'clsx';
 const Footer = () => {
@@ -76,11 +77,12 @@ const Footer = () => {
                 <div className={classes.copyrightContainer}>
                     <p>© 2022 Rhythmitica. All rights reserved</p>
                     <div className={classes.copyrightLinks}>
-                    <Link href={'#'}><a><img src={instagram}/></a></Link>
-                    <Link href={'#'}><a><img src={pinterest}/></a></Link>
-                    <Link href={'#'}><a><img src={twitter}/></a></Link>
-                    <Link href={'#'}><a><img src={facebook}/></a></Link>
-                    <Link href={'#'}><a><img src={gplus}/></a></Link>
+                        <Link href={'#'}><a><img src={instagram} /></a></Link>
+                        <Link href={'#'}><a><img src={pinterest} /></a></Link>
+                        <Link href={'#'}><a><img src={twitter} /></a></Link>
+                        <Link href={'#'}><a><img src={facebook} /></a></Link>
+                        <Link href={'#'}><a><img src={gplus} /></a></Link>
+                        <Link href={'#'}><a className={classes.iconContainer}><WhatsAppIcon /></a></Link>
                     </div>
                 </div>
             </div>
