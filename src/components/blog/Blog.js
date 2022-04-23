@@ -10,9 +10,11 @@ const Blog = ({ categories }) => {
     const [q, setQ] = useState('')
     const Dispatch = useDispatch();
 
-    const handleSelectCategory = (e , value) => {
-        console.log('id',value)
+    const handleSelectCategory = (e, value) => {
+        console.log('id', value)
         setSelectedCategory(value)
+        Dispatch(getPostsList(false, null, { q: q, cat_id: value }, 1))
+
     }
     const handleSearch = (force = false) => {
         if (force == true) {
@@ -22,24 +24,24 @@ const Blog = ({ categories }) => {
         }
     }
 
-    useEffect(() => {
-        handlePaginate()
-    }, [selectedCategory])
+    // useEffect(() => {
+    //     handlePaginate()
+    // }, [selectedCategory])
 
     const handlePaginate = (page = 1) => {
         Dispatch(getPostsList(false, null, { q: q, cat_id: selectedCategory }, page))
     }
     return (
         <div className={classes.blogMainContainer}>
-                <BlogHeader
-                    handleSelectCategory={handleSelectCategory}
-                    categories={categories}
-                    selectedCategory={selectedCategory}
-                    _handleSearch={handleSearch}
-                    q={q}
-                    setQ={setQ}
-                />
-                <PostsList handlePaginate={handlePaginate} />
+            <BlogHeader
+                handleSelectCategory={handleSelectCategory}
+                categories={categories}
+                selectedCategory={selectedCategory}
+                _handleSearch={handleSearch}
+                q={q}
+                setQ={setQ}
+            />
+            <PostsList handlePaginate={handlePaginate} />
         </div>
     )
 }

@@ -10,6 +10,7 @@ import pinterest from '../../assets/images/icons/pinterest.svg'
 import instagram from '../../assets/images/icons/instagram.svg'
 import gplus from '../../assets/images/icons/gplus.svg'
 import twitter from '../../assets/images/icons/twitter.svg'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Image from 'next/image'
 
 import clsx from 'clsx';

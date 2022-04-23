@@ -304,4 +304,39 @@
         }
       
     }
+    & .iconContainer{
+        width:37px;
+        height:37px;
+        border-radius: 50%;
+        background-color:#291720b3;
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        @media (max-width: master.$xl) {
+            width: 26px;
+            height: 26px;
+        }
+        @media (max-width: master.$lg) {
+            width: 22px;
+            height: 22px;
+        }
+        @media (max-width: master.$md) {
+            width: 26px;
+            height: 26px;
+        }
+        & svg{
+            color:#fff;
+            @media (max-width: master.$xl) {
+                font-size:18px;
+
+            }
+            @media (max-width: master.$lg) {
+                font-size:16px;
+
+            }
+            @media (max-width: master.$md) {
+                font-size:20px;
+            }
+        }
+    }
 }
