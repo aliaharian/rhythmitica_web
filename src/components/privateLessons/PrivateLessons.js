@@ -25,13 +25,20 @@ const PrivateLessons = ({ packages, params }) => {
     }, [])
     const handleSelectPackage = (id) => {
         let index = selectedPackages.indexOf(id);
+        let packagesTmp;
         if (index == -1) {
             setSelectedPackages([...selectedPackages, id]);
+            packagesTmp = [...selectedPackages, id]
+
         } else {
             let tmp = selectedPackages;
             tmp.splice(index, 1);
             setSelectedPackages([...tmp]);
+            packagesTmp = [...tmp];
         }
+
+        Dispatch(getStaffList(false, null, { q: q, sort: filter, package_ids: packagesTmp.toString() }, 0))
+
     }
     const handleSearch = (force = false) => {
         if (force == true) {
@@ -50,10 +57,14 @@ const PrivateLessons = ({ packages, params }) => {
         } else {
             setFilter(filterp)
         }
+        Dispatch(getStaffList(false, null, { q: q, sort: filterp === filter ? null : filterp, package_ids: selectedPackages.toString() }, 0))
     }
-    useEffect(() => {
-        handlePaginate()
-    }, [filter, selectedPackages])
+
+    // useEffect(() => {
+    //     handlePaginate()
+    // }, [filter, selectedPackages])
+
+
     const handlePaginate = (page = 0) => {
         Dispatch(getStaffList(false, null, { q: q, sort: filter, package_ids: selectedPackages.toString() }, page))
     }
