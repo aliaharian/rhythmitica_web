@@ -18,10 +18,12 @@ const Events = ({ packages, eventTypes }) => {
         let index = selectedPackages.indexOf(id);
         if (index == -1) {
             setSelectedPackages([...selectedPackages, id]);
+            Dispatch(getEventsList(false, null, { q: q, view: filter, package_ids: [...selectedPackages, id].toString(), event_type: selectedEventType }, 1))
         } else {
             let tmp = selectedPackages;
             tmp.splice(index, 1);
             setSelectedPackages([...tmp]);
+            Dispatch(getEventsList(false, null, { q: q, view: filter, package_ids: [...tmp].toString(), event_type: selectedEventType }, 1))
         }
     }
     const handleSearch = (force = false) => {
@@ -35,20 +37,29 @@ const Events = ({ packages, eventTypes }) => {
         }
     }
     const handleChangeFilter = (filterp) => {
-
         if (filterp === filter) {
             setFilter(null)
+            Dispatch(getEventsList(false, null, { q: q, view: null, package_ids: selectedPackages.toString(), event_type: selectedEventType }, 1))
         } else {
             setFilter(filterp)
+            Dispatch(getEventsList(false, null, { q: q, view: filterp, package_ids: selectedPackages.toString(), event_type: selectedEventType }, 1))
         }
+
     }
-    useEffect(() => {
-        handlePaginate()
-    }, [filter, selectedPackages, selectedEventType])
+    // useEffect(() => {
+    //     handlePaginate()
+    // }, [filter, selectedPackages, selectedEventType])
 
     const handlePaginate = (page = 1) => {
         Dispatch(getEventsList(false, null, { q: q, view: filter, package_ids: selectedPackages.toString(), event_type: selectedEventType }, page))
     }
+
+    const handleSelectEventType = (e) => {
+        setSelectedEventType(e)
+        Dispatch(getEventsList(false, null, { q: q, view: filter, package_ids: selectedPackages.toString(), event_type: e }, 1))
+    }
+
+
     return (
         <div className={classes.eventsMainContainer}>
             <EventsSidebar
@@ -57,7 +68,7 @@ const Events = ({ packages, eventTypes }) => {
                 selectedPackages={selectedPackages}
                 eventTypes={eventTypes}
                 selectedEventType={selectedEventType}
-                handleSelectEventType={(e) => setSelectedEventType(e)}
+                handleSelectEventType={handleSelectEventType}
             />
             <div className={classes.staffsContainer}>
                 <EventsHeader

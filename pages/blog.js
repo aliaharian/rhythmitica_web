@@ -13,7 +13,11 @@ function BlogPage({categories}) {
     </Layout>
   )
 }
-export const getServerSideProps = wrapper.getServerSideProps(
+
+
+
+
+export const getStaticProps = wrapper.getStaticProps(
   (store) =>
     async ({ req, res }) => {
       try {
@@ -28,18 +32,19 @@ export const getServerSideProps = wrapper.getServerSideProps(
             site: process.env.REACT_APP_SITE_TOKEN
           },
         });
-        // console.log('postsssspostsssspostsssspostsssspostssss',posts)
         store.dispatch(getPostsList(true, posts.data));
 
         return {
           props: {
             categories: categories.data,
-          }, // will be passed to the page component as props
+          }, 
         };
       }
       catch (e) {
         console.log(e)
       }
     });
+
+
 
 export default BlogPage;
