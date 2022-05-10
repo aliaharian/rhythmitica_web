@@ -10,44 +10,29 @@ function singlePostPage({ postInfo }) {
         </Layout>
     )
 }
+export const getServerSideProps = wrapper.getServerSideProps(
+    (store) =>
+        async ({ req, res, query }) => {
 
 
-export async function getStaticPaths() {
-    const posts = await axios.get(`${process.env.REACT_APP_BASE_URL}/v1.0/blog/briefList`, {
-        headers: {
-            site: '6e6a90a95755444cbdee6d0df6929539' //process.env.REACT_APP_SITE_TOKEN
-        },
-    });
+            try {
 
-    const paths = posts.data.map((page) => {
-        return {
-            params: { post_id: page.id.toString(), post_slug: page.slug.toString() },
-        };
-    });
 
-    return {
-        paths,
-        fallback: false,
-    };
-}
+                const postInfo = await axios.get(`${process.env.REACT_APP_BASE_URL}/v1.0/blog/${query.post_slug}`, null, {
+                    headers: {
+                        site: process.env.REACT_APP_SITE_TOKEN
+                    },
+                });
 
-export async function getStaticProps({ params }) {
-    try {
-        const postInfo = await axios.get(`${process.env.REACT_APP_BASE_URL}/v1.0/blog/${params.post_slug}`, null, {
-            headers: {
-                site: '6e6a90a95755444cbdee6d0df6929539' //process.env.REACT_APP_SITE_TOKEN
-            },
+                return {
+                    props: {
+                        postInfo: postInfo.data,
+                    }, // will be passed to the page component as props
+                };
+            }
+            catch (e) {
+                console.log(e)
+            }
         });
-
-        return {
-            props: {
-                postInfo: postInfo.data,
-            }, // will be passed to the page component as props
-        };
-    }
-    catch (e) {
-        console.log(e)
-    }
-}
 
 export default singlePostPage;

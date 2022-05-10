@@ -9,7 +9,7 @@ function AboutUsPage() {
     </Layout>
   )
 }
-export const getServerSideProps = wrapper.getServerSideProps(
+export const getStaticProps = wrapper.getStaticProps(
   (store) =>
     async ({ req, res }) => {
      
