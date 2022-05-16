@@ -9,10 +9,10 @@ function PartnersPage() {
     </Layout>
   )
 }
-export const getServerSideProps = wrapper.getServerSideProps(
+export const getStaticProps = wrapper.getStaticProps(
   (store) =>
     async ({ req, res }) => {
-     
+
       return {
         props: {
           page: 'partners',

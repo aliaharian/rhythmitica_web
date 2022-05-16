@@ -16,8 +16,6 @@ export const getServerSideProps = wrapper.getServerSideProps(
 
 
             try {
-
-
                 const postInfo = await axios.get(`${process.env.REACT_APP_BASE_URL}/v1.0/blog/${query.post_slug}`, null, {
                     headers: {
                         site: process.env.REACT_APP_SITE_TOKEN
