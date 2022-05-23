@@ -27,6 +27,10 @@ function Home({ categories, events, posts }) {
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) =>
     async ({ req, res }) => {
+      res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=10, stale-while-revalidate=59'
+      )
       const categories = await axios.get(`${process.env.REACT_APP_BASE_URL}/v1.0/tags`, {
         headers: {
           site: process.env.REACT_APP_SITE_TOKEN

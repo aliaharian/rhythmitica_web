@@ -11,8 +11,6 @@ export default class MyDocument extends Document {
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link rel="shortcut icon" href="/static/favicon.ico" />
-          <link rel="stylesheet" href="/App.css" />
-          
         </Head>
 
         <body>
@@ -48,7 +46,7 @@ MyDocument.getInitialProps = async (ctx) => {
   // 4. page.render
 
   // Render app and page and get the context of the page with collected side effects.
- 
+
 
 
   const sheets = new ServerStyleSheets({ injectFirst: true });

@@ -14,6 +14,7 @@ import { SnackbarProvider } from "notistack"; // requires a loader
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import cookies from 'next-cookies'
+import '../public/App.css'
 
 import axios from 'axios';
 import { setTimezones, setUserIp, SET_USER_IP } from "../redux/users";

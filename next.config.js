@@ -4,6 +4,20 @@
 const withImages = require('next-images')
 const withFonts = require('next-fonts');
 module.exports = withImages(withFonts({
+    async headers() {
+        return [
+            {
+                source: '/:all*(svg|jpg|png)',
+                locale: false,
+                headers: [
+                    {
+                        key: 'Cache-Control',
+                        value: 'public, max-age=9999999999, must-revalidate',
+                    }
+                ],
+            },
+        ]
+    },
     env: {
         REACT_APP_BASE_URL: "https://itica.ca/api",
         // REACT_APP_SITE_TOKEN: "8d338b98a30e01e341f46f409713e7f0",
@@ -18,4 +32,4 @@ module.exports = withImages(withFonts({
         path: '_next/image'
 
     },
-}))
+})) 
