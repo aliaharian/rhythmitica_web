@@ -44,6 +44,7 @@
     "redux-localstorage": "^0.4.1",
     "redux-thunk": "^2.4.0",
     "sass": "^1.43.3",
+    "sharp": "^0.30.4",
     "slick-carousel": "^1.8.1",
     "three": "^0.135.0",
     "webpack": "^5.60.0",
