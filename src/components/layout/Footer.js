@@ -20,7 +20,7 @@ const Footer = () => {
             <div className={classes.footerGrandContainer}>
                 <div className={classes.footerContainer}>
                     <div className={classes.footerAbout}>
-                        <h1>RHYTHMITICA</h1>
+                        <h1>RHYTHMITICA, Online Music Academy</h1>
                         <p>
                             Rhythmitica is the very first world online music academy established in 2012 based in Toronto,
                             Canada. The academic tutoring of traditional world music to interested students across the globe

@@ -95,7 +95,7 @@
         max-width: 300px;
     }
     & > h1 {
-        font-size: 35px;
+        font-size: 20px;
         line-height: 47px;
         font-family: var(--fontBold);
         color: #fff;
@@ -108,15 +108,15 @@
             // color:var(--pinkColor)
         }
         @media (max-width: master.$xl) {
-            font-size: 30px;
+            font-size: 19px;
             line-height: 45px;
         }
         @media (max-width: master.$lg) {
-            font-size: 28px;
+            font-size: 18px;
             line-height: 41px;
         }
         @media (max-width: master.$md) {
-            font-size: 24px;
+            font-size: 14px;
             line-height: 30px;
         }
     }

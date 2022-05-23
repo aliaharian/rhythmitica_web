@@ -35,7 +35,7 @@ const Event = ({
             </div>
             {/* <Link href={`/events/${id}`}> */}
                 <Button className={classes.actionBtn}>
-                    <Image width={7} height={12} alt="" src={arrowRight} />
+                    <Image loading="eager" width={7} height={12} alt="" src={arrowRight} />
                     {/* <ChevronRightIcon /> */}
                 </Button>
             {/* </Link> */}
