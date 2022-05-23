@@ -39,7 +39,7 @@ const Partners = () => {
             image: partner2,
             link: '#'
         },
-        
+
     ]
     return (
         <>
@@ -49,8 +49,8 @@ const Partners = () => {
                     <h2 className={classes.partnersTitle}>Partners</h2>
                     <div className={classes.partnersBodyContainer}>
                         <Slider {...settings}>
-                            {partners.map((partner) => (
-                                <PartnerItem partner={partner} />
+                            {partners.map((partner, index) => (
+                                <PartnerItem key={index} partner={partner} />
                             ))}
 
                         </Slider>

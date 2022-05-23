@@ -25,13 +25,13 @@ const HomeSlider = () => {
         <div className={classes.sliderContainer}>
             <Slider {...settings}>
                 <div className={classes.slideItem}>
-                    <Image priority={true} layout='fill' src={slide0} alt="rhythmitica" />
+                    <Image loading="eager" priority={true} layout='fill' src={slide0} alt="rhythmitica" />
                 </div>
                 <div className={classes.slideItem}>
-                    <Image priority={true} layout='fill' src={slide3} alt="rhythmitica" />
+                    <Image loading="eager" priority={true} layout='fill' src={slide3} alt="rhythmitica" />
                 </div>
                 <div className={classes.slideItem}>
-                    <Image priority={true} layout='fill' src={slide2} alt="rhythmitica" />
+                    <Image loading="eager" priority={true} layout='fill' src={slide2} alt="rhythmitica" />
                 </div>
 
             </Slider>

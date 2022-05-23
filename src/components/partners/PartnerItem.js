@@ -11,7 +11,7 @@ const PartnerItem = ({
         <div className={classes.partnerItemContainer}>
             <div className={classes.partnerItem}>
                 <div className={classes.partnerItemImage}>
-                    <Image layout="fill" alt="" src={partner.image} />
+                    <Image loading="eager" layout="fill" alt="" src={partner.image} />
                 </div>
                 <div className={classes.partnerInfo}>
                     <div>

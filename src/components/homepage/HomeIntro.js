@@ -16,11 +16,11 @@ const HomeIntro = () => {
         <div className={classes.IntroGrandContainer}>
             <div className={classes.IntroContainer}>
                 <div>
-                    <Image layout="fill" alt="private lessons" src={privateImg} />
+                    <Image loading="eager" layout="fill" alt="private lessons" src={privateImg} />
                     <Link href={'/privateLessons'}><a>Private Lessons</a></Link>
                 </div>
                 <div>
-                    <Image layout="fill" alt="group lessons" src={groupImg} />
+                    <Image loading="eager" layout="fill" alt="group lessons" src={groupImg} />
                     <Link href={'/events'}><a>Group Lessons</a></Link>
                 </div>
 
