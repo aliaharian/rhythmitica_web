@@ -7,12 +7,12 @@ module.exports = withImages(withFonts({
     async headers() {
         return [
             {
-                source: '/:all*(svg|jpg|png)',
+                source: '/:all*(svg|jpg|png|ttf|woff|woff2|js|css)',
                 locale: false,
                 headers: [
                     {
                         key: 'Cache-Control',
-                        value: 'public, max-age=9999999999, must-revalidate',
+                        value: 'public, max-age=31536000, immutable',
                     }
                 ],
             },
