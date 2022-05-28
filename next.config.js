@@ -29,7 +29,7 @@ module.exports = withImages(withFonts({
         deviceSizes: [1080, 1200, 1440, 1920, 2048, 3840],
         disableStaticImages: true,
         domains: ['itica.ca'],
-        path: '_next/image'
+        path: '/_next/image'
 
     },
 })) 
