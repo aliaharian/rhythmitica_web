@@ -3,12 +3,36 @@ import { wrapper } from "../redux/store";
 import axios from 'axios'
 import Events from '../src/components/events/Events';
 import { getEventsList } from '../redux/events';
+import Head from 'next/head';
 
 function EventsPage({packages , eventTypes}) {
+  const structuredData = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Rhythmitica | Online Music Academy",
+      "item": "https://www.rhythmitica.ca"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Events",
+      "item": "https://www.rhythmitica.ca/events"
+    }]
+  }
   return (
+    <>
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+    </Head>
     <Layout page={'events'}>
       <Events packages={packages} eventTypes={eventTypes}/>
     </Layout>
+    </>
   )
 }
 export const getServerSideProps = wrapper.getServerSideProps(

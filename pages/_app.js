@@ -61,14 +61,38 @@ function MyApp(props) {
 
       <React.Fragment>
         <Head>
-          <title>rhythmitica</title>
+          <link rel="alternate" href="https://www.rhythmitica.ca/" hreflang="x-default" />
+          <title>Rhythmitica | Online Music Academy</title>
+
+          <meta name="description"
+            content="learn music and instruments online. all Music instruments like santoor , oud , daf and etc. in Rhythmitica" />
+
+          <meta name="keywords"
+            content="music , persian music , santoor , daf , learn daf , oud , violin , guitar , fiddle" />
+
+          <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+          <link rel="manifest" href="/favicons/site.webmanifest" />
+          <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+          <link rel="shortcut icon" href="/favicons/favicon.ico" />
+          <meta name="msapplication-TileColor" content="#00aba9" />
+          <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+          <meta name="theme-color" content="#ffffff" />
+          <meta name="format-detection" content="telephone=no" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+          <meta name="apple-mobile-web-app-title" content="Rhythmitica" />
+          <meta name="mobile-web-app-capable" content="yes" />
+          <meta name="google" value="notranslate" />
+
+          
           {/* <meta
                         name="viewport"
                         content="minimum-scale=1, initial-scale=1, width=device-width"
                     /> */}
           {/* <meta name="viewport" content="width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no, user-scalable=0 , maximum-scale=1"/> */}
 
-          {/* <link id="favicon" rel="shortcut icon" href="/public/favicon.ico"></link> */}
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />
@@ -94,7 +118,7 @@ MyApp.getInitialProps = async ({ ctx }) => {
 
       // const timezoneRes = await fetch(`${process.env.REACT_APP_BASE_URL}/timezones`);
       // const timezoneData = await timezoneRes.json();
-      // ctx.store.dispatch({ type: SET_USER_IP, payload: data });
+      // ctx.store.dispatch({type: SET_USER_IP, payload: data });
       // ctx.store.dispatch(getContactDetail(data2));
 
       return {

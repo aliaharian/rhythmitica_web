@@ -3,12 +3,36 @@ import { wrapper } from "../redux/store";
 import axios from 'axios'
 import { getStaffList } from '../redux/privateLessons/Actions';
 import PrivateLessons from '../src/components/privateLessons/PrivateLessons';
+import Head from 'next/head';
 
-function PrivateLessonsPage({ packages , params }) {
+function PrivateLessonsPage({ packages, params }) {
+  const structuredData = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Rhythmitica | Online Music Academy",
+      "item": "https://www.rhythmitica.ca"
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Private Lessons",
+      "item": "https://www.rhythmitica.ca/privateLessons"
+    }]
+  }
   return (
-    <Layout page={'privateLessons'}>
-      <PrivateLessons packages={packages} params={params} />
-    </Layout>
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </Head>
+      <Layout page={'privateLessons'}>
+        <PrivateLessons packages={packages} params={params} />
+      </Layout>
+    </>
   )
 }
 export const getServerSideProps = wrapper.getServerSideProps(

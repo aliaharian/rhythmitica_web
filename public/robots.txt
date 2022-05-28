@@ -1,0 +1,4 @@
+User-agent: *
+
+
+Sitemap: https://test.rhythmitica.ca/sitemap.xml
