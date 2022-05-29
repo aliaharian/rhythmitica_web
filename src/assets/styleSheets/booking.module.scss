@@ -335,6 +335,12 @@
         width: calc(100% + 32px);
         padding: 0 18px;
     }
+    @media (max-width: master.$md) {
+        height: 62px;
+        margin: 0 -12px 20px;
+        width: calc(100% + 24px);
+        padding: 0 18px;
+    }
     & > p {
         font-size: 28px;
         color: #b8aab3;
